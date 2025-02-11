@@ -1,1 +1,1 @@
-https://mcdasilva.github.io/CSC209/Week1/Part1/index.html
+https://mcdasilva.github.io/CSC209/StartPage/startPage.html
