@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en-US">
+        <title>Technical Page - Schedule</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="stylesheet" href="../CSSStyles/stylesToggleButton.css">
+
+        <link id="themeMode" rel="stylesheet" href="../CSSStyles/stylesLightMode.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <script defer>
+            function readMe() { 
+                if (document.getElementById("buttonReadMe").innerHTML == 'Read Me') {
+                    document.getElementById("readMe").innerHTML = `<pre>1. Only the first two entries of the table have links.
+The third one is a placeholder.
+                        
+2. Only "schedule" and "syllabus" in the navigation bar have links. 
+The others are placeholders.</pre>`;
+                    
+                    document.getElementById("readMe").style.display = 'inline-block';
+
+                    document.getElementById("buttonReadMe").innerHTML = 'Hide me'
+                }
+                else {
+                    document.getElementById("buttonReadMe").innerHTML = 'Read Me'
+                    document.getElementById("readMe").style.display = 'none';
+                }
+
+            }
+        </script>
+
+    </head>
+
+    <body class="technical">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework2.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>Technical</h1>
+
+            <p>
+                In this page, you'll find the technical part of my homework.
+            </p>
+        </div>
+
+        <hr>
+
+        <header class="technical">
+            <img style="top: 5%; position: absolute; left: 20%;" src="../Images/smithLogo.png" alt="Smith College Logo"  width="55%">
+
+            <h1 style="left: 38%; top: 55%; display: inline; position: absolute; width: 500px;">CSC 209 - Web programming</h1>
+
+            <h2 style="left: 45%; top: 75%; position: absolute; width: 500px;">
+                <a style="display: block; position: absolute;" href="https://www.smith.edu/people/ileana-streinu" target="_blank">Ileana Streinu</a>
+            </h2>
+
+        </header>
+    
+        <nav class="technical">
+
+            <input type="checkbox" id="darkmodeToggle"> 
+            <label for="darkmodeToggle">
+                <svg class="moon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+                <svg class="sun" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="800px" height="800px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                    <g>
+                        <circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="16"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="32" y1="10" x2="32" y2="0"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="32" y1="64" x2="32" y2="54"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="54" y1="32" x2="64" y2="32"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="0" y1="32" x2="10" y2="32"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="48" y1="16" x2="53" y2="11"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="11" y1="53" x2="16" y2="48"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="48" y1="48" x2="53" y2="53"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="11" y1="11" x2="16" y2="16"/>
+                    </g>
+                </svg>
+            </label>
+   
+            <ul>
+                <li><a class="active" href="#">Schedule</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="#">Requirements</a></li>
+                <li><a href="#">Textbook</a></li>
+                <li><a href="#c">How To Resources</a></li>
+            </ul>
+        </nav>
+        
+
+        <h2 style="margin-left: 48%; display: inline-block;">Schedule</h2>
+        
+        <button id="buttonReadMe" style="margin-left: -100px; margin-top: 3%; position: absolute;" onclick="readMe()">Read Me</button>
+
+        <p class="technical" id="readMe"></p>
+
+        <article>
+            <table>
+                <tr>
+                    <th>WEEK</th>
+                    <th>DATE</th>
+                    <th>LECTURE</th>
+                    <th>TOPIC</th>
+                    <th>HWK</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Wed 1/29</td>
+                    <td>Lecture 1</td>
+                    <td class="click">
+                        <a href="./Topic1/topic1.html" target="_blank">Introduction to Web Programming: Basics of HTML and CSS.</a>
+                    </td>
+                    <td>HW1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Wed 2/5</td>
+                    <td>Lecture 2</td>
+                    <td class="click">
+                        <a href="./Topic2/topic2.html" target="_blank">HTML & CSS: Styling Web Pages and Layout Techniques.</a></td>
+                    </td>
+                    <td>HW2</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td class="click">
+                        <a href="#">...</a></td>
+                    </td>
+                    <td>...</td>
+                </tr>
+            </table>
+        </article>
+
+        <script>
+            let toggle = document.getElementById('darkmodeToggle');
+            let themeLink = document.getElementById('themeMode');
+
+            if (localStorage.getItem('theme') == 'dark'){
+                toggle.checked = true
+                themeLink.setAttribute('href', "../CSSStyles/stylesDarkModeTechnical.css")
+            }
+            else {
+                toggle.checked = false
+                themeLink.setAttribute('href', "../CSSStyles/stylesLightMode.css")
+            }
+
+
+            toggle.addEventListener('change', function(){
+                if (toggle.checked) {
+                    themeLink.setAttribute('href', "../CSSStyles/stylesDarkModeTechnical.css")
+                    localStorage.setItem('theme', 'dark')
+                }
+                else {
+                    themeLink.setAttribute('href', "../CSSStyles/stylesLightMode.css")
+                    localStorage.setItem('theme', 'light')
+                }
+            })
+
+        </script>
+    </body>
+</html>

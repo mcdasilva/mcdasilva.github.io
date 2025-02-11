@@ -1,0 +1,128 @@
+body {
+    background-image: url("./ImagesPlanets/backgroundPlanets.gif");
+}
+
+.planet {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.planet a:link {
+    color: rgb(85, 61, 205);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.planet a:visited {
+    color: rgb(104, 21, 95);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.planet a:hover {
+    color: rgb(143, 70, 5);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.planet a:active {
+    color: rgb(166, 103, 22);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.saturn {
+    margin-left: 2%; 
+    margin-top: 2%;
+}
+
+.jupiter {
+    margin-left: 8%; 
+    margin-top: 2%;
+}
+
+.mercury {
+    margin-left: 14%; 
+    margin-top: 2%;
+}
+
+.saturnStaticFirst, .jupiterStaticFirst, .mercuryStaticFirst,
+/* .saturnStaticLast, .jupiterStaticLast, .mercuryStaticLast, */
+.saturnAnimated, .jupiterAnimated, .mercuryAnimated {
+    cursor: pointer;
+    width: 100%; 
+    height: 100%; 
+    border-radius: 10px;
+    background-color: rgb(174, 170, 230);
+    padding: 5px;
+    position: absolute;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.explanation {
+    position: relative;
+    background-color: rgb(174, 170, 230);
+    opacity: 0;
+    background-color: none;
+    top: 15px;
+    width: 800px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 5%;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.saturnExp {
+    top: 7%;
+    margin-left: 109%;
+}
+
+.jupiterExp {
+    top: 7%;
+    margin-left: 109%;
+}
+
+.mercuryExp {
+    top: 7%;
+    margin-left: 109%;
+}
+
+.saturnStaticFirst, .jupiterStaticFirst, .mercuryStaticFirst{
+    display: block;
+}
+
+/* .saturnStaticLast {
+    opacity: 0;
+    transition: opacity 1.7s;
+}
+
+.jupiterStaticLast, .mercuryStaticLast{
+    opacity: 0;
+    transition: opacity 3s;
+} */
+
+.saturnAnimated, .jupiterAnimated, .mercuryAnimated{
+    opacity: 0;
+}
+
+.saturn:hover .saturnStaticFirst, .jupiter:hover .jupiterStaticFirst, .mercury:hover .mercuryStaticFirst{
+    opacity: 0;
+}
+
+.saturn:hover .saturnAnimated, .jupiter:hover .jupiterAnimated, .mercury:hover .mercuryAnimated{
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* .saturn:hover .saturnStaticLast, .jupiter:hover .jupiterStaticLast, .mercury:hover .mercuryStaticLast{
+    opacity: 1;
+} */
+
+.saturn:hover .explanation, .jupiter:hover .explanation, .mercury:hover .explanation{
+    opacity: 1;
+    pointer-events: auto;
+}

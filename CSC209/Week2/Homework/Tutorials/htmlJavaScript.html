@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en-US">
+        <title>HTML JavaScript</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework2.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>HTML JavaScript</h1>
+
+            <p>
+                In this page, I am experimenting with HTML JavaScript.
+            </p>
+        </div>
+
+        <hr>
+
+        <button type="button"
+        onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date and Time.</button>
+
+        <p id="demo"></p>
+
+        <br>
+
+        <p>The following example writes "Hello JavaScript!" into an HTML element with id="demo2":</p>
+
+        <p id="demo2"></p>
+
+        <script>
+            document.getElementById("demo2").innerHTML = "Hello JavaScript!";
+        </script> 
+
+        <br>
+
+        <p id="demo3">This is a demonstration.</p>
+        
+        <button type="button" onclick="myFunction()">Click Me!</button>
+
+        <script>
+            function myFunction() { 
+            document.getElementById("demo3").innerHTML = "Hello JavaScript2!";
+            }
+        </script>
+
+        <br>
+        <br>
+
+        <p id="demo4">JavaScript can change the style of an HTML element.</p>
+
+        <script>
+            function myFunction2() {
+                document.getElementById("demo4").style.fontSize = "25px"; 
+                document.getElementById("demo4").style.color = "red";
+                document.getElementById("demo4").style.backgroundColor = "yellow";        
+            }
+        </script>
+
+        <button type="button" onclick="myFunction2()">Click Me2!</button>
+
+        <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+
+    </body>
+</html>

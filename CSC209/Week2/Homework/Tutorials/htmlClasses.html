@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en-US">
+        <title>HTML Classes</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <style>
+            .main {
+                text-align: center;
+            }
+
+            .city {
+                background-color: tomato;
+                color: white;
+                border: 2px solid black;
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .note {
+                font-size: 120%;
+                color: red;
+            }
+        </style>
+
+    </head>
+
+    <body class="tutorial">
+ 
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework2.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>HTML Classes</h1>
+
+            <p>
+                In this page, I am experimenting with HTML classes.
+            </p>
+        </div>
+
+        <hr>
+
+        <p>Click the button to hide all elements with class name "city":</p>
+
+        <button onclick="myFunction()">Hide elements</button>
+
+        <div class="city main">
+            <h2>London</h2>
+            <p>London is the capital of England.</p>
+        </div>
+          
+        <div class="city">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <p class="city">Paris is the capital of France</p>
+          
+        <div class="city">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+        <h1>My <span class="note">Important</span> Heading</h1>
+        <p>This is some <span class="note">important</span> text.</p>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementsByClassName("city");
+              for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              }
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    background-image: url("./ImagesStartPage/backgroundGifStartPage.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(188, 221, 250);
+}
+
+* {
+    transition: color 0.3s;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+h1:hover, p:hover{
+    color: aliceblue;
+}
+
+
+table {
+    margin-top: 15%;
+    margin-left: 40%;
+    border-spacing: 10px;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(188, 221, 250);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color:aliceblue;
+}
+
+a:link {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(246, 103, 127);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: tan;
+    background-color: transparent;
+    text-decoration: none;
+}
