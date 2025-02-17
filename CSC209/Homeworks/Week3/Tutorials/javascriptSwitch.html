@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript switch</h2>
+
+        <p id="demo"></p>
+
+        <script>
+            let text;
+            switch (new Date().getDay()) {
+            case 6:
+                text = "Today is Saturday";
+                break;
+            case 0:
+                text = "Today is Sunday";
+                break;
+            default:
+                text = "Looking forward to the Weekend";
+            }
+            document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript switch</h2>
+
+        <p id="demo2"></p>
+
+        <script>
+            let text2;
+            switch (new Date().getDay()) {
+            case 4:
+            case 5:
+                text2 = "Soon it is Weekend";
+                break;
+            case 0:
+            case 6:
+                text2 = "It is Weekend";
+                break;
+            default:
+                text2 = "Looking forward to the Weekend2";
+            }
+            document.getElementById("demo2").innerHTML = text2;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+
+        <h2>JavaScript switch</h2>
+
+        <p id="demo3"></p>
+
+        <script>
+            let x = "0";
+
+            switch (x) {
+            case 0:
+                text3 = "Off";
+                break;
+            case 1:
+                text3 = "On";
+                break;
+            default:
+                text3 = "No value found";
+            }
+            document.getElementById("demo3").innerHTML = text3;
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+        
+        <h1>JavaScript Objects</h1>
+        <h2>Creating an Object</h2>
+
+        <p id="demo"></p>
+
+        <script>
+            // Create an Object:
+            const car = {type:"Fiat", model:"500", color:"white"};
+
+            // Display Data from the Object:
+            document.getElementById("demo").innerHTML =
+            "The car type is " + car.type;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>Creating JavaScript Objects</h1>
+        <h2>Using an Object Literal</h2>
+
+        <p id="demo2"></p>
+
+        <script>
+            // Create an empty Object
+            const person = {};
+
+            // Add Properties
+            person.firstName = "John";
+            person.lastName = "Doe";
+            person.age = 50;
+            person.eyeColor = "blue"; 
+
+            // Display Data from Object
+            document.getElementById("demo2").innerHTML =
+            person.firstName + " is " + person.age + " years old.";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>Creating JavaScript Objects</h1>
+        <h2>Using the new Keyword</h2>
+
+        <p id="demo3"></p>
+
+        <script>
+            // Create an Object
+            const person2 = new Object();
+            person2.firstName = "John";
+            person2.lastName = "Doe";
+            person2.age = 50;
+            person2.eyeColor = "blue"; 
+
+            // Diplay Object Content
+            document.getElementById("demo3").innerHTML =
+            person2.firstName + " is " + person2.age + " years old.";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+
+        <h1>JavaScript Objects</h1>
+        <p>There are two ways to access a property: object.property or object["property"]</p>
+
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+
+        <script>
+            // Create an Object:
+            const person3 = {
+            firstName: "John",
+            lastName : "Doe",
+            id     :  5566
+            };
+
+            // Display lastName from the Object:
+            document.getElementById("demo4").innerHTML =
+            "The last name is " + person3.lastName;
+
+
+            // Display lastName from the Object:
+            document.getElementById("demo5").innerHTML =
+            "The last name is " +  person3["lastName"];
+
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Objects</h1>
+        <h2>Object Methods</h2>
+        <p>A method is a function definition stored as a property value.</p>
+
+        <p id="demo6"></p>
+
+        <script>
+            const person4 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+            };
+
+            document.getElementById("demo6").innerHTML = person4.fullName();
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Objects</h1>
+        <h2>Objects are Mutable</h2>
+
+        <p>Changes to a copy of an object will also change the original object:</p>
+
+        <p id="demo7"></p>
+
+        <script>
+            // Create an Object
+            const person5 = {
+            firstName: "John",
+            lastName: "Doe",
+            age:50,
+            eyeColor: "blue"
+            };
+
+            // Create a Copy
+            const x = person5;
+
+            // Change Age
+            x.age = 10;
+
+            document.getElementById("demo7").innerHTML =
+            person5.firstName + " is " + person5.age + " years old.";
+        </script>
+
+    </body>
+</html>

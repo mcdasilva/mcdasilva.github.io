@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript For Loop</h2>
+
+        <p id="demo"></p>
+
+        <script>
+        const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+        let text = "";
+            for (let i = 0; i < cars.length; i++) {
+            text += cars[i] + "<br>";
+            }
+
+            document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript For In Loop</h2>
+        <p>The for in statement loops through the properties of an object:</p>
+
+        <p id="demo2"></p>
+
+        <script>
+            const person = {fname:"John", lname:"Doe", age:25}; 
+
+            let txt = "";
+            for (let x in person) {
+            txt += person[x] + " ";
+            }
+
+            document.getElementById("demo2").innerHTML = txt;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>The forEach() Method</h2>
+
+        <p>Call a function once for each array element:</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            const numbers = [45, 4, 9, 16, 25];
+
+            let txt2 = "";
+            numbers.forEach(myFunction);
+            document.getElementById("demo3").innerHTML = txt2;
+
+            function myFunction(value) {
+            txt2 += value + "<br>"; 
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript For Of Loop</h2>
+        <p>The for of statement loops through the values of any iterable object:</p>
+
+        <p id="demo4"></p>
+
+        <script>
+            const cars2 = ["BMW", "Volvo", "Mini"];
+
+            let text3 = "";
+            for (let x of cars2) {
+            text3 += x + "<br>";
+            }
+
+            document.getElementById("demo4").innerHTML = text3;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript While Loop</h2>
+
+        <p id="demo5"></p>
+
+        <script>
+            let text4 = "";
+            let i = 0;
+            while (i < 10) {
+                text4 += "<br>The number is " + i;
+                i++;
+            }
+            document.getElementById("demo5").innerHTML = text4;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+
+        <h2>JavaScript Do While Loop</h2>
+
+        <p id="demo6"></p>
+
+        <script>
+            let text5 = ""
+            let i2 = 0;
+
+            do {
+            text5 += "<br>The number is " + i2;
+            i2++;
+            }
+            while (i2 < 10);  
+
+            document.getElementById("demo6").innerHTML = text5;
+        </script>
+
+
+    </body>
+</html>

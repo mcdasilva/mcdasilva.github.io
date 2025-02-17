@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>CSS How To</title>
+            <meta charset="UTF-8"> 
+            <meta name="keywords" content="HTML, CSS, JavaScript">
+            <meta name="description" content="Homework 2">
+            <meta name="author" content="Matheus Coutinho da Silva">
+            <meta http-equiv="refresh" content="30">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <!-- External CSS -->
+            <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+    
+            <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <script>
+            function myFunction() {
+                document.getElementById("demo2").innerHTML = "Paragraph changed.";
+            }
+        </script>
+    </head>
+
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript in Body</h2>
+
+        <p id="demo"></p>
+
+        <script>
+            document.getElementById("demo").innerHTML = "My First JavaScript";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Demo JavaScript in Head</h2>
+
+        <p id="demo2">A Paragraph</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Demo JavaScript in Body</h2>
+
+        <p id="demo3">A Paragraph</p>
+
+        <button type="button" onclick="myFunction2()">Try it</button>
+
+        <script>
+            function myFunction2() {
+                document.getElementById("demo3").innerHTML = "Paragraph changed.";
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Demo External JavaScript</h2>
+
+        <p id="demo4">A Paragraph.</p>
+
+        <button type="button" onclick="myFunction3()">Try it</button>
+
+        <p>This example links to "myScript.js".</p>
+        <p>(myFunction is stored in "myScript.js")</p>
+
+        <script src="./JavaScript/myScript.js"></script>
+
+    </body>
+</html> 

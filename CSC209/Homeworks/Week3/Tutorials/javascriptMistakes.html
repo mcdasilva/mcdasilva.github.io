@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>Common JavaScript Mistakes</h2>
+
+        <p>It is a common mistake to forget that switch statements use strict comparison.</p>
+        <p>This will not work: (didn't work, as predicted)</p>
+
+        <p id="demo"></p>
+
+        <script>
+            let x = 10;
+            switch(x) {
+            case "10": document.getElementById("demo").innerHTML = "Hello";
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Common JavaScript Mistakes</h2>
+
+        <p>All programming languages, including JavaScript, have difficulties with precise floating point values.</p>
+        <p>To solve the problem, it helps to multiply and divide:</p>
+
+        <p id="demo2"></p>
+
+        <script>
+            let p = 0.1;
+            let y = 0.2;
+            let z = (p * 10 + y *10) / 10;
+            document.getElementById("demo2").innerHTML = z;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Common JavaScript Mistakes</h2>
+
+        <p>You must use a "backslash" if you must break a statement in a string:</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            document.getElementById("demo3").innerHTML = "Hello \
+            World!";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Common JavaScript Mistakes</h2>
+
+        <p>This example will return undefined:</p>
+
+        <p id="demo4"></p>
+
+        <script>
+            document.getElementById("demo4").innerHTML = myFunction(55);
+            function myFunction(a) {
+                let
+                power = 10;
+                return
+                a * power;
+            }
+        </script>
+
+    </body>
+</html>

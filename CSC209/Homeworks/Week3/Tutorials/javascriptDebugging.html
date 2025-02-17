@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>My First Web Page</h2>
+
+        <p>Activate debugging in your browser (Chrome, IE, Firefox) with F12, and select "Console" in the debugger menu.</p>
+
+        <script>
+            a = 5;
+            b = 6;
+            c = a + b;
+            console.log(c);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Debugger</h2>
+
+        <p id="demo"></p>
+
+        <p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+
+        <script>
+            let x = 15 * 5;
+            debugger;
+            document.getElementById("demo").innerHTML = x;
+        </script>
+
+    </body>
+</html> 

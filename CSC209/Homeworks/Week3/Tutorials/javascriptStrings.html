@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h1>JavaScript Template Strings</h1>
+        <p>With back-ticks, you can use both single and double quotes inside a string:</p>
+
+        <p id="demo"></p>
+
+        <p>Templates not supported in Internet Explorer.</p>
+
+        <script>
+            let text = `He's often called "Johnny"`;
+            document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Strings</h1>
+        <h2>The length Property</h2>
+
+        <p>The length of the string is:</p>
+        <p id="demo2"></p>
+
+        <script>
+            let text2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            document.getElementById("demo2").innerHTML = text2.length;
+        </script>  
+        
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Strings</h1>
+
+        <p>The escape sequence \\ inserts a backslash in a string.</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            let text3 = "The character \\ is called backslash.";
+            document.getElementById("demo3").innerHTML = text3; 
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Template Strings</h1>
+        <p>Templates allow multiline strings:</p>
+
+        <p id="demo4"></p>
+
+        <p>Templates are not supported in Internet Explorer.</p>
+
+        <script>
+            let text4 =
+
+            `The quick
+            brown fox
+            jumps over
+            the lazy dog`;
+
+            document.getElementById("demo4").innerHTML = text4;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>Never Create Strings as Objects</h2>
+        <p>Strings and objects cannot be safely compared.</p>
+
+        <p id="demo5"></p>
+
+        <script>
+            let x = "John";        // x is a string
+            let y = new String("John");  // y is an object
+            document.getElementById("demo5").innerHTML = (x===y);
+        </script>
+
+    </body>
+</html>

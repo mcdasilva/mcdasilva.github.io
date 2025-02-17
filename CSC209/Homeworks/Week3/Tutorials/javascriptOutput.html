@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>My First Web Page</h2>
+        <p>My First Paragraph.</p>
+
+        <p id="demo"></p>
+
+        <script>
+            document.getElementById("demo").innerHTML = 5 + 6;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>My First Web Page</h2>
+        <p>My first paragraph.</p>
+
+        <p>Never call document.write after the document has finished loading.
+        It will overwrite the whole document.</p>
+
+        <script>
+            document.write(5 + 6);
+        </script>
+        
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>My First Web Page</h2>
+        <p>My first paragraph.</p>
+
+        <button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>My First Web Page</h1>
+        <p>My first paragraph.</p>
+
+        <script>
+            window.alert(5 + 6);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>My First Web Page</h1>
+        <p>My first paragraph.</p>
+
+        <script>
+            alert(5 + 1);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <script>
+            console.log(5 + 20);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <button onclick="window.print()">Print this page</button>
+
+    </body>
+</html> 

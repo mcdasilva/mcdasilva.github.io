@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript</h2>
+
+        <p>JavaScript evaluates expressions from left to right. Different sequences can produce different results:</p>
+
+        <p id="demo"></p>
+
+        <script>
+            let x = 16 + 4 + "Volvo";
+            document.getElementById("demo").innerHTML = x;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript</h2>
+
+        <p>JavaScript evaluates expressions from left to right. Different sequences can produce different results:</p>
+
+        <p id="demo2"></p>
+
+        <script>
+            let y = "Volvo" + 16 + 4;
+            document.getElementById("demo2").innerHTML = y;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Numbers</h2>
+
+        <p>Extra large or extra small numbers can be written with scientific (exponential) notation:</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            let k = 123e5;
+            let z = 123e-5;
+
+            document.getElementById("demo3").innerHTML =
+            k + "<br>" + z;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavScript Bigint</h1>
+        <p>A BigInt can not have decimals.</p>
+
+        <p id="demo4"></p>
+
+        <p>You cannot perform math between a BigInt type and a Number type.</p>
+
+        <script>
+            let r = BigInt("123456789012345678901234567890");
+            document.getElementById("demo4").innerHTML = r; 
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Objects</h2>
+
+        <p id="demo5"></p>
+
+        <script>
+            const person = {
+            firstName : "John",
+            lastName  : "Doe",
+            age     : 50,
+            eyeColor  : "blue"
+            };
+
+            document.getElementById("demo5").innerHTML =
+            person.firstName + " is " + person.age + " years old.";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+
+        <h1>JavaScript Operators</h1>
+        <h2>The typeof Operator</h2>
+        <p>The typeof operator returns the type of a variable or an expression.</p>
+
+        <p id="demo6"></p>
+
+        <script>
+            document.getElementById("demo6").innerHTML = 
+            typeof "" + "<br>" +
+            typeof "John" + "<br>" + 
+            typeof "John Doe";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Operators</h1>
+        <h2>The typeof Operator</h2>
+        <p>Variables can be emptied if you set the value to <b>undefined</b>.</p>
+
+        <p id="demo7"></p>
+
+        <script>
+            let car = "Volvo";
+            car = undefined;
+
+            document.getElementById("demo7").innerHTML =
+            "<p>The value of car is " + car +
+            "<p>The typeof car is " + typeof car;
+        </script>
+
+    </body>
+</html>
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Images</title>
+
+        <link rel="stylesheet" href="part1Styles.css">
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <style>
+            .gallery{
+                position: absolute;
+                top: 30%;
+                margin-left: 5%;
+                align-items: center;
+                display: flex;
+                gap: 50px;
+            }
+
+            .gallery img {
+                border-radius: 10px;
+                border: 2px solid #333;
+                margin: 10px;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow:0 6px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../../../Homeworks/Week1/Part3/ImagesHw1/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../../../Homeworks/Week1/Part3/homework1.html">
+                <button>
+                    <img src="../../../Homeworks/Week1/Part3/ImagesHw1/backButton.png" alt="Back button">
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>Images</h1>
+
+            <p>
+                In this page, I am experimenting with images.
+            </p>
+        </div>
+
+        <hr>
+
+        <br>
+        <br>
+
+        <p>Hover over each image to see the tooltip and a zoom effect!</p>
+
+        <div class="gallery">
+            <img src="sky.jpg" alt="Random sky image from Google" title="Wide Sky" width="600" height="400">
+            <img src="sky.jpg" alt="Random sky image from Google" title="Tall Sky" width="400" height="600">
+            <img src="sky.jpg" alt="Random sky image from Google" title="Small Sky" width="200" height="200">
+        </div>
+
+    </body>
+</html>

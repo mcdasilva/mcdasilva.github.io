@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript if .. else</h2>
+
+        <p>A time-based greeting:</p>
+
+        <p id="demo"></p>
+
+        <script>
+            const time = new Date().getHours();
+            let greeting;
+            if (time < 10) {
+            greeting = "Good morning";
+            } else if (time < 20) {
+            greeting = "Good day";
+            } else {
+            greeting = "Good evening";
+            }
+            document.getElementById("demo").innerHTML = greeting;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Math.random()</h2>
+
+        <p id="demo2"></p>
+
+        <script>
+            let text;
+            if (Math.random() < 0.5) {
+            text = "<a href='https://w3schools.com'>Visit W3Schools</a>";
+            } else {
+            text = "<a href='https://wwf.org'>Visit WWF</a>";
+            }
+            document.getElementById("demo2").innerHTML = text;
+        </script>
+
+    </body>
+</html>

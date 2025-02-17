@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript Numbers</h2>
+
+        <p>Number can be written with or without decimals.</p>
+
+        <p id="demo"></p>
+
+        <script>
+            document.getElementById("demo").innerHTML = 10.50;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Strings</h2>
+
+        <p>Strings can be written with double or single quotes.</p>
+
+        <p id="demo2"></p>
+
+        <script>
+            document.getElementById("demo2").innerHTML = 'John Doe';
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Variables</h2>
+
+        <p>In this example, x is defined as a variable.
+        Then, x is assigned the value of 6:</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            let x;
+            x = 6;
+            document.getElementById("demo3").innerHTML = x;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Operators</h2>
+
+        <p>JavaScript uses arithmetic operators to compute values (just like algebra).</p>
+
+        <p id="demo4"></p>
+
+        <script>
+            document.getElementById("demo4").innerHTML = (5 + 6) * 10;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Expressions</h2>
+
+        <p>Expressions compute to values.</p>
+
+        <p id="demo5"></p>
+
+        <script>
+            document.getElementById("demo5").innerHTML = "Jane" + " "  + "Doe";
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Comments are NOT Executed</h2>
+
+        <p id="demo6"></p>
+
+        <script>
+            let y;
+            y = 5;
+            // y = 6; I will not be executed
+            document.getElementById("demo6").innerHTML = y;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript is Case Sensitive</h2>
+
+        <p>Try to change lastName to lastname.</p>
+
+        <p id="demo7"></p>
+
+        <script>
+            let lastname, lastName;
+            lastName = "Doe";
+            lastname = "Peterson";
+            document.getElementById("demo7").innerHTML = lastname;
+        </script>
+
+    </body>
+</html>

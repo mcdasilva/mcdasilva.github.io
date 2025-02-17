@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS How To</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 2">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+    
+    <body class="tutorial">
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework3.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h1>JavaScript Functions</h1>
+
+        <p>Call a function which performs a calculation and returns the result:</p>
+
+        <p id="demo"></p>
+
+        <script>
+            let x = myFunction(4, 3);
+            document.getElementById("demo").innerHTML = x;
+
+            function myFunction(a, b) {
+            return a * b;
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Functions</h1>
+
+        <p>Accessing a function without () returns the function and not the function result:</p>
+        <p id="demo2"></p>
+
+        <script>
+            function toCelsius(f) {
+            return (5/9) * (f-32);
+            }
+
+            let value = toCelsius;
+            document.getElementById("demo2").innerHTML = value;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Functions</h1>
+
+        <p>Outside myFunction() carName is undefined.</p>
+
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+
+        <script>
+            let text = "Outside: " + typeof carName;
+            document.getElementById("demo3").innerHTML = text;
+
+            function myFunction() {
+                let carName = "Volvo";
+                let text = "Inside: " + typeof carName + " " + carName; 
+                document.getElementById("demo4").innerHTML = text;
+            }
+
+            myFunction();
+        </script>
+
+    </body>
+</html>
