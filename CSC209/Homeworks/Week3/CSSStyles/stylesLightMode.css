@@ -1,0 +1,455 @@
+body.creative {
+    background: linear-gradient(180deg, rgb(72, 72, 255), pink);
+}
+
+em {
+    color: rgb(1, 13, 23);
+}
+
+p.technical {
+    color: rgb(0, 0, 0);
+    background-color:#b4b2e0;
+    border-radius: 10px;
+    text-align: center justify;
+    display: none;
+    font-size:medium;
+    padding: 1%;
+    width: 600px;
+    margin-left: 33%;
+    overflow: visible;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    box-sizing:border-box
+  }
+
+
+table {
+    margin-left: 0.05%;
+}
+
+th {
+    background-color:rgb(244, 161, 60) ;
+}
+
+td {
+    background-color: bisque;
+}
+
+th, td {
+    position: relative;
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+th:hover, td:hover {
+    width: 300px;
+    background-color:rgb(244, 193, 130)
+}
+
+.click {
+    background-color: rgb(228, 206, 116);
+}
+
+td.click a {
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+td.click a:hover {
+    background-color: rgb(119, 102, 35);
+    color: rgb(240, 249, 255);
+}
+
+nav {
+    position: relative;
+    float: left;
+}
+
+nav.technical input, nav.technical label {
+    position: fixed;
+    top: 52%;
+    padding-left: 3px;
+}
+
+nav.creative input, nav.creative label {
+    position: fixed;
+    top: 49.8%;
+    padding-left: 3px;
+}
+
+nav.technical ul {
+    list-style-type: none;
+    margin: 0;
+    top: 57%;
+    padding: 0;
+    width: 12%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+nav.creative ul {
+    border-radius: 10px;
+    list-style-type: none;
+    margin: 0;
+    top: 54.8%;
+    padding: 0;
+    width: 12%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+nav li {
+    border-bottom: 1px solid black;
+}
+
+nav li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background: linear-gradient(180deg, #ffe6f2, #ffccff);
+    color: rgb(0, 0, 0);
+}
+
+nav li a.active {
+    background: linear-gradient(180deg, #f87cb8, #ff00ff);
+    color: rgb(0, 0, 0);
+}
+
+nav li:last-child{
+    border-bottom: none;
+}
+
+a {
+    transition: background-color 0.3s;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ac2525;
+    text-decoration: none;
+}
+
+a:active {
+    color: tan;
+    text-decoration: none;
+}
+
+
+header {
+  background-color: #b4b2e0;
+  text-align: center;
+  color: white;
+  height: 200px;
+  position: relative;
+}
+
+header.creative {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url(../Images/headerBackground.jpg);
+    border-radius: 100px;
+    text-align: center;
+    color: white;
+    height: 200px;
+    position: relative;
+  }
+
+header img.creative {
+    top: 5%; 
+    position: absolute; 
+    left: 15%; 
+    border-radius: 100px; 
+    box-shadow:0 6px 8px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    height: 180px;
+}
+
+header.creative h1 {
+    color: rgb(216, 237, 255);
+    background-color: none;
+    left: 30%; 
+    top: 5%; 
+    display: inline; 
+    position: absolute; 
+    width: 800px; 
+    padding: 20px; 
+    transition: 0.3s;
+}
+
+
+header.creative h1:hover {
+    color: rgb(232, 238, 244);
+    background-color: transparent;
+}
+
+header.creative p {
+    color: rgb(216, 237, 255);
+    background-color: none;
+    font-size: x-large;
+    display: block;
+    left: 2%; 
+    top: 42%; 
+    position: absolute; 
+    width: 550px;
+    transition: 0.3s;
+    text-align: center justify;
+    font-size:medium;
+    padding: 1%;
+    width: 600px;
+    margin-left: 33%;
+}
+
+header p:hover {
+    color: rgb(232, 238, 244);
+    background-color: transparent;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 20px;
+  width: 84.6%;
+  margin-left: 13%;
+  background-color:#b4b2e0;
+  min-height:100px; 
+  margin-top: 0.56%;
+}
+
+article.creative {
+    border-radius: 50px;
+    background: linear-gradient(180deg, black, gray);
+    margin-top: 2.4%;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.subsection {
+    /* background-color: #b6b6b6; */
+    background: linear-gradient(180deg, #ffe6f2, #ffccff);
+    border-radius: 100px;
+    padding: 1px;
+    padding-bottom: 30px;
+    /* overflow: hidden; */
+    /* overflow: visible; */
+}
+
+.subsection h1 {
+    color: rgb(40, 44, 47);
+    text-align: center;
+    font-size: xx-large;
+    transition: 0.3s
+}
+
+.subsection h2 {
+    color: rgb(40, 44, 47);
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: x-large;
+    transition: 0.3s
+}
+
+.subsection h3 {
+    color: rgb(40, 44, 47);
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: large;
+    transition: 0.3s
+}
+
+.subsection h1:hover {
+    color: rgb(100, 112, 121);
+    background-color: transparent;
+}
+
+.subsection h2:hover {
+    background-color: transparent;
+}
+
+.subsection h3:hover {
+    background-color: transparent;
+}
+
+.subsection p {
+    color: rgb(40, 44, 47);
+    background-color: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.subsection p:hover {
+    color: rgb(40, 44, 47);
+    background-color: transparent;
+}
+
+
+.subsection .gallery-item {
+    display: flex;
+    align-items: center;
+}
+
+
+.subsection .gallery-item img {
+    width: 40%;
+    object-fit: cover;
+    background-color: rgb(42, 42, 42);
+    padding: 5px;
+    border-radius: 10px;
+    float: left;
+    margin: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: transform 0.3s;
+}
+
+.subsection .gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Ensure Text is Aligned Next to Image */
+.subsection .gallery-item .gallery-text h2, .subsection .gallery-item .gallery-text h3, .subsection .gallery-item .gallery-text p {
+    text-align: left;
+    overflow: hidden;
+    margin-left: -3%;
+    margin-right: 5%;
+}
+
+.subsection .contact-item {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 5%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px 10%;
+    border-radius: 15px;
+}
+
+.subsection .contact-item .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgb(42, 42, 42);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-text {
+    text-align: center;
+    max-width: 400px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+a.email { 
+    color: #c13584; 
+} 
+
+a.instagram { 
+    color: #ff6b6b; 
+} 
+
+.email:hover { 
+    color: #ff60ba; 
+} 
+
+.instagram:hover { 
+    color: #ffaaaa; 
+} 
+
+.prettyButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(135deg, #ff999d, #ffb7a3);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 12px;
+}
+
+.prettyButton:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prettyButton:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #ff758c, #ff92a5);
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}

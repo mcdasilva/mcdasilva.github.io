@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="topic3.html">
+                <button>
+                    <img src="../../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+        </div>
+
+        <h1>JavaScript Assignments</h1>
+        <h2>Addition Assignment</h2>
+        <h3>The += Operator</h3>
+
+        <p id="demo"></p>
+
+        <script>
+            let text = "Hello";
+            text += " World";
+            document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript Assignments</h1>
+        <h2>Exponentiation Assignment</h2>
+        <h3>The **= Operator</h3>
+
+        <p id="demo2"></p>
+
+        <script>
+            let x = 10;
+            x **= 5;
+            document.getElementById("demo2").innerHTML = "Value of x is: " + x;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+
+        <h1>JavaScript Assignments</h1>
+        <h2>The ??= Operator</h2>
+        <p>The ??= operator is used between two values. If the first value is undefined or null, the second value is assigned.</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            let t;
+            document.getElementById("demo3").innerHTML = t ??= 5; 
+        </script>
+
+    </body>
+</html>
