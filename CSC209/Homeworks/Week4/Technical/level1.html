@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Technical Page - Level 1</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 4">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="stylesheet" href="../CSSStyles/stylesTechLvl1.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+    <body>
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="technical.html">
+                <button>
+                    Technical Page
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>Technical - LVL 1</h1>
+
+            <p>
+                In this page, you'll find the technical part (LVL 1) of my homework.
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="redMenu">
+            <label for="redSpeed">Red square speed</label>
+            <select id="redSpeed">
+                <option value=30>Slow</option>
+                <option value=20>Medium</option>
+                <option value=10>Fast</option>
+            </select>
+            <button id="moveRedBtn" onclick="moveSquare('red', 'redSq', 0, 350)">Move red square</button> <br><br>  
+        </div>
+
+        <div id="blueMenu">
+            <label for="blueSpeed">Blue square speed</label>
+            <select id="blueSpeed">
+                <option value=30>Slow</option>
+                <option value=20>Medium</option>
+                <option value=10>Fast</option>
+            </select>
+            <button id="moveBlueBtn" onclick="moveSquare('blue', 'blueSq', 350, 0)">Move blue square</button> <br><br>  
+        </div>
+
+    
+        <div id ="squaresContainer">
+            <div id ="blueSq"></div>
+            <div id ="redSq"></div>
+        </div>
+
+        <script src="../Javascript/animationLvl1.js"></script>
+
+    
+    </body>
+</html>

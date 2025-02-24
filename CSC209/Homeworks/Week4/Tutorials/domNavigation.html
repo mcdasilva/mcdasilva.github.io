@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>DOM Navigation</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h1 id="id01">My First Page</h1>
+        <p id="id02"></p>
+
+        <script>
+            document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1 id="id03">My First Page</h1>
+        <p id="id04"></p>
+
+        <script>
+            document.getElementById("id04").innerHTML = document.getElementById("id03").nodeName;
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1 id="id05">My First Page</h1>
+        <p id="id06"></p>
+
+        <script>
+            document.getElementById("id06").innerHTML = document.getElementById("id05").nodeType;
+        </script>
+
+    </body>
+</html>

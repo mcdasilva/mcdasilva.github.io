@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+            
+        <title>DOM Animations</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+
+    <body class="tutorial" onload="checkCookies()">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onclick Attribute</h2>
+
+        <h2 onclick="this.innerHTML='Ooops!'">Click on this text!</h2>
+
+        <!DOCTYPE html>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onload Attribute</h2>
+
+        <p id="demo"></p>
+
+        <script>
+        function checkCookies() {
+            let text = "";
+                if (navigator.cookieEnabled == true) {
+                    text = "Cookies are enabled.";
+                } else {
+                    text = "Cookies are not enabled.";
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript HTML Events</h1>
+        <h2>The oninput Attribute</h2>
+
+        Enter your name: <input type="text" id="fname" oninput="upperCase()">
+        <p>When you write in the input field, a function is triggered to transform the input to upper case.</p>
+
+        <script>
+            function upperCase() {
+                const x = document.getElementById("fname");
+                x.value = x.value.toUpperCase();
+            }
+        </script>
+
+    </body>
+</html>

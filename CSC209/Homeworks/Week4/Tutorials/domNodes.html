@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>DOM Nodes</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript HTML DOM</h2>
+        <p>Add a new HTML Element.</p>
+
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+
+        <script>
+            const para = document.createElement("p");
+            const node = document.createTextNode("This is new.");
+            para.appendChild(node);
+            const element = document.getElementById("div1");
+            element.appendChild(para);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript HTML DOM</h2>
+        <p>Add a new HTML Element.</p>
+
+        <div id="div2">
+        <p id="p3">This is a paragraph.</p>
+        <p id="p4">This is another paragraph.</p>
+        </div>
+
+        <script>
+            const para2 = document.createElement("p");
+            const node2 = document.createTextNode("This is new.");
+            para2.appendChild(node2);
+
+            const element2 = document.getElementById("div2");
+            const child2 = document.getElementById("p3");
+            element2.insertBefore(para2,child2);
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript HTML DOM</h2>
+        <h3>Remove an HTML Element.</h3>
+
+        <div>
+            <p id="p5">This is a paragraph.</p>
+            <p id="p6">This is another paragraph.</p>
+        </div>
+
+        <button onclick="myFunction()">Remove Element</button>
+
+        <script>
+            function myFunction() {
+                document.getElementById("p5").remove();
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript HTML DOM</h2>
+        <h3>Replace an HTML Element.</h3>
+
+        <div id="div3">
+        <p id="p7">This is a paragraph.</p>
+        <p id="p8">This is a paragraph 2.</p>
+        </div>
+
+        <script>
+            const parent3 = document.getElementById("div3");
+            const child3 = document.getElementById("p7");
+            const para3 = document.createElement("p");
+            const node3 = document.createTextNode("This is new.");
+            para3.appendChild(node3);
+            parent3.replaceChild(para3,child3);
+        </script>
+
+    </body>
+</html>

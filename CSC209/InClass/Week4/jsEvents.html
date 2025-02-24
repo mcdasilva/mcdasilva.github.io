@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+        
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onclick Attribute</h2>
+
+        <button onclick="this.innerHTML=Date()">The time is?</button>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1>JavaScript HTML Events</h1>
+        <h2>The onclick Attribute</h2>
+
+        <p>Click the button to display the date.</p>
+        <button onclick="displayDate()">The time is?</button>
+
+        <script>
+            function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+            }
+        </script>
+
+        <p id="demo"></p>
+
+    </body>
+</html>

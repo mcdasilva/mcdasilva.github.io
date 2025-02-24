@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>DOM HTML</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+    </head>
+
+    <body class="tutorial">
+
+        <h2>JavaScript can Change HTML</h2>
+
+        <p id="p1">Hello World!</p>
+
+        <script>
+            document.getElementById("p1").innerHTML = "New text!";
+        </script>
+
+        <p>The paragraph above was changed by a script.</p>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h1 id="id01">Old Heading</h1>
+
+        <script>
+            const element = document.getElementById("id01");
+            element.innerHTML = "New Heading";
+        </script>
+
+        <p>JavaScript changed "Old Heading" to "New Heading".</p>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript HTML DOM</h2>
+        <img id="image" src="Images/smiley.gif" width="160" height="120">
+
+        <script>
+            document.getElementById("image").src = "Images/landscape.jpg";
+        </script>
+
+        <p>The original image was smiley.gif, but the script changed it to landscape.jpg</p>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <p id="demo"></p>
+
+        <script>
+            document.getElementById("demo").innerHTML = "Date : " + Date();
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <p>Bla, bla, bla</p>
+
+        <script>
+            document.write(Date());
+        </script>
+
+        <p>Bla, bla, bla</p>
+
+
+    </body>
+</html>

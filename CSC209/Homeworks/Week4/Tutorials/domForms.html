@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>DOM Forms</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+
+        <script>
+            function validateForm(formID) {
+                let x = document.forms[formID]["fname"].value;
+                    if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                    }
+                    else {
+                        alert('Your form was successfully submitted!');
+                    }
+                }
+        </script>
+    </head>
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <h2>JavaScript Validation</h2>
+
+        <form name="myForm" onsubmit="return validateForm('myForm')" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Validation</h2>
+
+        <p>Please input a number between 1 and 10:</p>
+
+        <input id="numb">
+
+        <button type="button" onclick="myFunction()">Submit</button>
+
+        <p id="demo2"></p>
+
+        <script>
+            function myFunction() {
+                // Get the value of the input field with id="numb"
+                let x = document.getElementById("numb").value;
+                // If x is Not a Number or less than one or greater than 10
+                let text;
+                if (isNaN(x) || x < 1 || x > 10) {
+                    text = "Input not valid";
+                } else {
+                    text = "Input OK";
+                }
+                document.getElementById("demo2").innerHTML = text;
+            }
+        </script>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <h2>JavaScript Validation</h2>
+
+        <form name="post" method="post" onsubmit="return validateForm('post')">
+            <input type="text" name="fname" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>If you click submit without filling out the text field,
+        your browser will display an error message.</p>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Technical Page - Level 2</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 4">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="stylesheet" href="../CSSStyles/stylesTechLvl2.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <script>
+            const SQUARES = [[0, 0, 'diagonal', 'red'], [0, 350, 'diagonal', 'blue'], [350, 0, 'diagonal','green'], [350, 350, 'diagonal', 'yellow'], 
+                           [0, 175, 'vertical', 'purple'], [350, 175, 'vertical', 'orange'],
+                           [175, 0, 'horizontal', 'pink'], [175, 350, 'horizontal', 'brown']];
+        </script>
+
+    </head>
+    <body onload="createSquareContainer(SQUARES);">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="technical.html">
+                <button>
+                    Technical Page
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>Technical - LVL 2</h1>
+
+            <p>
+                In this page, you'll find the technical part (LVL 2) of my homework.
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="buttonMenu">
+            <label for="speed">Speed</label>
+            <select id="speed">
+                <option value=30>Slow</option>
+                <option value=20>Medium</option>
+                <option value=10>Fast</option>
+            </select>
+            <button id="moveBtn" onclick="moveAllSquares(SQUARES)">Move Squares</button> <br><br>  
+        </div>
+
+        <script src="../Javascript/animationLvl2.js"></script>
+
+    </body>
+</html>

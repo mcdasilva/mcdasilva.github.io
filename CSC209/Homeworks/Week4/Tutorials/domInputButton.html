@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>DOM Input Button</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+
+        </div>
+
+        <p>Click the button to create an Input Button with a "Click me" text.</p>
+        <button id="btn1" onclick="myFunction1()">Try it</button>
+        <script>
+            function myFunction1() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "button");
+                x.setAttribute("value", "Click me");
+                document.getElementById("btn1").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Checkbox.</p>
+        <button id="btn2" onclick="myFunction2()">Try it</button>
+        <script>
+            function myFunction2() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "checkbox");
+                document.getElementById("btn2").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Color picker.</p>
+        <button id="btn3" onclick="myFunction3()">Try it</button>
+        <script>
+            function myFunction3() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "color");
+                document.getElementById("btn3").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Date field.</p>
+        <button id="btn4" onclick="myFunction4()">Try it</button>
+        <script>
+            function myFunction4() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "date");
+                x.setAttribute("value", "2014-02-09");
+                document.getElementById("btn4").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Datetime field.</p>
+        <button id="btn5" onclick="myFunction5()">Try it</button>
+        <script>
+            function myFunction5() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "datetime");
+                x.setAttribute("value", "2000-01-01T08:32Z");
+                document.getElementById("btn5").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Local Datetime field.</p>
+        <button id="btn6" onclick="myFunction6()">Try it</button>
+        <script>
+            function myFunction6() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "datetime-local");
+                document.getElementById("btn6").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create an Email field.</p>
+        <button id="btn7" onclick="myFunction7()">Try it</button>
+        <script>
+            function myFunction7() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "email");
+                x.setAttribute("value", "john@example.com");
+                document.getElementById("btn7").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a File Upload Button.</p>
+        <button id="btn8" onclick="myFunction8()">Try it</button>
+        <script>
+            function myFunction8() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "file");
+                document.getElementById("btn8").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Hidden Input Field.</p>
+        <button id="btn9" onclick="myFunction9()">Try it</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction9() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "hidden");
+                document.getElementById("btn9").insertAdjacentElement("afterend", x);
+                document.getElementById("demo").innerHTML = "The Hidden Input Field was created. However, you are not able to see it because it is hidden (not visible).";
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Image Field.</p>
+        <button id="btn10" onclick="myFunction10()">Try it</button>
+        <script>
+            function myFunction10() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "image");
+                document.getElementById("btn10").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Month Field.</p>
+        <button id="btn11" onclick="myFunction11()">Try it</button>
+        <script>
+            function myFunction11() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "month");
+                document.getElementById("btn11").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Password Field.</p>
+        <button id="btn12" onclick="myFunction12()">Try it</button>
+        <script>
+            function myFunction12() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "password");
+                x.setAttribute("value", "pswtext");
+                document.getElementById("btn12").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Radio Button.</p>
+        <button id="btn13" onclick="myFunction13()">Try it</button>
+        <script>
+            function myFunction13() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "radio");
+                document.getElementById("btn13").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Slider Control.</p>
+        <button id="btn14" onclick="myFunction14()">Try it</button>
+        <script>
+            function myFunction14() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "range");
+                document.getElementById("btn14").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Search field.</p>
+        <button id="btn16" onclick="myFunction16()">Try it</button>
+        <script>
+            function myFunction16() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "search");
+                document.getElementById("btn16").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Submit Button.</p>
+        <button id="btn17" onclick="myFunction17()">Try it</button>
+        <script>
+            function myFunction17() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "submit");
+                document.getElementById("btn17").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Text Field.</p>
+        <button id="btn18" onclick="myFunction18()">Try it</button>
+        <script>
+            function myFunction18() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "text");
+                x.setAttribute("value", "Hello World!");
+                document.getElementById("btn18").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a URL field.</p>
+        <button id="btn20" onclick="myFunction20()">Try it</button>
+        <script>
+            function myFunction20() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "url");
+                x.setAttribute("value", "http://www.google.com");
+                document.getElementById("btn20").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Number Field.</p>
+        <button id="btn21" onclick="myFunction21()">Try it</button>
+        <script>
+            function myFunction21() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "number");
+                document.getElementById("btn21").insertAdjacentElement("afterend", x);
+            }
+        </script>
+        
+        <hr>
+
+        <p>Click the button to create a Reset Field.</p>
+        <button id="btn22" onclick="myFunction22()">Try it</button>
+        <script>
+            function myFunction22() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "reset");
+                document.getElementById("btn22").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Time Field.</p>
+        <button id="btn23" onclick="myFunction23()">Try it</button>
+        <script>
+            function myFunction23() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "time");
+                document.getElementById("btn23").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+        <p>Click the button to create a Week Field.</p>
+        <button id="btn24" onclick="myFunction24()">Try it</button>
+        <script>
+            function myFunction24() {
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "week");
+                document.getElementById("btn24").insertAdjacentElement("afterend", x);
+            }
+        </script>
+
+        <hr>
+
+    </body>
+</html>

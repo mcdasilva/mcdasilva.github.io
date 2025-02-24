@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+            
+        <title>GUI Input Widgets</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 3">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework4.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="tutorials.html">
+                <button>
+                    Tutorials Page
+                </button>
+            </a>
+        </div>
+
+
+        <p>Use the slider to re-scale the image.</p>
+        
+        <div id='slider-container'></div>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <p>Use the number bar to add/remove images.</p>
+        
+        <div id='number-container'></div>
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <hr>
+
+        <p>Choose which image to show (you can check and uncheck the options).</p>
+        
+        <div id='radio-container'></div>
+
+
+        <!--------------------------------------------------------------------------------------------------------------------------->
+
+        <script src="../Javascript/guiInput.js"></script>
+
+        <script>
+            window.onload = function(){
+                createSlider();
+                createNumberBar();
+                createRadioButton();
+            }
+        </script>
+        
+    </body>
+</html>

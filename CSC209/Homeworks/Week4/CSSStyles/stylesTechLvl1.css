@@ -1,0 +1,46 @@
+#squaresContainer {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: rgb(0, 0, 0);
+}
+
+#redSq {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    animation-name: redAnim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+#blueSq {
+    width: 50px;
+    height: 50px;
+    top: 350px;
+    left: 350px;
+    position: absolute;
+    background-color: blue;
+    animation-name: blueAnim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+@keyframes redAnim {
+    0%   {background-color:red}
+    25%  {background-color:rgb(255, 128, 0)}
+    50%  {background-color:rgb(255, 196, 0)}
+    75%  {background-color:rgb(255, 217, 0)}
+    100% {background-color:red}
+}
+
+@keyframes blueAnim {
+    0%   {background-color:blue}
+    25%  {background-color:rgb(0, 76, 255)}
+    50%  {background-color:rgb(0, 115, 255)}
+    75%  {background-color:rgb(0, 153, 255)}
+    100% {background-color:blue}
+}
