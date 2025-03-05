@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Technical Page - LVL 3</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 5">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <h1>Technical - LVL 3</h1>
+        
+        <button id="randomizeButton">RANDOMIZE</button>
+
+        <br><br>
+
+        <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+            Sorry, your browser does not support canvas.
+        </canvas>
+
+
+        <script src="../Javascript/technical.js"></script>
+
+
+
+        <!-- Variables -->
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+
+            const width = 500;
+            const height = 500;
+
+            window.ctx = ctx;
+            window.canvasW = width;
+            window.canvasH = height;
+        </script>
+
+        <!-- Create canvas as page loads -->
+        <script>
+            window.onload = function(){
+                createParticles(3);
+            }
+        </script>
+
+    </body>
+</html>

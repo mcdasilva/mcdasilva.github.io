@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>HTML5 Canvas - fillStyle and strokeStyle with opacity</h1>
+
+        <canvas id="myCanvas" width="200" height="125" style="border:1px solid #000000;">
+            Sorry, your browser does not support canvas.
+        </canvas>
+
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+
+            ctx.fillStyle = "rgb(0 255 0 / 50%)";
+            ctx.fillRect(10,10, 100,100);
+
+            ctx.strokeStyle = "rgb(0 0 255 / 50%)";
+            ctx.lineWidth = 5;
+            ctx.strokeRect(10,10, 100,100);
+        </script>
+
+    </body>
+</html>

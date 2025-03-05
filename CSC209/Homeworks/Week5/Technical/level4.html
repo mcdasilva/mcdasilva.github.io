@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Technical Page - LVL 4</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 5">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSSStyles/stylesGeneral.css">
+
+    <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+    </head>
+    <body class="tutorial">
+
+        <div class="mainButtons">
+
+            <a href="../../../StartPage/startPage.html">
+                <button>
+                    <img src="../Images/homeButton.png" 
+                    alt="Home button">
+                </button>
+            </a>
+
+            <a href="../homework5.html">
+                <button>
+                    <img src="../Images/backButton.png" alt="Back button">
+                </button>
+            </a>
+
+            <a href="technical.html">
+                <button>
+                    Technical Page
+                </button>
+            </a>
+
+        </div>
+
+        <div class="headers">
+            <h1>Technical - LVL 4</h1>
+
+            <p>
+                In this page, you'll find the technical part (LVL 4) of my homework.
+            </p>
+        </div>
+
+        <hr>
+        
+        <button id="randomizeButton">RANDOMIZE</button>
+
+        <br><br>
+
+        <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+            Sorry, your browser does not support canvas.
+        </canvas>
+
+
+        <script src="../Javascript/technical.js"></script>
+
+
+
+        <!-- Variables -->
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+
+            const width = 500;
+            const height = 500;
+
+            const NRPTS = 8;
+
+            window.ctx = ctx;
+            window.canvasW = width;
+            window.canvasH = height;
+            window.numParticles = NRPTS;
+        </script>
+
+        <!-- Create canvas as page loads -->
+        <script>
+            window.onload = function(){
+                clearCanvas();
+                createParticles();
+                randomizePos();
+            }
+        </script>
+
+    </body>
+</html>

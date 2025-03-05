@@ -1,0 +1,179 @@
+body.creative {
+    background: linear-gradient(180deg, rgb(72, 72, 255), pink);
+}
+
+label.normal {
+    background-color: #cec0c0;
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(1, 13, 23);
+}
+
+em {
+    color: rgb(1, 13, 23);
+}
+
+
+table {
+    margin-left: 0.05%;
+}
+
+th {
+    background-color:rgb(244, 161, 60) ;
+}
+
+td {
+    background-color: bisque;
+}
+
+th, td {
+    position: relative;
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+th:hover, td:hover {
+    width: 300px;
+    background-color:rgb(244, 193, 130)
+}
+
+.click {
+    background-color: rgb(228, 206, 116);
+}
+
+td.click a {
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+td.click a:hover {
+    background-color: rgb(119, 102, 35);
+    color: rgb(240, 249, 255);
+}
+
+.toggle {
+    position: relative;
+    float: left;
+}
+
+.toggle input, .toggle label {
+    position: fixed;
+    top: 260px;
+    right: 1050px;
+}
+
+a {
+    transition: background-color 0.3s;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ac2525;
+    text-decoration: none;
+}
+
+a:active {
+    color: tan;
+    text-decoration: none;
+}
+
+.prettyButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(135deg, #ff999d, #ffb7a3);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 12px;
+}
+
+.prettyButton:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prettyButton:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #ff758c, #ff92a5);
+}
+
+.prettyInput, .prettySelect, .prettyCheckbox {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(135deg, #ff999d, #ffb7a3);
+    padding: 5px 5px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.prettyInput:hover, .prettySelect:hover, .prettyCheckbox:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prettyInput[type="number"] {
+    width: 60px;
+    text-align: center;
+}
+
+.prettyCheckbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #ff999d, #ffb7a3);
+    position: relative;
+    top: 7px;
+}
+
+.prettyCheckbox:checked {
+    background: linear-gradient(135deg, #ff758c, #ff92a5);
+}
+
+.prettyCheckbox:checked::after {
+    content: "✔";
+    font-size: 14px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prettySelect {
+    width: auto;
+    cursor: pointer;
+}

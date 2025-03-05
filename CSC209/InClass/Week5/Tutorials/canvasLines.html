@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML5 Canvas - lineCap Property</h1>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+Sorry, your browser does not support canvas.
+</canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+ctx.moveTo(0,0);
+ctx.lineTo(175,75);
+ctx.lineWidth = 10;
+ctx.lineCap = "round";
+ctx.stroke();
+</script>
+
+</body>
+</html>
