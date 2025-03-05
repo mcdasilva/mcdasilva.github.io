@@ -2,8 +2,7 @@
     width: 100px;
     height: 35px;
     position: relative;
-    /* display: block; */
-    display: flex; /* ✅ Properly align content */
+    display: flex;
     background: linear-gradient(180deg, #f85707, #ffae85);
     border-radius: 200px;
     box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
@@ -48,17 +47,12 @@
 .toggle-icons {
     display: flex;
     align-items: center;
-    /* width: 100%; */
     justify-content: space-between;
 }
 
 .toggle label svg {
-    /* position: absolute;
-    width: 20px;
-    top: -381.5px; */
-    width: 22px;  /* Set a proper size */
     height: 22px;
-    position: static; /* ✅ Remove absolute positioning */
+    position: static;
     z-index: 1000;
 }
 
