@@ -509,8 +509,9 @@ function clearGrid() {
         cells.forEach(cell => cell.style.backgroundColor = dead);
 
         // Clear stored generations
-        window.initialCells.length = 0;
-        window.generations.length = 0;
+        // window.initialCells.length = 0;
+        // window.generations.length = 0;
+        // window.generations[0] = [...window.initialCells];
 
         console.log("Grid cleared!");
 
