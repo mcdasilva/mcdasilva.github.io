@@ -1,0 +1,85 @@
+.toggle label {
+    width: 100px;
+    height: 35px;
+    position: relative;
+    display: flex;
+    background: linear-gradient(180deg, #f85707, #ffae85);
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle label::after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    background: linear-gradient(180deg, yellow, red);
+    border-radius: 180px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.toggle input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.toggle input:checked + label {
+    background: linear-gradient(180deg,#170b5d, #240cd4);
+}
+
+.toggle input:checked + label::after {
+    left: 90px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, rgb(26, 23, 23), darkblue);
+
+}
+
+.toggle label:active::after {
+    width: 50px;
+}
+
+.toggle-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle label svg {
+    width: 22px;
+    height: 22px;
+    position: static;
+    z-index: 1000;
+}
+
+.toggle label svg.sun {
+    margin-left: -78px;
+    margin-top: 2px;
+    transition: 0.3s;
+}
+
+.toggle label svg.sun g circle, .toggle label svg.sun g line {
+    stroke-width: 5;
+}
+
+.toggle label svg.moon {
+    margin-left: 68px;
+}
+
+.toggle label svg.moon path {
+    stroke: gray;
+    transition: 0.3s;
+}
+
+.toggle input:checked + label svg.sun g circle, input:checked + label svg.sun g line {
+    stroke: gray;
+}
+
+.toggle input:checked + label svg.moon path{
+    stroke: white;
+}

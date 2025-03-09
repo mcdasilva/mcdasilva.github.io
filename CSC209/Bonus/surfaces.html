@@ -1,0 +1,131 @@
+<html>
+	<head>
+
+		<title>Surfaces of Revolution</title>
+
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Surfaces of Revolution">
+        <!-- <meta http-equiv="refresh" content="30"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="CSSStyles/stylesGeneral.css">
+
+        <link rel="icon" type="image/x-icon" href="../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <link rel="stylesheet" href="CSSStyles/stylesToggleButton.css">
+
+        <link id="themeMode" rel="stylesheet" href="CSSStyles/stylesLightMode.css">
+
+
+		<style>
+			#curve {
+				border: 1px solid gray;
+				position: relative;
+				top: 0px;
+				left: 200px;
+				width: 600px;
+				height: 600px;
+				background-color: black;
+			}
+			#surface {
+				border: 1px solid gray;
+				position: absolute;
+				top: 315px;
+				left: 809px;
+				width: 600px;
+				height: 600px;
+				background-color: #000033;
+			}
+
+		</style>
+		<meta charset="utf-8"/>
+	</head>
+	<!-- This is important to prevent menu during right-click -->
+	<body class="technical creative bonus" oncontextmenu="return false;">
+
+		<div class="mainButtons">
+            <a href="../StartPage/startPage.html">
+                <button>
+                    <img src="Images/homeButton.png" 
+                    alt="Home button" style="width: 50px; height: 50px;">
+                </button>
+            </a>
+        </div>
+
+		<div class="headers">
+
+            <h1>Surfaces of Revolution</h1>
+
+            <p>
+                Here, you'll find a bonus page.
+            </p>
+
+        </div>
+
+		<hr>
+
+		<div class="toggle">
+            <input type="checkbox" id="darkmodeToggle"> 
+            <label for="darkmodeToggle" style="left: 1480px; top: 330px; position: fixed;" onclick="toggleCSSStyle()">
+
+                <div class="toggle-icons">
+                    <svg class="moon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                
+                <svg class="sun" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="800px" height="800px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                    <g>
+                        <circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="16"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="32" y1="10" x2="32" y2="0"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="32" y1="64" x2="32" y2="54"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="54" y1="32" x2="64" y2="32"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="0" y1="32" x2="10" y2="32"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="48" y1="16" x2="53" y2="11"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="11" y1="53" x2="16" y2="48"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="48" y1="48" x2="53" y2="53"/>
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="11" y1="11" x2="16" y2="16"/>
+                    </g>
+                </svg>
+
+
+                </div>
+            </label>
+        </div>
+
+		<!-- Example control points. -->
+		<script src="Javascript/toggleStyle.js"></script>
+		<script src="Javascript/three.min.js"></script>
+		<script src="Javascript/dat.gui.min.js"></script>	
+		<script src="Javascript/curves.js"></script>
+		<script src="Javascript/OBJExporter.js"></script>
+		<script src="Javascript/FileSaver.js"></script>
+		<script src="Javascript/preset.js"></script>
+		<canvas id="curve" width=600 height=600></canvas>
+		<div id="surface" width=600 height=600></div>
+		<div id="msg">Surfaces of Revolution</div>
+		<div id="help">Key/Mouse Controls
+			<ul>
+				<li>'z': draw Bezier</li>
+				<li>'b': draw BSpline</li>
+				<li>'m': draw Hermite</li>
+				<li>'=': increment nSegment</li>
+				<li>'-': decrement nSegment</li>
+				<li>'e': erase all control points</li>
+				<li>'l': show control lines</li>
+				<li>'c': toggle close/open curve (applicable to BSpline and Hermite only)</li>
+				<li>'a': toggle show/hide rotation axis</li>
+				<li>'s': generate or update surface (or press space bar)</li>
+				<li>'w': toggle wireframe/solid rendering mode</li>
+				<li>'f': toggle flat/smooth rendering mode</li>
+				<li>CTRL+Click : add a control point (or ALT+Click, COMMAND+Click)</li>
+				<li>SHIFT+Click: delete an existing control point</li>
+				<li>Arrow keys : move rotation axis left/right</li>
+				<li>Number keys: load preset control points (1 through 5)</li>
+				<li>Auto Mesh (on control panel): keep mesh updated whenever curve changes</li>
+			</ul>
+		</div>
+	</body>
+</html>
