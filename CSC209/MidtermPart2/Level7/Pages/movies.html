@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Movies Page</title>
+        <meta charset="UTF-8"> 
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="Homework 4">
+        <meta name="author" content="Matheus Coutinho da Silva">
+        <!-- <meta http-equiv="refresh" content="10"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- External CSS -->
+
+        <link rel="stylesheet" href="../css/Movies/movies.css">
+
+        <link id="themeMode" rel="stylesheet" href="../css/stylesLightMode.css">
+
+        <link rel="icon" type="image/x-icon" href="../../../StartPage/ImagesStartPage/favIconStartPage.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="../css/iconBar.css">
+
+        <script>
+            const SQUARES = [[0, 0, 'diagonal', 'red'], [0, 350, 'diagonal', 'blue'], [350, 0, 'diagonal','green'], [350, 350, 'diagonal', 'yellow'], 
+                           [0, 175, 'vertical', 'purple'], [350, 175, 'vertical', 'orange'],
+                           [175, 0, 'horizontal', 'pink'], [175, 350, 'horizontal', 'brown'],
+                           [100, 150, 'diagonal', 'blue'], [100, 200, 'diagonal', 'red'], [250, 150, 'diagonal','yellow'], [250, 200, 'diagonal', 'green'],
+                           [125, 50, 'horizontal', 'brown'], [125, 300, 'horizontal', 'pink'], [225, 50, 'horizontal', 'brown'], [225, 300, 'horizontal', 'pink'],
+                           [50, 125, 'vertical', 'orange'], [50, 225, 'vertical', 'orange'], [300, 125, 'vertical', 'purple'], [300, 225, 'vertical', 'purple']];
+        </script>
+
+    </head>
+    <body class="creative" onload="createSquareContainer(SQUARES);">
+
+        <div class="icon-bar">
+            <a href="../home.html"><i class="fa fa-home"></i></a> 
+            <a href="MainPages/iconBar.html">Icon Bar Page</a> 
+            <a href="search.html"><i class="fa fa-search"></i></a> 
+            <a href="photos.html#gallery"><i class="fa fa-photo"></i></a> 
+            <a class="icBar-active" href="movies.html"><i class="fa fa-film"></i></a>
+            <a href="download.html"><i class="fa fa-download"></i></a>
+            <a href="print.html"><i class="fa fa-print"></i></a>
+            <a href="trash.html"><i class="fa fa-trash"></i></a> 
+        </div>
+
+        <div style="height: 70px;"></div>
+
+        <div id="buttonMenu">
+            <label for="speed" style="color: aliceblue;">Speed</label>
+            <select id="speed">
+                <option value=30>Slow</option>
+                <option value=20>Medium</option>
+                <option value=10>Fast</option>
+            </select>
+            <button id="moveBtn" onclick="moveAllSquares(SQUARES)">Move Circles</button> 
+
+            <button id="resetBtn" onclick="resetSquares(SQUARES)">Reset Circles</button>
+
+            <br><br>
+
+        </div>
+
+        <script src="../js/IconBar/Movies/animation.js"></script>
+
+    </body>
+</html>

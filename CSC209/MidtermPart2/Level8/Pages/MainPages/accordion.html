@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="../../css/iconBar.css">
+
+        <link rel="stylesheet" href="../../css/accordion.css">
+
+    </head>
+    <body onload="addToggleEvent()">
+
+        <div class="icon-bar">
+            <a href="../../home.html"><i class="fa fa-home"></i></a> 
+            <a href="iconBar.html">Icon Bar Page</a> 
+            <a href="../search.html"><i class="fa fa-search"></i></a> 
+            <a href="../photos.html#gallery"><i class="fa fa-photo"></i></a> 
+            <a href="../movies.html"><i class="fa fa-film"></i></a>
+            <a class="icBar-active" href="#"><i class="fa fa-download"></i></a>
+            <a href="../print.html"><i class="fa fa-print"></i></a>
+            <a href="../trash.html"><i class="fa fa-trash"></i></a> 
+        </div>
+
+        <div style="height: 70px;"></div>
+
+        <button class="accordion">Download image 1</button>
+        <div class="panel">
+            <a href="../../images/output1.png" download="Image1">Click here to download Image 1</a>
+        </div>
+
+        <button class="accordion">Download image 2</button>
+        <div class="panel">
+            <a href="../../images/output2.png" download="Image2">Click here to download Image 2</a>
+        </div>
+
+        <button class="accordion">Download image 3</button>
+        <div class="panel">
+            <a href="../../images/output3.png" download="Image3">Click here to download Image 3</a>
+        </div>
+
+        <script src="../../js/Accordion/accordion.js"></script>
+
+    </body>
+</html>

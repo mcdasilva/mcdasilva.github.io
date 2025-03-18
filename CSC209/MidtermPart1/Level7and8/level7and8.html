@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="W3_Comparison_Table/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/comparisonTable.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    <h2>Comparison Table</h2>
+
+    <!-- The <link> tag in the <head> section of an HTML file is used to connect the document to external resources, like stylesheets. 
+    In our case, it mostly contributes styling information by linking to CSS files, which define how elements in the HTML document should look—like 
+    colors, fonts, and layout. The content in the <body> of the HTML file (in our case, the <table> and its children) uses this information to 
+    determine how it is displayed on the webpage. -->
+
+    <table>
+        <tr>
+            <th style="width:50%">Name</th>
+            <th>Part 1</th>
+            <th>Part 2</th>
+        </tr>
+        <tr>
+            <td>Sample text</td>
+            <td><i class="fa fa-remove"></i></td>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+            <td>Sample text</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+            <td>Sample text</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+            <td>Sample text</td>
+            <td><i class="fa fa-remove"></i></td>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+            <td>Sample text</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </table>
+
+   <!-- Variables -->
+   <script>
+        let CHECKCROSSBASIC = 'fa-check';
+        let CHECKCROSSPRO = 'fa-check';
+
+        const NRROWS = 2;
+        window.nRows = NRROWS;
+
+        const FEATURES = ["Mary","Alice"]; 
+        const BASIC = ["fa-check","fa-remove"]; 
+        const PRO = ["fa-remove","fa-check"];
+    </script>
+
+    <!-- Functions -->
+    <script src="js/level7and8.js"></script>
+
+    <script>
+        window.onload = function(){
+            removeRows();
+            addRowsDifferent(FEATURES, BASIC, PRO); 
+        }
+    </script>
+
+    </body>
+</html>
