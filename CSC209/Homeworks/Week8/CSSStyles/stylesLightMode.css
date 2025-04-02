@@ -1,0 +1,104 @@
+body.creative {
+    background: linear-gradient(180deg, #473bff, #ffb6c1);
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    margin-top: 150px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+}
+
+.mySlides img {
+    width: 1200px;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.text {
+    padding: 12px 20px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
+
+.normal {
+    background-color: #cec0c0;
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(1, 13, 23);
+}
+
+.prettySelect {
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(135deg, #ff999d, #ffb7a3);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
