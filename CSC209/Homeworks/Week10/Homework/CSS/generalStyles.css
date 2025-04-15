@@ -1,0 +1,119 @@
+body.userLogged {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #dbe6f6, #c5796d);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+body.adminLogged {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right,rgb(219, 246, 224),rgb(109, 197, 115));
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+
+body.register {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, rgb(219, 246, 224), rgb(109, 197, 115));
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+#logoutForm {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #038e5a;
+    transform: scale(1.05);
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #04AA6D;
+    box-shadow: 0 0 5px rgba(4, 170, 109, 0.4);
+    outline: none;
+}
+
+input[type="submit"] {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #038e5a;
+    transform: scale(1.05);
+}
