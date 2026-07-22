@@ -28,7 +28,7 @@ export default function Home() {
         src: item.src,
         alt: item.alt,
         title: project.title,
-        meta: item.caption ?? item.alt,
+        meta: project.medium,
         ratio: item.ratio,
         type: item.type,
         exists: true,

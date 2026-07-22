@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Artwork from '@/components/Artwork';
+import ToolLogos from '@/components/ToolLogos';
 import { getProject, getProjects } from '@/data/site';
 
 export function generateStaticParams() {
@@ -54,11 +55,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dt className="text-amber">Dimensions / Duration</dt>
               <dd>{project.dimensions}</dd>
             </div>
-            <div>
-              <dt className="text-amber">Software</dt>
-              <dd>{project.software}</dd>
-            </div>
           </dl>
+          <ToolLogos tools={project.tools} className="mt-8" />
           <p className="mt-8 leading-relaxed text-bone">
             {project.description}
           </p>

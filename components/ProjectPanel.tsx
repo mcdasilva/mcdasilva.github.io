@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Artwork from './Artwork';
+import ToolLogos from './ToolLogos';
 import type { Project } from '@/data/site';
 
 export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
@@ -16,9 +17,12 @@ export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
         <span className="text-xs text-amber">
           {String(i + 1).padStart(2, '0')}
         </span>
-        <h3 className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
-          {p.title}
-        </h3>
+        <div>
+          <h3 className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
+            {p.title}
+          </h3>
+          <ToolLogos tools={p.tools} className="mt-3" />
+        </div>
       </div>
       <p className="mt-2 max-w-sm text-sm text-muted">{p.summary}</p>
     </Link>

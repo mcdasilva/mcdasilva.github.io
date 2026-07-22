@@ -57,7 +57,7 @@ Edit this file to change:
 - project title
 - date
 - medium
-- software
+- tool logos
 - dimensions or duration
 - short description
 - image filenames
@@ -92,6 +92,8 @@ The first sorted image is used as:
 - one slide in the homepage carousel
 
 Every `.png` in the folder appears in the project page's `Final Work` section. If a project folder has no PNGs yet, the site shows one dark placeholder for that project instead of several fake missing image slots.
+
+Filenames are not displayed on real artwork. They are only used internally for sorting and accessibility.
 
 ## Project Image Table
 
@@ -133,6 +135,41 @@ public/artwork/horror/the-watchers/the-watchers-04.png
 ```
 
 If a project only has two final images, add only two PNG files. If it has twelve, add twelve. The website will match the folder contents.
+
+## Tool And Logo Folders
+
+Project pages and Work panels can show small tool logos instead of a separate text-only Software field.
+
+Logos live in:
+
+```text
+public/logos/
+```
+
+The current Blender logo path is:
+
+```text
+public/logos/blender/logo.svg
+```
+
+The project record controls which logos appear:
+
+```ts
+tools: ['blender'],
+```
+
+For traditional work or projects where no software logo should appear, use:
+
+```ts
+tools: [],
+```
+
+To add another tool later:
+
+1. Create a folder such as `public/logos/photoshop/`.
+2. Add `logo.svg` or another small image asset.
+3. Add the tool to `ToolKey` and `toolLogos` in `data/site.ts`.
+4. Add the tool id to the project record's `tools` array.
 
 ## Missing Image Placeholders
 
@@ -198,7 +235,7 @@ Pattern:
   category: 'Horror',
   year: '2026',
   medium: 'Digital image sequence',
-  software: 'Blender, Photoshop',
+  tools: ['blender'],
   dimensions: 'Variable image series',
   summary: 'Short panel description.',
   description: 'Short project-page description.',
@@ -221,11 +258,11 @@ public/artwork/horror/new-project-slug/new-project-slug-02.png
 
 To remove a project:
 
-1. Remove its object from `projects`.
+1. Remove its object from `projectRecords`.
 2. Remove its slug from `selectedSlugs`.
 3. Remove its URL from `public/sitemap.xml`.
 
-To reorder projects, reorder the objects in the `projects` array. Previous/next navigation follows this order.
+To reorder projects, reorder the objects in the `projectRecords` array. Previous/next navigation follows this order.
 
 ## Update About
 

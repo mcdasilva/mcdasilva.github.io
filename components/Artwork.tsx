@@ -25,7 +25,7 @@ export default function Artwork({
   art,
   className = '',
   priority = false,
-  showCaption = true,
+  showCaption = false,
   sizes = '(max-width: 768px) 100vw, 50vw',
 }: ArtworkProps) {
   const exists = fs.existsSync(publicPath(art.src));

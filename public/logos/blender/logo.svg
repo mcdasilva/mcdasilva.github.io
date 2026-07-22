@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Blender</title>
+  <circle cx="32" cy="32" r="29" fill="#0e0e0e" stroke="#c47a4a" stroke-width="3"/>
+  <path fill="#ede8e0" d="M22 16h12.5c7.1 0 11.4 3.4 11.4 8.9 0 3.4-1.8 6-5 7.3 4 1.2 6.5 4.3 6.5 8.5 0 5.8-4.6 9.3-12.1 9.3H22V16Zm12.1 13.6c3.2 0 5-1.4 5-4 0-2.5-1.8-3.9-5-3.9h-5.3v7.9h5.3Zm.8 14.6c3.6 0 5.6-1.6 5.6-4.5s-2-4.5-5.6-4.5h-6.1v9h6.1Z"/>
+</svg>

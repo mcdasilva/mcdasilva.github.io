@@ -13,6 +13,14 @@ export type Artwork = {
 };
 
 export type ProjectCategory = 'Horror' | 'Concept Art' | 'Environment Design';
+export type ToolKey = 'blender';
+
+export type ToolLogo = {
+  id: ToolKey;
+  name: string;
+  logo: string;
+  fallback: string;
+};
 
 export type Project = {
   slug: string;
@@ -20,7 +28,7 @@ export type Project = {
   category: ProjectCategory;
   year: string;
   medium: string;
-  software: string;
+  tools: ToolKey[];
   dimensions: string;
   summary: string;
   description: string;
@@ -43,7 +51,7 @@ const art = (
   ratio = '16:9',
   type = 'final image',
   options: Pick<Artwork, 'placeholder' | 'position'> = {},
-): Artwork => ({ src, alt, ratio, type, caption: alt, ...options });
+): Artwork => ({ src, alt, ratio, type, ...options });
 
 const publicArtworkPath = (folder: string) =>
   path.join(process.cwd(), 'public', 'artwork', folder);
@@ -116,6 +124,15 @@ export const projectCategories: ProjectCategory[] = [
   'Environment Design',
 ];
 
+export const toolLogos: Record<ToolKey, ToolLogo> = {
+  blender: {
+    id: 'blender',
+    name: 'Blender',
+    logo: '/logos/blender/logo.svg',
+    fallback: 'B',
+  },
+};
+
 export const contact = {
   email: 'mcdasilva2025@gmail.com',
   location: 'United States / Brazil',
@@ -132,9 +149,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'the-watchers',
     title: 'The Watchers',
     category: 'Horror',
-    year: '2025',
+    year: 'June 2025',
     medium: 'Digital sculpture',
-    software: 'ZBrush, Blender, Substance 3D',
+    tools: ['blender'],
     dimensions: 'Variable',
     summary:
       'Figural observers emerging from darkness, attention, and unease.',
@@ -150,9 +167,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'masquerade',
     title: 'Masquerade',
     category: 'Horror',
-    year: '2026',
+    year: 'June 2026',
     medium: 'Digital horror image sequence',
-    software: 'Blender, ZBrush, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A staged horror sequence about concealment, performance, and the instability of identity.',
@@ -168,9 +185,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'a-mothers-despair',
     title: "A Mother's Despair",
     category: 'Horror',
-    year: '2025',
+    year: 'June 2025',
     medium: 'Digital sculpture',
-    software: 'Blender, ZBrush',
+    tools: ['blender'],
     dimensions: 'Variable',
     summary: 'A study of grief, exhaustion, and inherited emotion.',
     description:
@@ -185,9 +202,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'its-time-to-go',
     title: "It's Time to Go",
     category: 'Concept Art',
-    year: '2026',
+    year: 'June 2026',
     medium: 'Concept art keyframes',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A cinematic departure scene centered on urgency, threshold, and emotional release.',
@@ -203,9 +220,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'vigil',
     title: 'Vigil',
     category: 'Concept Art',
-    year: '2026',
+    year: 'June 2026',
     medium: 'Concept art keyframes',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A watchful scene built around waiting, silence, and restrained tension.',
@@ -221,9 +238,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'not-yet',
     title: 'Not Yet',
     category: 'Concept Art',
-    year: '2026',
+    year: 'May 2026',
     medium: 'Concept art sequence',
-    software: 'Blender, Photoshop, FL Studio',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A meditation on anticipation and the distance between pressure and release.',
@@ -239,9 +256,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'unbound',
     title: 'Unbound',
     category: 'Concept Art',
-    year: '2026',
+    year: 'May 2026',
     medium: 'Concept art keyframes',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A release from constraint shown through motion, material rupture, and atmosphere.',
@@ -258,9 +275,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'the-way-ive-grown',
     title: "The Way I've Grown",
     category: 'Environment Design',
-    year: '2026',
+    year: 'July 2026',
     medium: 'Digital environment',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A remembered backyard reconstructed as a quiet meditation on growth.',
@@ -276,9 +293,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'na-casa-de-titia',
     title: "Na Casa de Titia (At Auntie's House)",
     category: 'Environment Design',
-    year: '2026',
+    year: 'June 2026',
     medium: 'Digital environment',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A domestic environment shaped by hospitality, memory, and the quiet intimacy of family space.',
@@ -294,9 +311,9 @@ const projectRecords: ProjectRecord[] = [
     slug: 'depois-da-chuva',
     title: 'Depois da Chuva (After the Rain)',
     category: 'Environment Design',
-    year: '2026',
+    year: 'July 2026',
     medium: 'Digital environment',
-    software: 'Blender, Photoshop',
+    tools: ['blender'],
     dimensions: 'Variable image series',
     summary:
       'A post-rain environment focused on wet surfaces, softened sound, and charged quiet.',
