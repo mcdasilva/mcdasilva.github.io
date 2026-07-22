@@ -9,6 +9,7 @@ export type Artwork = {
   caption?: string;
   poster?: string;
   placeholder?: boolean;
+  position?: string;
 };
 
 export type ProjectCategory = 'Horror' | 'Concept Art' | 'Environment Design';
@@ -29,13 +30,20 @@ export type Project = {
   collaborators: string;
 };
 
+type ProjectRecord = Omit<Project, 'hero' | 'gallery'> & {
+  artworkFolder: string;
+  fallbackBasename: string;
+  artworkType: string;
+  artworkPosition?: string;
+};
+
 const art = (
   src: string,
   alt: string,
   ratio = '16:9',
   type = 'final image',
-  placeholder = false,
-): Artwork => ({ src, alt, ratio, type, caption: alt, placeholder });
+  options: Pick<Artwork, 'placeholder' | 'position'> = {},
+): Artwork => ({ src, alt, ratio, type, caption: alt, ...options });
 
 const publicArtworkPath = (folder: string) =>
   path.join(process.cwd(), 'public', 'artwork', folder);
@@ -60,6 +68,7 @@ const projectImages = (
   folder: string,
   fallbackBasename: string,
   type = 'final image',
+  position?: string,
 ): Artwork[] => {
   const files = sortedPngFiles(folder);
 
@@ -70,14 +79,35 @@ const projectImages = (
         `${fallbackBasename}-01.png`,
         '16:9',
         `final image; add PNG files to public/artwork/${folder}/`,
-        true,
+        { placeholder: true },
       ),
     ];
   }
 
   return files.map((file) =>
-    art(`/artwork/${folder}/${file}`, file, '16:9', type),
+    art(`/artwork/${folder}/${file}`, file, '16:9', type, { position }),
   );
+};
+
+const resolveProject = ({
+  artworkFolder,
+  fallbackBasename,
+  artworkType,
+  artworkPosition,
+  ...project
+}: ProjectRecord): Project => {
+  const gallery = projectImages(
+    artworkFolder,
+    fallbackBasename,
+    artworkType,
+    artworkPosition,
+  );
+
+  return {
+    ...project,
+    hero: gallery[0],
+    gallery,
+  };
 };
 
 export const projectCategories: ProjectCategory[] = [
@@ -97,58 +127,7 @@ export const intro =
 export const aboutIntro =
   'Matheus Coutinho da Silva is a Brazilian artist and creative technologist whose work combines digital environments, computation, architecture, and physical making. His practice explores memory, place, migration, domestic space, and emotional atmosphere.';
 
-const watchersImages = projectImages(
-  'horror/the-watchers',
-  'the-watchers',
-  'horror sculpture final image',
-);
-const masqueradeImages = projectImages(
-  'horror/masquerade',
-  'masquerade',
-  'horror final image',
-);
-const mothersDespairImages = projectImages(
-  'horror/a-mothers-despair',
-  'a-mothers-despair',
-  'horror sculpture final image',
-);
-const itsTimeImages = projectImages(
-  'concept-art/its-time-to-go',
-  'its-time-to-go',
-  'concept art final image',
-);
-const vigilImages = projectImages(
-  'concept-art/vigil',
-  'vigil',
-  'concept art final image',
-);
-const notYetImages = projectImages(
-  'concept-art/not-yet',
-  'not-yet',
-  'concept art final image',
-);
-const unboundImages = projectImages(
-  'concept-art/unbound',
-  'unbound',
-  'concept art final image',
-);
-const grownImages = projectImages(
-  'environment-design/the-way-ive-grown',
-  'the-way-ive-grown',
-  'environment design final image',
-);
-const titiaImages = projectImages(
-  'environment-design/na-casa-de-titia',
-  'na-casa-de-titia',
-  'environment design final image',
-);
-const depoisImages = projectImages(
-  'environment-design/depois-da-chuva',
-  'depois-da-chuva',
-  'environment design final image',
-);
-
-export const projects: Project[] = [
+const projectRecords: ProjectRecord[] = [
   {
     slug: 'the-watchers',
     title: 'The Watchers',
@@ -161,8 +140,9 @@ export const projects: Project[] = [
       'Figural observers emerging from darkness, attention, and unease.',
     description:
       'A sculptural study of being seen, using enlarged eyes, textured surfaces, and theatrical darkness.',
-    hero: watchersImages[0],
-    gallery: watchersImages,
+    artworkFolder: 'horror/the-watchers',
+    fallbackBasename: 'the-watchers',
+    artworkType: 'horror sculpture final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -178,8 +158,9 @@ export const projects: Project[] = [
       'A staged horror sequence about concealment, performance, and the instability of identity.',
     description:
       'Masquerade approaches horror through ritualized surfaces, theatrical darkness, and figures that feel both ceremonial and unsafe.',
-    hero: masqueradeImages[0],
-    gallery: masqueradeImages,
+    artworkFolder: 'horror/masquerade',
+    fallbackBasename: 'masquerade',
+    artworkType: 'horror final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -194,8 +175,9 @@ export const projects: Project[] = [
     summary: 'A study of grief, exhaustion, and inherited emotion.',
     description:
       'The portrait is shaped through weight, facial tension, surface fatigue, and subdued light.',
-    hero: mothersDespairImages[0],
-    gallery: mothersDespairImages,
+    artworkFolder: 'horror/a-mothers-despair',
+    fallbackBasename: 'a-mothers-despair',
+    artworkType: 'horror sculpture final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -211,8 +193,9 @@ export const projects: Project[] = [
       'A cinematic departure scene centered on urgency, threshold, and emotional release.',
     description:
       "It's Time to Go frames departure as an atmospheric event, using composition, light, and gesture to hold a moment just before movement.",
-    hero: itsTimeImages[0],
-    gallery: itsTimeImages,
+    artworkFolder: 'concept-art/its-time-to-go',
+    fallbackBasename: 'its-time-to-go',
+    artworkType: 'concept art final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -228,8 +211,9 @@ export const projects: Project[] = [
       'A watchful scene built around waiting, silence, and restrained tension.',
     description:
       'Vigil studies a held state of attention through stillness, distance, and a controlled cinematic palette.',
-    hero: vigilImages[0],
-    gallery: vigilImages,
+    artworkFolder: 'concept-art/vigil',
+    fallbackBasename: 'vigil',
+    artworkType: 'concept art final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -245,8 +229,9 @@ export const projects: Project[] = [
       'A meditation on anticipation and the distance between pressure and release.',
     description:
       'Not Yet holds a suspended moment through cinematic restraint, emotional tension, and the expectation of an event that has not arrived.',
-    hero: notYetImages[0],
-    gallery: notYetImages,
+    artworkFolder: 'concept-art/not-yet',
+    fallbackBasename: 'not-yet',
+    artworkType: 'concept art final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -262,8 +247,10 @@ export const projects: Project[] = [
       'A release from constraint shown through motion, material rupture, and atmosphere.',
     description:
       'Unbound explores the moment a form leaves containment, using light, suspended movement, and visual tension to suggest transformation.',
-    hero: unboundImages[0],
-    gallery: unboundImages,
+    artworkFolder: 'concept-art/unbound',
+    fallbackBasename: 'unbound',
+    artworkType: 'concept art final image',
+    artworkPosition: '82% 50%',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -279,8 +266,9 @@ export const projects: Project[] = [
       'A remembered backyard reconstructed as a quiet meditation on growth.',
     description:
       'This work uses plants, chairs, unfinished walls, and late sunlight to translate family memory into a cinematic scene.',
-    hero: grownImages[0],
-    gallery: grownImages,
+    artworkFolder: 'environment-design/the-way-ive-grown',
+    fallbackBasename: 'the-way-ive-grown',
+    artworkType: 'environment design final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -296,8 +284,9 @@ export const projects: Project[] = [
       'A domestic environment shaped by hospitality, memory, and the quiet intimacy of family space.',
     description:
       "Na Casa de Titia reconstructs an aunt's home as an emotional interior, using thresholds, furniture, surfaces, and afternoon light to suggest remembered presence.",
-    hero: titiaImages[0],
-    gallery: titiaImages,
+    artworkFolder: 'environment-design/na-casa-de-titia',
+    fallbackBasename: 'na-casa-de-titia',
+    artworkType: 'environment design final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -313,8 +302,9 @@ export const projects: Project[] = [
       'A post-rain environment focused on wet surfaces, softened sound, and charged quiet.',
     description:
       'Depois da Chuva studies the atmosphere after rainfall, where domestic space becomes reflective, hushed, and emotionally suspended.',
-    hero: depoisImages[0],
-    gallery: depoisImages,
+    artworkFolder: 'environment-design/depois-da-chuva',
+    fallbackBasename: 'depois-da-chuva',
+    artworkType: 'environment design final image',
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -333,5 +323,7 @@ export const selectedSlugs = [
   'depois-da-chuva',
 ];
 
+export const getProjects = () => projectRecords.map(resolveProject);
+
 export const getProject = (slug: string) =>
-  projects.find((project) => project.slug === slug);
+  getProjects().find((project) => project.slug === slug);

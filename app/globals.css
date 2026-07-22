@@ -1,2 +1,58 @@
-@tailwind base;@tailwind components;@tailwind utilities;
-:root{color-scheme:dark}html{scroll-behavior:smooth}body{background:#0e0e0e;color:#ede8e0}::selection{background:#c47a4a;color:#0e0e0e}a,button{outline-offset:4px}a:focus-visible,button:focus-visible{outline:1px solid #c47a4a}.grain:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")} @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background: #0e0e0e;
+  color: #ede8e0;
+}
+
+::selection {
+  background: #c47a4a;
+  color: #0e0e0e;
+}
+
+a,
+button,
+a *,
+button * {
+  outline-offset: 4px;
+  transition:
+    color 260ms ease,
+    border-color 260ms ease,
+    background-color 260ms ease,
+    opacity 260ms ease;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid #c47a4a;
+}
+
+.grain:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

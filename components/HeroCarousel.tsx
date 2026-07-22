@@ -12,6 +12,7 @@ export type HeroSlide = {
   ratio: string;
   type: string;
   exists: boolean;
+  position?: string;
 };
 
 const slideDuration = 4800;
@@ -52,6 +53,9 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
               priority={index === 0}
               sizes="100vw"
               className="object-cover"
+              style={
+                active.position ? { objectPosition: active.position } : undefined
+              }
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-coal px-6 text-center">

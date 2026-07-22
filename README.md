@@ -45,7 +45,7 @@ Then push to `main`. The workflow builds the static site and deploys the generat
 
 ## Main Editing File
 
-All project data is stored in:
+All editable project records are stored in:
 
 ```text
 data/site.ts
@@ -158,21 +158,9 @@ The-Watchers-01.png
 
 ## Homepage Hero Carousel
 
-The homepage hero starts with:
+The homepage hero carousel rotates through real project PNGs from the project folders. There is no separate homepage hero image, so artwork will not be duplicated from a `home` folder.
 
-```text
-public/artwork/home/home-hero.png
-```
-
-Then it rotates through every project image referenced in `data/site.ts`.
-
-To change the first hero image, replace:
-
-```text
-public/artwork/home/home-hero.png
-```
-
-To change the project slides, add, remove, or reorder PNG files inside the project folders.
+To change the homepage carousel, add, remove, or reorder PNG files inside the project folders. Empty project placeholders are skipped by the carousel.
 
 ## Change A Project Category
 
@@ -194,21 +182,32 @@ The Work page groups projects automatically by this value.
 
 ## Add A New Project
 
-1. Add a new object to the `projects` array in `data/site.ts`.
+1. Add a new object to the `projectRecords` array in `data/site.ts`.
 2. Choose one of the three category values.
 3. Create a new project folder under the matching category folder.
-4. Use the `projectImages()` helper with that folder path.
+4. Set `artworkFolder` to that folder path.
 5. Add the project slug to `selectedSlugs` if it should appear on the homepage.
 6. Add the project URL to `public/sitemap.xml`.
 
 Pattern:
 
 ```ts
-const newProjectImages = projectImages(
-  'horror/new-project-slug',
-  'new-project-slug',
-  'horror final image',
-);
+{
+  slug: 'new-project-slug',
+  title: 'New Project',
+  category: 'Horror',
+  year: '2026',
+  medium: 'Digital image sequence',
+  software: 'Blender, Photoshop',
+  dimensions: 'Variable image series',
+  summary: 'Short panel description.',
+  description: 'Short project-page description.',
+  artworkFolder: 'horror/new-project-slug',
+  fallbackBasename: 'new-project-slug',
+  artworkType: 'horror final image',
+  credits: 'All work by Matheus Coutinho da Silva.',
+  collaborators: 'No additional collaborators listed.',
+}
 ```
 
 Then add files:

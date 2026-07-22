@@ -1,16 +1,7 @@
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 import HeroCarousel, { type HeroSlide } from '@/components/HeroCarousel';
 import ProjectPanel from '@/components/ProjectPanel';
-import { contact, intro, projects, selectedSlugs } from '@/data/site';
-
-const heroPath = '/artwork/home/home-hero.png';
-
-const publicPath = (src: string) =>
-  path.join(process.cwd(), 'public', src.replace(/^\/+/, ''));
-
-const slideExists = (src: string) => fs.existsSync(publicPath(src));
+import { contact, getProjects, intro, selectedSlugs } from '@/data/site';
 
 const uniqueSlides = (slides: HeroSlide[]) => {
   const seen = new Set<string>();
@@ -23,6 +14,7 @@ const uniqueSlides = (slides: HeroSlide[]) => {
 };
 
 export default function Home() {
+  const projects = getProjects();
   const selected = selectedSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter(Boolean);
@@ -39,24 +31,14 @@ export default function Home() {
         meta: item.caption ?? item.alt,
         ratio: item.ratio,
         type: item.type,
-        exists: slideExists(item.src),
+        exists: true,
+        position: item.position,
       });
     });
 
     return projectSlides;
   });
-  const heroSlides = uniqueSlides([
-    {
-      src: heroPath,
-      alt: 'home-hero.png',
-      title: 'Matheus Coutinho da Silva',
-      meta: 'Artist + Creative Technologist',
-      ratio: '16:9',
-      type: 'full-screen cinematic artwork',
-      exists: slideExists(heroPath),
-    },
-    ...gallerySlides,
-  ]);
+  const heroSlides = uniqueSlides(gallerySlides);
 
   return (
     <>
@@ -66,12 +48,13 @@ export default function Home() {
         ) : (
           <div className="absolute inset-0 -z-20 flex items-center justify-center bg-coal p-6 text-center">
             <div>
-              <p className="font-serif text-2xl text-bone">home-hero.png</p>
+              <p className="font-serif text-2xl text-bone">Project artwork</p>
               <p className="mt-3 text-xs uppercase tracking-[.18em] text-amber">
                 Recommended 16:9
               </p>
               <p className="mt-2 text-sm text-muted">
-                Suggested media type: full-screen cinematic artwork
+                Add project PNGs to the artwork folders to populate the
+                homepage carousel.
               </p>
             </div>
           </div>

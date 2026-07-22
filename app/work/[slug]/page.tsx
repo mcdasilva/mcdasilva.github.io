@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Artwork from '@/components/Artwork';
-import { getProject, projects } from '@/data/site';
+import { getProject, getProjects } from '@/data/site';
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return getProjects().map((project) => ({ slug: project.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
@@ -21,13 +21,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   if (!project) notFound();
 
+  const projects = getProjects();
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const previous =
     projects[(currentIndex - 1 + projects.length) % projects.length];
   const next = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <article className="px-5 py-32">
+    <article id={`${project.slug}-top`} className="px-5 py-32">
       <section className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.8fr_1.6fr]">
         <div>
           <p className="text-xs uppercase tracking-[.2em] text-amber">
@@ -96,6 +97,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           Next: {next.title}
         </Link>
       </nav>
+      <div className="mx-auto mt-10 max-w-7xl text-right">
+        <a
+          href={`#${project.slug}-top`}
+          className="text-xs uppercase tracking-[.18em] text-amber hover:text-bone"
+        >
+          Back to Top
+        </a>
+      </div>
     </article>
   );
 }

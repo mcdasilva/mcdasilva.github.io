@@ -32,6 +32,7 @@ export default function Artwork({
   const isVideo = art.src.endsWith('.mp4');
   const poster =
     art.poster && fs.existsSync(publicPath(art.poster)) ? art.poster : undefined;
+  const mediaStyle = art.position ? { objectPosition: art.position } : undefined;
 
   return (
     <figure
@@ -46,11 +47,13 @@ export default function Artwork({
           fill
           sizes={sizes}
           className="object-cover"
+          style={mediaStyle}
           priority={priority}
         />
       ) : exists && isVideo ? (
         <video
           className="h-full w-full object-cover"
+          style={mediaStyle}
           controls
           playsInline
           preload="metadata"
