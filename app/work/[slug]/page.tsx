@@ -42,6 +42,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dd>{project.year}</dd>
             </div>
             <div>
+              <dt className="text-amber">Category</dt>
+              <dd>{project.category}</dd>
+            </div>
+            <div>
               <dt className="text-amber">Medium</dt>
               <dd>{project.medium}</dd>
             </div>
@@ -74,33 +78,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           ))}
         </div>
       </section>
-
-      {project.series && (
-        <section className="mx-auto mt-24 max-w-7xl space-y-16 border-y border-line py-16">
-          <h2 className="font-serif text-4xl">Series Works</h2>
-          {project.series.map((seriesItem) => (
-            <div
-              key={seriesItem.title}
-              className="grid gap-8 md:grid-cols-[.7fr_1.3fr]"
-            >
-              <div>
-                <h3 className="font-serif text-3xl text-amber">
-                  {seriesItem.title}
-                </h3>
-                <p className="mt-3 text-sm text-muted">
-                  {seriesItem.metadata}
-                </p>
-                <p className="mt-5 text-bone">{seriesItem.description}</p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-2">
-                {seriesItem.images.map((item) => (
-                  <Artwork key={item.src} art={item} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </section>
-      )}
 
       <section className="mx-auto mt-24 grid max-w-7xl gap-12 border-t border-line pt-16 md:grid-cols-2">
         <div>

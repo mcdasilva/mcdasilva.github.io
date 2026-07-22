@@ -1,27 +1,27 @@
 # Matheus Coutinho da Silva Portfolio
 
-A dark, cinematic, editorial portfolio for MFA Visualization applications. The site is built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. It uses static project data only, with no database and no CMS.
+A dark, cinematic, editorial portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. The site uses static project data only. There is no database or CMS.
 
-## Install And Run Locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open:
+Preview locally:
 
 ```text
 http://localhost:3000
 ```
 
-## Build For Production
+## Build
 
 ```bash
 npm run build
 ```
 
-The static export is written to:
+The static export is generated in:
 
 ```text
 out/
@@ -29,152 +29,192 @@ out/
 
 ## Deploy To GitHub Pages
 
-This repository includes:
+GitHub Pages deployment is handled by:
 
 ```text
 .github/workflows/deploy-pages.yml
 ```
 
-In GitHub, open:
+In GitHub, set:
 
 ```text
-Settings -> Pages -> Build and deployment -> Source
+Settings -> Pages -> Build and deployment -> Source -> GitHub Actions
 ```
 
-Set the source to:
+Then push to `main`. The workflow builds the static site and deploys the generated `out/` folder.
 
-```text
-GitHub Actions
-```
+## Main Editing File
 
-Push to `main`. GitHub Actions will install dependencies, build the site, and publish the generated `out/` folder. The site is configured for GitHub Pages through `next.config.mjs` with `output: 'export'`, `images.unoptimized`, `trailingSlash`, and `public/.nojekyll`.
-
-## Where To Edit Text And Project Data
-
-Most editable portfolio content lives in:
+All project data is stored in:
 
 ```text
 data/site.ts
 ```
 
-Use this file to edit:
+Edit this file to change:
 
-- project titles
-- dates
-- media
+- project category
+- project title
+- date
+- medium
 - software
 - dimensions or duration
-- short descriptions
-- image and video paths
+- short description
+- image filenames
 - credits
 - collaborators
-- selected homepage projects
-- contact and social links
-- the About introduction
+- homepage selected projects
+- contact links
+- About page introduction
 
-The About page layout is in:
+## Artwork Categories
+
+Projects are currently divided into three categories:
+
+1. Horror
+2. Concept Art
+3. Environment Design
+
+The category folders are:
 
 ```text
-app/about/page.tsx
+public/artwork/horror/
+public/artwork/concept-art/
+public/artwork/environment-design/
 ```
 
-The CV page layout is in:
+Each project has exactly three final PNG image slots. Image `01` is also used as the project hero image.
 
-```text
-app/cv/page.tsx
-```
+## Project Image Table
 
-## Artwork And Media Folders
-
-Place final images and videos inside `public/artwork/`. All images should be `.png`.
-
-The site intentionally shows a dark labeled placeholder when a referenced image or video is missing. The placeholder displays the missing filename, the recommended aspect ratio, and the suggested media type.
-
-## Placeholder Reference Table
-
-| Filename | Folder | Where It Appears | Recommended Aspect Ratio |
+| Category | Project | Folder | Required PNG filenames |
 |---|---|---|---|
-| `home-hero.png` | `public/artwork/home/` | Homepage hero background | `16:9` |
-| `landscapes-hero.png` | `public/artwork/landscapes/` | Landscapes That Raised Me hero and project panels | `16:9` |
-| `the-way-ive-grown-final-01.png` | `public/artwork/landscapes/` | The Way I've Grown page, Landscapes series, homepage/work panels | `16:9` |
-| `depois-da-chuva-final-01.png` | `public/artwork/landscapes/` | Landscapes series | `16:9` |
-| `na-casa-de-titia-final-01.png` | `public/artwork/landscapes/` | Landscapes series | `16:9` |
-| `not-yet-poster.png` | `public/artwork/not-yet/` | Not Yet hero, video poster, final gallery | `16:9` |
-| `not-yet-video.mp4` | `public/artwork/not-yet/` | Not Yet final video | `16:9` |
-| `digital-atelier-interface.png` | `public/artwork/digital-atelier/` | Digital Atelier hero, final gallery, homepage/work panels | `16:9` |
-| `digital-atelier-particles.png` | `public/artwork/digital-atelier/` | Digital Atelier final gallery | `16:9` |
-| `digital-atelier-generative.png` | `public/artwork/digital-atelier/` | Digital Atelier final gallery | `16:9` |
-| `watchers-final.png` | `public/artwork/watchers/` | The Watchers hero, final gallery, homepage/work panels | `4:5` |
-| `mothers-despair-final.png` | `public/artwork/mothers-despair/` | A Mother's Despair hero, final gallery, homepage/work panels | `16:9` |
-| `designed-space-exterior.png` | `public/artwork/designed-space/` | Designed Space hero, final gallery, homepage/work panels, walkthrough poster | `16:9` |
-| `designed-space-interior.png` | `public/artwork/designed-space/` | Designed Space final gallery | `16:9` |
-| `designed-space-plan.png` | `public/artwork/designed-space/` | Designed Space final gallery | `16:9` |
-| `designed-space-walkthrough.mp4` | `public/artwork/designed-space/` | Designed Space final video | `16:9` |
-| `material-studies-hero.png` | `public/artwork/material-studies/` | Material & Traditional Studies hero and project panels | `16:9` |
-| `figure-drawing.png` | `public/artwork/material-studies/` | Material & Traditional Studies final gallery | `3:4` |
-| `tree-study.png` | `public/artwork/material-studies/` | Material & Traditional Studies final gallery | `3:4` |
-| `ceramic-object.png` | `public/artwork/material-studies/` | Material & Traditional Studies final gallery | `4:5` |
-| `portrait.png` | `public/artwork/portrait/` | About page portrait | `4:5` |
+| Horror | Not Yet | `public/artwork/horror/` | `not-yet-01.png`, `not-yet-02.png`, `not-yet-03.png` |
+| Horror | The Watchers | `public/artwork/horror/` | `the-watchers-01.png`, `the-watchers-02.png`, `the-watchers-03.png` |
+| Horror | A Mother's Despair | `public/artwork/horror/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, `a-mothers-despair-03.png` |
+| Concept Art | Digital Atelier | `public/artwork/concept-art/` | `digital-atelier-01.png`, `digital-atelier-02.png`, `digital-atelier-03.png` |
+| Concept Art | Material & Traditional Studies | `public/artwork/concept-art/` | `material-traditional-studies-01.png`, `material-traditional-studies-02.png`, `material-traditional-studies-03.png` |
+| Environment Design | Landscapes That Raised Me | `public/artwork/environment-design/` | `landscapes-that-raised-me-01.png`, `landscapes-that-raised-me-02.png`, `landscapes-that-raised-me-03.png` |
+| Environment Design | The Way I've Grown | `public/artwork/environment-design/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, `the-way-ive-grown-03.png` |
+| Environment Design | Designed Space | `public/artwork/environment-design/` | `designed-space-01.png`, `designed-space-02.png`, `designed-space-03.png` |
 
-## Replace Images
+Recommended ratio for the current project images:
 
-1. Export the artwork as `.png`.
-2. Use the exact filename from the table unless you also update `data/site.ts`.
-3. Place the file in the matching folder under `public/artwork/`.
-4. Refresh the site. The placeholder will disappear when the file exists at the referenced path.
+```text
+16:9
+```
 
-Example:
+The site uses `object-fit: cover`, so images may crop differently on desktop and mobile.
+
+## How To Add Images To A Project
+
+1. Export each artwork image as `.png`.
+2. Create three files for the project using the exact filenames in the table.
+3. Put the files in the correct category folder.
+4. Refresh the site preview.
+
+Example for `The Watchers`:
+
+```text
+public/artwork/horror/the-watchers-01.png
+public/artwork/horror/the-watchers-02.png
+public/artwork/horror/the-watchers-03.png
+```
+
+The first image appears as:
+
+- the project hero
+- the Work page project panel
+- one slide in the homepage carousel
+
+All three images appear in the project page's `Final Work` section and in the homepage carousel.
+
+## Missing Image Placeholders
+
+If an image is missing, the site displays a dark placeholder with:
+
+- missing filename
+- recommended aspect ratio
+- suggested media type
+
+To fix a placeholder, add the exact file shown in the placeholder to the correct folder.
+
+GitHub Pages is case-sensitive, so this matters:
+
+```text
+the-watchers-01.png
+```
+
+is not the same as:
+
+```text
+The-Watchers-01.png
+```
+
+## Homepage Hero Carousel
+
+The homepage hero starts with:
 
 ```text
 public/artwork/home/home-hero.png
 ```
 
-## Add Or Replace Videos
+Then it rotates through every project image referenced in `data/site.ts`.
 
-Videos should be `.mp4` files placed in the relevant `public/artwork/...` folder.
+To change the first hero image, replace:
 
-Video entries are defined in `data/site.ts` with the `video()` helper:
-
-```ts
-video(
-  '/artwork/not-yet/not-yet-video.mp4',
-  'not-yet-video.mp4',
-  '/artwork/not-yet/not-yet-poster.png',
-)
+```text
+public/artwork/home/home-hero.png
 ```
 
-The third value is the poster image shown before playback. Use a `.png` poster with the same aspect ratio as the video.
+To change the project slides, replace the three PNGs for each project in the category folders.
 
-## Edit A Project
+## Change A Project Category
 
-Open `data/site.ts` and edit the matching object inside the `projects` array.
-
-Common fields:
+Open `data/site.ts` and edit the `category` field:
 
 ```ts
-title: 'Not Yet',
-year: '2026',
-medium: 'Single-channel looping animation, sound',
-software: 'Blender, FL Studio, Audition',
-dimensions: '00:45',
-summary: 'Short text used on project panels.',
-description: 'Short project page description.',
-credits: 'Animation, sound, and direction by Matheus Coutinho da Silva.',
-collaborators: 'No additional collaborators listed.',
+category: 'Horror',
 ```
 
-Use `hero` for the main project image and `gallery` for final images or videos.
+Allowed values:
 
-## Add, Remove, Or Reorder Projects
+```ts
+'Horror'
+'Concept Art'
+'Environment Design'
+```
 
-To add a project:
+The Work page groups projects automatically by this value.
+
+## Add A New Project
 
 1. Add a new object to the `projects` array in `data/site.ts`.
-2. Give it a unique `slug`.
-3. Add `hero`, `gallery`, credits, and collaborators.
-4. Add matching media files to `public/artwork/`.
-5. Add the slug to `selectedSlugs` if it should appear on the homepage.
-6. Add the route to `public/sitemap.xml`.
+2. Choose one of the three category values.
+3. Create three PNG paths with the `projectImages()` helper.
+4. Use image `01` as the hero.
+5. Add the project slug to `selectedSlugs` if it should appear on the homepage.
+6. Add the project URL to `public/sitemap.xml`.
+
+Pattern:
+
+```ts
+const newProjectImages = projectImages(
+  'horror',
+  'new-project-slug',
+  'horror final image',
+);
+```
+
+Then add files:
+
+```text
+public/artwork/horror/new-project-slug-01.png
+public/artwork/horror/new-project-slug-02.png
+public/artwork/horror/new-project-slug-03.png
+```
+
+## Remove Or Reorder Projects
 
 To remove a project:
 
@@ -182,23 +222,23 @@ To remove a project:
 2. Remove its slug from `selectedSlugs`.
 3. Remove its URL from `public/sitemap.xml`.
 
-To reorder projects, reorder the objects in the `projects` array. This also changes previous/next navigation on project pages.
+To reorder projects, reorder the objects in the `projects` array. Previous/next navigation follows this order.
 
-## Update The About Page
+## Update About
 
-The main About introduction is `aboutIntro` in:
+The About introduction is:
 
 ```text
-data/site.ts
+data/site.ts -> aboutIntro
 ```
 
-The visible About sections are in:
+The About page layout is:
 
 ```text
 app/about/page.tsx
 ```
 
-The portrait file should be:
+The portrait image path is:
 
 ```text
 public/artwork/portrait/portrait.png
@@ -206,51 +246,29 @@ public/artwork/portrait/portrait.png
 
 ## Update Contact And Social Links
 
-Edit the `contact` object in:
+Edit:
 
 ```text
-data/site.ts
+data/site.ts -> contact
 ```
 
 The homepage footer, About page, and CV page use this shared contact data.
 
 ## Replace The CV PDF
 
-Place the PDF here:
+Add the PDF here:
 
 ```text
 public/Matheus-Coutinho-da-Silva-CV.pdf
 ```
 
-The CV page download link already points to that filename.
+The CV page shows a placeholder label until that file exists.
 
-## Change The Homepage Hero Slideshow
+## Troubleshooting
 
-Replace:
-
-```text
-public/artwork/home/home-hero.png
-```
-
-Keep a cinematic horizontal crop. The recommended ratio is `16:9`, but the page uses `object-fit: cover`, so images will crop differently on desktop and mobile.
-
-The homepage hero is a restrained slideshow. It starts with `home-hero.png`, then rotates through every final `.png` image referenced in `data/site.ts`. If a referenced file has not been added yet, the slideshow shows a dark editorial placeholder with the project title, filename, and recommended ratio.
-
-The hero text is edited in:
-
-```text
-app/page.tsx
-data/site.ts
-```
-
-To control which artwork appears in the slideshow, edit project `hero`, `gallery`, and `series.images` entries in `data/site.ts`, then add the matching `.png` files under `public/artwork/`.
-
-## Troubleshoot Missing Media
-
-- Confirm the file is inside `public/artwork/`.
-- Confirm the filename and extension match `data/site.ts` exactly.
-- Use `.png` for images.
-- Use `.mp4` for videos.
-- Check capitalization. GitHub Pages is case-sensitive.
+- Run `npm run dev` and open `http://localhost:3000`.
+- Make sure each image is `.png`.
+- Make sure the filename exactly matches `data/site.ts`.
+- Make sure the file is in the correct category folder.
 - Run `npm run build` before deploying.
-- If a placeholder remains visible, copy the filename shown in the placeholder and make sure that exact file exists in the listed folder.
+- If GitHub Pages shows the README instead of the site, confirm Pages is set to `GitHub Actions`.

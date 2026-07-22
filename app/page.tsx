@@ -28,13 +28,8 @@ export default function Home() {
     .filter(Boolean);
   const gallerySlides = projects.flatMap((project) => {
     const projectSlides: HeroSlide[] = [];
-    const artwork = [
-      project.hero,
-      ...project.gallery,
-      ...(project.series?.flatMap((seriesItem) => seriesItem.images) ?? []),
-    ];
 
-    artwork.forEach((item) => {
+    project.gallery.forEach((item) => {
       if (item.src.endsWith('.mp4')) return;
 
       projectSlides.push({
