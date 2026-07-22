@@ -234,7 +234,7 @@ public/artwork/home/home-hero.png
 
 Keep a cinematic horizontal crop. The recommended ratio is `16:9`, but the page uses `object-fit: cover`, so images will crop differently on desktop and mobile.
 
-The homepage hero is a restrained slideshow. It starts with `home-hero.png`, then automatically adds every existing final `.png` image referenced in `data/site.ts`. Missing placeholder files are skipped in the slideshow so the homepage stays polished while you are still replacing artwork.
+The homepage hero is a restrained slideshow. It starts with `home-hero.png`, then rotates through every final `.png` image referenced in `data/site.ts`. If a referenced file has not been added yet, the slideshow shows a dark editorial placeholder with the project title, filename, and recommended ratio.
 
 The hero text is edited in:
 

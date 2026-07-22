@@ -9,9 +9,12 @@ export type HeroSlide = {
   alt: string;
   title: string;
   meta: string;
+  ratio: string;
+  type: string;
+  exists: boolean;
 };
 
-const slideDuration = 6500;
+const slideDuration = 4800;
 
 export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
   const [index, setIndex] = useState(0);
@@ -41,19 +44,35 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           exit={reduceMotion ? undefined : { opacity: 0, scale: 1.015 }}
           transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src={active.src}
-            alt={active.alt}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover"
-          />
+          {active.exists ? (
+            <Image
+              src={active.src}
+              alt={active.alt}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-coal px-6 text-center">
+              <div className="max-w-md">
+                <p className="font-serif text-4xl leading-none text-bone md:text-6xl">
+                  {active.title}
+                </p>
+                <p className="mt-6 text-xs uppercase tracking-[.2em] text-amber">
+                  {active.alt}
+                </p>
+                <p className="mt-3 text-sm text-muted">
+                  Recommended {active.ratio} - {active.type}
+                </p>
+              </div>
+            </div>
+          )}
         </motion.div>
       </AnimatePresence>
 
       {slides.length > 1 && (
-        <div className="pointer-events-none absolute bottom-8 right-5 hidden w-56 text-right md:block">
+        <div className="pointer-events-none absolute bottom-8 right-5 hidden w-64 text-right md:block">
           <div className="mb-3 h-px w-full bg-bone/20">
             <motion.div
               key={active.src}
@@ -76,6 +95,12 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           <p className="mt-1 text-[10px] uppercase tracking-[.16em] text-muted">
             {active.meta}
           </p>
+        </div>
+      )}
+
+      {slides.length > 1 && (
+        <div className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 md:block">
+          <div className="h-24 w-[3px] bg-amber" />
         </div>
       )}
     </div>

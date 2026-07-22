@@ -10,8 +10,7 @@ const heroPath = '/artwork/home/home-hero.png';
 const publicPath = (src: string) =>
   path.join(process.cwd(), 'public', src.replace(/^\/+/, ''));
 
-const existingImage = (src: string) =>
-  !src.endsWith('.mp4') && fs.existsSync(publicPath(src));
+const slideExists = (src: string) => fs.existsSync(publicPath(src));
 
 const uniqueSlides = (slides: HeroSlide[]) => {
   const seen = new Set<string>();
@@ -36,29 +35,31 @@ export default function Home() {
     ];
 
     artwork.forEach((item) => {
-      if (!existingImage(item.src)) return;
+      if (item.src.endsWith('.mp4')) return;
 
       projectSlides.push({
         src: item.src,
         alt: item.alt,
         title: project.title,
         meta: item.caption ?? item.alt,
+        ratio: item.ratio,
+        type: item.type,
+        exists: slideExists(item.src),
       });
     });
 
     return projectSlides;
   });
   const heroSlides = uniqueSlides([
-    ...(existingImage(heroPath)
-      ? [
-          {
-            src: heroPath,
-            alt: 'home-hero.png',
-            title: 'Matheus Coutinho da Silva',
-            meta: 'Artist + Creative Technologist',
-          },
-        ]
-      : []),
+    {
+      src: heroPath,
+      alt: 'home-hero.png',
+      title: 'Matheus Coutinho da Silva',
+      meta: 'Artist + Creative Technologist',
+      ratio: '16:9',
+      type: 'full-screen cinematic artwork',
+      exists: slideExists(heroPath),
+    },
     ...gallerySlides,
   ]);
 
