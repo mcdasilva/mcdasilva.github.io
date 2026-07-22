@@ -1,31 +1,72 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
+import HeroCarousel, { type HeroSlide } from '@/components/HeroCarousel';
 import ProjectPanel from '@/components/ProjectPanel';
 import { contact, intro, projects, selectedSlugs } from '@/data/site';
+
+const heroPath = '/artwork/home/home-hero.png';
+
+const publicPath = (src: string) =>
+  path.join(process.cwd(), 'public', src.replace(/^\/+/, ''));
+
+const existingImage = (src: string) =>
+  !src.endsWith('.mp4') && fs.existsSync(publicPath(src));
+
+const uniqueSlides = (slides: HeroSlide[]) => {
+  const seen = new Set<string>();
+
+  return slides.filter((slide) => {
+    if (seen.has(slide.src)) return false;
+    seen.add(slide.src);
+    return true;
+  });
+};
 
 export default function Home() {
   const selected = selectedSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter(Boolean);
-  const heroPath = '/artwork/home/home-hero.png';
-  const heroExists = fs.existsSync(
-    path.join(process.cwd(), 'public', heroPath.replace(/^\/+/, '')),
-  );
+  const gallerySlides = projects.flatMap((project) => {
+    const projectSlides: HeroSlide[] = [];
+    const artwork = [
+      project.hero,
+      ...project.gallery,
+      ...(project.series?.flatMap((seriesItem) => seriesItem.images) ?? []),
+    ];
+
+    artwork.forEach((item) => {
+      if (!existingImage(item.src)) return;
+
+      projectSlides.push({
+        src: item.src,
+        alt: item.alt,
+        title: project.title,
+        meta: item.caption ?? item.alt,
+      });
+    });
+
+    return projectSlides;
+  });
+  const heroSlides = uniqueSlides([
+    ...(existingImage(heroPath)
+      ? [
+          {
+            src: heroPath,
+            alt: 'home-hero.png',
+            title: 'Matheus Coutinho da Silva',
+            meta: 'Artist + Creative Technologist',
+          },
+        ]
+      : []),
+    ...gallerySlides,
+  ]);
 
   return (
     <>
       <section className="relative isolate min-h-[92vh] overflow-hidden px-5 pt-24">
-        {heroExists ? (
-          <Image
-            src={heroPath}
-            alt="home-hero.png"
-            fill
-            priority
-            sizes="100vw"
-            className="absolute inset-0 -z-20 h-full w-full object-cover"
-          />
+        {heroSlides.length > 0 ? (
+          <HeroCarousel slides={heroSlides} />
         ) : (
           <div className="absolute inset-0 -z-20 flex items-center justify-center bg-coal p-6 text-center">
             <div>

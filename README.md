@@ -224,7 +224,7 @@ public/Matheus-Coutinho-da-Silva-CV.pdf
 
 The CV page download link already points to that filename.
 
-## Change The Homepage Hero
+## Change The Homepage Hero Slideshow
 
 Replace:
 
@@ -232,7 +232,9 @@ Replace:
 public/artwork/home/home-hero.png
 ```
 
-Keep a cinematic horizontal crop. The recommended ratio is `16:9`, but the page uses `object-fit: cover`, so the image will crop differently on desktop and mobile.
+Keep a cinematic horizontal crop. The recommended ratio is `16:9`, but the page uses `object-fit: cover`, so images will crop differently on desktop and mobile.
+
+The homepage hero is a restrained slideshow. It starts with `home-hero.png`, then automatically adds every existing final `.png` image referenced in `data/site.ts`. Missing placeholder files are skipped in the slideshow so the homepage stays polished while you are still replacing artwork.
 
 The hero text is edited in:
 
@@ -240,6 +242,8 @@ The hero text is edited in:
 app/page.tsx
 data/site.ts
 ```
+
+To control which artwork appears in the slideshow, edit project `hero`, `gallery`, and `series.images` entries in `data/site.ts`, then add the matching `.png` files under `public/artwork/`.
 
 ## Troubleshoot Missing Media
 
