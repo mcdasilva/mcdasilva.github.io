@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       'Artist + Creative Technologist portfolio for MFA Visualization applications.',
     type: 'website',
     url: 'https://mcdasilva.github.io',
-    images: ['/artwork/home/home-hero.jpg'],
+    images: ['/artwork/home/home-hero.png'],
   },
 };
 
