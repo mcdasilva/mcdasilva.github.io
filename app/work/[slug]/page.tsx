@@ -91,13 +91,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <nav className="mx-auto mt-20 grid max-w-7xl gap-5 border-t border-line pt-8 text-xs uppercase tracking-[.18em] text-amber sm:grid-cols-2">
         <Link
           href={`/work/${previous.slug}`}
-          className="inline-flex w-fit justify-self-start transition-colors duration-300 ease-out hover:text-bone"
+          className="inline-flex w-fit self-start justify-self-start p-0 leading-none transition-colors duration-300 ease-out hover:text-bone"
         >
           Previous: {previous.title}
         </Link>
         <Link
           href={`/work/${next.slug}`}
-          className="inline-flex w-fit justify-self-start transition-colors duration-300 ease-out hover:text-bone sm:justify-self-end sm:text-right"
+          className="inline-flex w-fit self-start justify-self-start p-0 leading-none transition-colors duration-300 ease-out hover:text-bone sm:justify-self-end sm:text-right"
         >
           Next: {next.title}
         </Link>

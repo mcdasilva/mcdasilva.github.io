@@ -7,6 +7,7 @@ type ToolLogosProps = {
   tools: ToolKey[];
   className?: string;
   iconClassName?: string;
+  imageSize?: number;
 };
 
 const publicPath = (src: string) =>
@@ -15,7 +16,8 @@ const publicPath = (src: string) =>
 export default function ToolLogos({
   tools,
   className = '',
-  iconClassName = '',
+  iconClassName = 'h-8 w-8',
+  imageSize = 20,
 }: ToolLogosProps) {
   const resolvedTools = tools.map((tool) => toolLogos[tool]).filter(Boolean);
 
@@ -35,10 +37,16 @@ export default function ToolLogos({
           <span
             key={tool.id}
             title={tool.name}
-            className={`inline-flex h-8 w-8 items-center justify-center border border-line bg-coal/70 text-[10px] font-semibold uppercase tracking-[.12em] text-bone ${iconClassName}`}
+            className={`inline-flex items-center justify-center text-[10px] font-semibold uppercase tracking-[.12em] text-bone ${iconClassName}`}
           >
             {exists ? (
-              <Image src={tool.logo} alt={tool.name} width={20} height={20} />
+              <Image
+                src={tool.logo}
+                alt={tool.name}
+                width={imageSize}
+                height={imageSize}
+                className="h-auto max-h-full w-auto max-w-full object-contain"
+              />
             ) : (
               <span aria-hidden="true">{tool.fallback}</span>
             )}
