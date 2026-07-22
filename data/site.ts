@@ -49,8 +49,7 @@ export const projectCategories: ProjectCategory[] = [
 ];
 
 export const contact = {
-  email: 'matheus.c.dasilva@gmail.com',
-  instagram: '@matheus.cdasilva',
+  email: 'mcdasilva2025@gmail.com',
   location: 'United States / Brazil',
 };
 
@@ -60,113 +59,58 @@ export const intro =
 export const aboutIntro =
   'Matheus Coutinho da Silva is a Brazilian artist and creative technologist whose work combines digital environments, computation, architecture, and physical making. His practice explores memory, place, migration, domestic space, and emotional atmosphere.';
 
-const landscapesImages = projectImages(
-  'environment-design',
-  'landscapes-that-raised-me',
-  'environment design final image',
-);
-const grownImages = projectImages(
-  'environment-design',
-  'the-way-ive-grown',
-  'environment design final image',
-);
-const designedSpaceImages = projectImages(
-  'environment-design',
-  'designed-space',
-  'architectural visualization final image',
-);
-const notYetImages = projectImages('horror', 'not-yet', 'horror final image');
 const watchersImages = projectImages(
   'horror',
   'the-watchers',
   'horror sculpture final image',
+);
+const masqueradeImages = projectImages(
+  'horror',
+  'masquerade',
+  'horror final image',
 );
 const mothersDespairImages = projectImages(
   'horror',
   'a-mothers-despair',
   'horror sculpture final image',
 );
-const atelierImages = projectImages(
+const itsTimeImages = projectImages(
   'concept-art',
-  'digital-atelier',
+  'its-time-to-go',
   'concept art final image',
 );
-const materialStudiesImages = projectImages(
+const vigilImages = projectImages(
   'concept-art',
-  'material-traditional-studies',
+  'vigil',
   'concept art final image',
+);
+const notYetImages = projectImages(
+  'concept-art',
+  'not-yet',
+  'concept art final image',
+);
+const unboundImages = projectImages(
+  'concept-art',
+  'unbound',
+  'concept art final image',
+);
+const grownImages = projectImages(
+  'environment-design',
+  'the-way-ive-grown',
+  'environment design final image',
+);
+const titiaImages = projectImages(
+  'environment-design',
+  'na-casa-de-titia',
+  'environment design final image',
+);
+const depoisImages = projectImages(
+  'environment-design',
+  'depois-da-chuva',
+  'environment design final image',
 );
 
 export const projects: Project[] = [
-  {
-    slug: 'landscapes-that-raised-me',
-    title: 'Landscapes That Raised Me',
-    category: 'Environment Design',
-    year: '2026',
-    medium: 'Ongoing series: digital environments',
-    software: 'Blender, Photoshop, Unreal Engine',
-    dimensions: 'Variable dimensions',
-    summary:
-      'Remembered Brazilian domestic landscapes reconstructed through light, objects, and atmosphere.',
-    description:
-      'An ongoing exploration of places that shaped childhood in Brazil. These environments are not exact replicas but emotional reconstructions assembled from memory, family architecture, domestic routines, and weather.',
-    hero: landscapesImages[0],
-    gallery: landscapesImages,
-    credits: 'All work by Matheus Coutinho da Silva.',
-    collaborators: 'No additional collaborators listed.',
-  },
-  {
-    slug: 'the-way-ive-grown',
-    title: "The Way I've Grown",
-    category: 'Environment Design',
-    year: '2026',
-    medium: 'Digital environment',
-    software: 'Blender, Photoshop',
-    dimensions: 'Variable dimensions',
-    summary:
-      'A remembered backyard reconstructed as a quiet meditation on growth.',
-    description:
-      'This work uses plants, chairs, unfinished walls, and late sunlight to translate family memory into a cinematic scene.',
-    hero: grownImages[0],
-    gallery: grownImages,
-    credits: 'All work by Matheus Coutinho da Silva.',
-    collaborators: 'No additional collaborators listed.',
-  },
-  {
-    slug: 'designed-space',
-    title: 'Designed Space',
-    category: 'Environment Design',
-    year: '2026',
-    medium: 'Architectural visualization',
-    software: 'AutoCAD, Blender, Photoshop',
-    dimensions: 'Plans, renders, walkthrough',
-    summary:
-      'A designed coastal residence explored through plans, interiors, exteriors, and atmosphere.',
-    description:
-      'This project frames architecture as atmosphere, moving from measured drawings to cinematic interior and exterior views.',
-    hero: designedSpaceImages[0],
-    gallery: designedSpaceImages,
-    credits: 'Design and visualization by Matheus Coutinho da Silva.',
-    collaborators: 'No additional collaborators listed.',
-  },
-  {
-    slug: 'not-yet',
-    title: 'Not Yet',
-    category: 'Horror',
-    year: '2026',
-    medium: 'Single-channel animation stills, sound study',
-    software: 'Blender, FL Studio, Audition',
-    dimensions: '00:45',
-    summary:
-      'A meditation on anticipation and the distance between a needle and a balloon.',
-    description:
-      'Not Yet holds a suspended moment between pressure and release through cinematic restraint, sound, and psychological tension.',
-    hero: notYetImages[0],
-    gallery: notYetImages,
-    credits:
-      'Animation, sound, and direction by Matheus Coutinho da Silva.',
-    collaborators: 'No additional collaborators listed.',
-  },
   {
     slug: 'the-watchers',
     title: 'The Watchers',
@@ -181,6 +125,23 @@ export const projects: Project[] = [
       'A sculptural study of being seen, using enlarged eyes, textured surfaces, and theatrical darkness.',
     hero: watchersImages[0],
     gallery: watchersImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'masquerade',
+    title: 'Masquerade',
+    category: 'Horror',
+    year: '2026',
+    medium: 'Digital horror image sequence',
+    software: 'Blender, ZBrush, Photoshop',
+    dimensions: 'Three final images',
+    summary:
+      'A staged horror sequence about concealment, performance, and the instability of identity.',
+    description:
+      'Masquerade approaches horror through ritualized surfaces, theatrical darkness, and figures that feel both ceremonial and unsafe.',
+    hero: masqueradeImages[0],
+    gallery: masqueradeImages,
     credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
@@ -201,49 +162,137 @@ export const projects: Project[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'digital-atelier',
-    title: 'Digital Atelier',
+    slug: 'its-time-to-go',
+    title: "It's Time to Go",
     category: 'Concept Art',
-    year: '2025',
-    medium: 'Interactive art / creative coding',
-    software: 'WebGL, JavaScript, GLSL, p5.js, Three.js',
-    dimensions: 'Browser-based experiments',
+    year: '2026',
+    medium: 'Concept art keyframes',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
     summary:
-      'A laboratory for interfaces, particles, generative systems, and coded material behavior.',
+      'A cinematic departure scene centered on urgency, threshold, and emotional release.',
     description:
-      'Digital Atelier collects interactive experiments where computation becomes a brush for simulating cloth, particles, surfaces, and responsive tools.',
-    hero: atelierImages[0],
-    gallery: atelierImages,
-    credits: 'All experiments by Matheus Coutinho da Silva.',
+      "It's Time to Go frames departure as an atmospheric event, using composition, light, and gesture to hold a moment just before movement.",
+    hero: itsTimeImages[0],
+    gallery: itsTimeImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'material-traditional-studies',
-    title: 'Material & Traditional Studies',
+    slug: 'vigil',
+    title: 'Vigil',
     category: 'Concept Art',
-    year: '2024-2026',
-    medium: 'Drawings, paintings, sculpture, physical studies',
-    software: 'Graphite, charcoal, clay, acrylic, Blender',
-    dimensions: 'Various',
+    year: '2026',
+    medium: 'Concept art keyframes',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
     summary:
-      'Physical studies that inform and correct the digital practice.',
+      'A watchful scene built around waiting, silence, and restrained tension.',
     description:
-      'A selection of drawings, paintings, photographs, and sculptural observations used as foundations for digital work.',
-    hero: materialStudiesImages[0],
-    gallery: materialStudiesImages,
-    credits: 'All studies by Matheus Coutinho da Silva.',
+      'Vigil studies a held state of attention through stillness, distance, and a controlled cinematic palette.',
+    hero: vigilImages[0],
+    gallery: vigilImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'not-yet',
+    title: 'Not Yet',
+    category: 'Concept Art',
+    year: '2026',
+    medium: 'Concept art sequence',
+    software: 'Blender, Photoshop, FL Studio',
+    dimensions: 'Three final images',
+    summary:
+      'A meditation on anticipation and the distance between pressure and release.',
+    description:
+      'Not Yet holds a suspended moment through cinematic restraint, emotional tension, and the expectation of an event that has not arrived.',
+    hero: notYetImages[0],
+    gallery: notYetImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'unbound',
+    title: 'Unbound',
+    category: 'Concept Art',
+    year: '2026',
+    medium: 'Concept art keyframes',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
+    summary:
+      'A release from constraint shown through motion, material rupture, and atmosphere.',
+    description:
+      'Unbound explores the moment a form leaves containment, using light, suspended movement, and visual tension to suggest transformation.',
+    hero: unboundImages[0],
+    gallery: unboundImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'the-way-ive-grown',
+    title: "The Way I've Grown",
+    category: 'Environment Design',
+    year: '2026',
+    medium: 'Digital environment',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
+    summary:
+      'A remembered backyard reconstructed as a quiet meditation on growth.',
+    description:
+      'This work uses plants, chairs, unfinished walls, and late sunlight to translate family memory into a cinematic scene.',
+    hero: grownImages[0],
+    gallery: grownImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'na-casa-de-titia',
+    title: "Na Casa de Titia (At Auntie's House)",
+    category: 'Environment Design',
+    year: '2026',
+    medium: 'Digital environment',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
+    summary:
+      'A domestic environment shaped by hospitality, memory, and the quiet intimacy of family space.',
+    description:
+      "Na Casa de Titia reconstructs an aunt's home as an emotional interior, using thresholds, furniture, surfaces, and afternoon light to suggest remembered presence.",
+    hero: titiaImages[0],
+    gallery: titiaImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'depois-da-chuva',
+    title: 'Depois da Chuva (After the Rain)',
+    category: 'Environment Design',
+    year: '2026',
+    medium: 'Digital environment',
+    software: 'Blender, Photoshop',
+    dimensions: 'Three final images',
+    summary:
+      'A post-rain environment focused on wet surfaces, softened sound, and charged quiet.',
+    description:
+      'Depois da Chuva studies the atmosphere after rainfall, where domestic space becomes reflective, hushed, and emotionally suspended.',
+    hero: depoisImages[0],
+    gallery: depoisImages,
+    credits: 'All work by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
 ];
 
 export const selectedSlugs = [
-  'landscapes-that-raised-me',
-  'not-yet',
-  'digital-atelier',
   'the-watchers',
+  'masquerade',
   'a-mothers-despair',
-  'designed-space',
-  'material-traditional-studies',
+  'its-time-to-go',
+  'vigil',
+  'not-yet',
+  'unbound',
+  'the-way-ive-grown',
+  'na-casa-de-titia',
+  'depois-da-chuva',
 ];
 
 export const getProject = (slug: string) =>

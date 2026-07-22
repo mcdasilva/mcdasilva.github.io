@@ -64,7 +64,7 @@ Edit this file to change:
 - credits
 - collaborators
 - homepage selected projects
-- contact links
+- contact information
 - About page introduction
 
 ## Artwork Categories
@@ -89,14 +89,16 @@ Each project has exactly three final PNG image slots. Image `01` is also used as
 
 | Category | Project | Folder | Required PNG filenames |
 |---|---|---|---|
-| Horror | Not Yet | `public/artwork/horror/` | `not-yet-01.png`, `not-yet-02.png`, `not-yet-03.png` |
 | Horror | The Watchers | `public/artwork/horror/` | `the-watchers-01.png`, `the-watchers-02.png`, `the-watchers-03.png` |
+| Horror | Masquerade | `public/artwork/horror/` | `masquerade-01.png`, `masquerade-02.png`, `masquerade-03.png` |
 | Horror | A Mother's Despair | `public/artwork/horror/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, `a-mothers-despair-03.png` |
-| Concept Art | Digital Atelier | `public/artwork/concept-art/` | `digital-atelier-01.png`, `digital-atelier-02.png`, `digital-atelier-03.png` |
-| Concept Art | Material & Traditional Studies | `public/artwork/concept-art/` | `material-traditional-studies-01.png`, `material-traditional-studies-02.png`, `material-traditional-studies-03.png` |
-| Environment Design | Landscapes That Raised Me | `public/artwork/environment-design/` | `landscapes-that-raised-me-01.png`, `landscapes-that-raised-me-02.png`, `landscapes-that-raised-me-03.png` |
+| Concept Art | It's Time to Go | `public/artwork/concept-art/` | `its-time-to-go-01.png`, `its-time-to-go-02.png`, `its-time-to-go-03.png` |
+| Concept Art | Vigil | `public/artwork/concept-art/` | `vigil-01.png`, `vigil-02.png`, `vigil-03.png` |
+| Concept Art | Not Yet | `public/artwork/concept-art/` | `not-yet-01.png`, `not-yet-02.png`, `not-yet-03.png` |
+| Concept Art | Unbound | `public/artwork/concept-art/` | `unbound-01.png`, `unbound-02.png`, `unbound-03.png` |
 | Environment Design | The Way I've Grown | `public/artwork/environment-design/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, `the-way-ive-grown-03.png` |
-| Environment Design | Designed Space | `public/artwork/environment-design/` | `designed-space-01.png`, `designed-space-02.png`, `designed-space-03.png` |
+| Environment Design | Na Casa de Titia (At Auntie's House) | `public/artwork/environment-design/` | `na-casa-de-titia-01.png`, `na-casa-de-titia-02.png`, `na-casa-de-titia-03.png` |
+| Environment Design | Depois da Chuva (After the Rain) | `public/artwork/environment-design/` | `depois-da-chuva-01.png`, `depois-da-chuva-02.png`, `depois-da-chuva-03.png` |
 
 Recommended ratio for the current project images:
 
@@ -244,7 +246,7 @@ The portrait image path is:
 public/artwork/portrait/portrait.png
 ```
 
-## Update Contact And Social Links
+## Update Contact Information
 
 Edit:
 
@@ -252,7 +254,7 @@ Edit:
 data/site.ts -> contact
 ```
 
-The homepage footer, About page, and CV page use this shared contact data.
+The homepage footer, About page, and CV page use this shared contact data. Instagram and other social handles are not displayed by default.
 
 ## Replace The CV PDF
 

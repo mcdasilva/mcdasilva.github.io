@@ -53,7 +53,7 @@ export default function About() {
               <a className="text-amber" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>{' '}
-              - {contact.instagram} - {contact.location}
+              - {contact.location}
             </p>
           </section>
         </div>

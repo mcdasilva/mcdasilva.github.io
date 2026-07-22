@@ -73,8 +73,6 @@ export default function CV() {
             Matheus Coutinho da Silva
             <br />
             {contact.email}
-            <br />
-            {contact.instagram}
           </p>
         </section>
       </div>
