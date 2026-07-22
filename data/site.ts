@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 export type Artwork = {
   src: string;
   alt: string;
@@ -5,6 +8,7 @@ export type Artwork = {
   type: string;
   caption?: string;
   poster?: string;
+  placeholder?: boolean;
 };
 
 export type ProjectCategory = 'Horror' | 'Concept Art' | 'Environment Design';
@@ -20,7 +24,7 @@ export type Project = {
   summary: string;
   description: string;
   hero: Artwork;
-  gallery: [Artwork, Artwork, Artwork];
+  gallery: Artwork[];
   credits: string;
   collaborators: string;
 };
@@ -30,17 +34,51 @@ const art = (
   alt: string,
   ratio = '16:9',
   type = 'final image',
-): Artwork => ({ src, alt, ratio, type, caption: alt });
+  placeholder = false,
+): Artwork => ({ src, alt, ratio, type, caption: alt, placeholder });
+
+const publicArtworkPath = (folder: string) =>
+  path.join(process.cwd(), 'public', 'artwork', folder);
+
+const sortedPngFiles = (folder: string) => {
+  const directory = publicArtworkPath(folder);
+
+  if (!fs.existsSync(directory)) return [];
+
+  return fs
+    .readdirSync(directory, { withFileTypes: true })
+    .filter(
+      (entry) => entry.isFile() && entry.name.toLowerCase().endsWith('.png'),
+    )
+    .map((entry) => entry.name)
+    .sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
+    );
+};
 
 const projectImages = (
   folder: string,
-  basename: string,
+  fallbackBasename: string,
   type = 'final image',
-): [Artwork, Artwork, Artwork] => [
-  art(`/artwork/${folder}/${basename}-01.png`, `${basename}-01.png`, '16:9', type),
-  art(`/artwork/${folder}/${basename}-02.png`, `${basename}-02.png`, '16:9', type),
-  art(`/artwork/${folder}/${basename}-03.png`, `${basename}-03.png`, '16:9', type),
-];
+): Artwork[] => {
+  const files = sortedPngFiles(folder);
+
+  if (files.length === 0) {
+    return [
+      art(
+        `/artwork/${folder}/${fallbackBasename}-01.png`,
+        `${fallbackBasename}-01.png`,
+        '16:9',
+        `final image; add PNG files to public/artwork/${folder}/`,
+        true,
+      ),
+    ];
+  }
+
+  return files.map((file) =>
+    art(`/artwork/${folder}/${file}`, file, '16:9', type),
+  );
+};
 
 export const projectCategories: ProjectCategory[] = [
   'Horror',
@@ -60,52 +98,52 @@ export const aboutIntro =
   'Matheus Coutinho da Silva is a Brazilian artist and creative technologist whose work combines digital environments, computation, architecture, and physical making. His practice explores memory, place, migration, domestic space, and emotional atmosphere.';
 
 const watchersImages = projectImages(
-  'horror',
+  'horror/the-watchers',
   'the-watchers',
   'horror sculpture final image',
 );
 const masqueradeImages = projectImages(
-  'horror',
+  'horror/masquerade',
   'masquerade',
   'horror final image',
 );
 const mothersDespairImages = projectImages(
-  'horror',
+  'horror/a-mothers-despair',
   'a-mothers-despair',
   'horror sculpture final image',
 );
 const itsTimeImages = projectImages(
-  'concept-art',
+  'concept-art/its-time-to-go',
   'its-time-to-go',
   'concept art final image',
 );
 const vigilImages = projectImages(
-  'concept-art',
+  'concept-art/vigil',
   'vigil',
   'concept art final image',
 );
 const notYetImages = projectImages(
-  'concept-art',
+  'concept-art/not-yet',
   'not-yet',
   'concept art final image',
 );
 const unboundImages = projectImages(
-  'concept-art',
+  'concept-art/unbound',
   'unbound',
   'concept art final image',
 );
 const grownImages = projectImages(
-  'environment-design',
+  'environment-design/the-way-ive-grown',
   'the-way-ive-grown',
   'environment design final image',
 );
 const titiaImages = projectImages(
-  'environment-design',
+  'environment-design/na-casa-de-titia',
   'na-casa-de-titia',
   'environment design final image',
 );
 const depoisImages = projectImages(
-  'environment-design',
+  'environment-design/depois-da-chuva',
   'depois-da-chuva',
   'environment design final image',
 );
@@ -135,7 +173,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Digital horror image sequence',
     software: 'Blender, ZBrush, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A staged horror sequence about concealment, performance, and the instability of identity.',
     description:
@@ -168,7 +206,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Concept art keyframes',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A cinematic departure scene centered on urgency, threshold, and emotional release.',
     description:
@@ -185,7 +223,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Concept art keyframes',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A watchful scene built around waiting, silence, and restrained tension.',
     description:
@@ -202,7 +240,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Concept art sequence',
     software: 'Blender, Photoshop, FL Studio',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A meditation on anticipation and the distance between pressure and release.',
     description:
@@ -219,7 +257,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Concept art keyframes',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A release from constraint shown through motion, material rupture, and atmosphere.',
     description:
@@ -236,7 +274,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Digital environment',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A remembered backyard reconstructed as a quiet meditation on growth.',
     description:
@@ -253,7 +291,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Digital environment',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A domestic environment shaped by hospitality, memory, and the quiet intimacy of family space.',
     description:
@@ -270,7 +308,7 @@ export const projects: Project[] = [
     year: '2026',
     medium: 'Digital environment',
     software: 'Blender, Photoshop',
-    dimensions: 'Three final images',
+    dimensions: 'Variable image series',
     summary:
       'A post-rain environment focused on wet surfaces, softened sound, and charged quiet.',
     description:

@@ -30,7 +30,7 @@ export default function Home() {
     const projectSlides: HeroSlide[] = [];
 
     project.gallery.forEach((item) => {
-      if (item.src.endsWith('.mp4')) return;
+      if (item.placeholder || item.src.endsWith('.mp4')) return;
 
       projectSlides.push({
         src: item.src,

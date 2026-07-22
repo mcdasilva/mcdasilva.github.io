@@ -83,22 +83,30 @@ public/artwork/concept-art/
 public/artwork/environment-design/
 ```
 
-Each project has exactly three final PNG image slots. Image `01` is also used as the project hero image.
+Each project has its own folder inside one of those category folders. Add as many `.png` images as the project needs. The site automatically reads every `.png` file in that folder, sorted by filename.
+
+The first sorted image is used as:
+
+- the project hero
+- the Work page project panel
+- one slide in the homepage carousel
+
+Every `.png` in the folder appears in the project page's `Final Work` section. If a project folder has no PNGs yet, the site shows one dark placeholder for that project instead of several fake missing image slots.
 
 ## Project Image Table
 
-| Category | Project | Folder | Required PNG filenames |
+| Category | Project | Project folder | Suggested PNG naming |
 |---|---|---|---|
-| Horror | The Watchers | `public/artwork/horror/` | `the-watchers-01.png`, `the-watchers-02.png`, `the-watchers-03.png` |
-| Horror | Masquerade | `public/artwork/horror/` | `masquerade-01.png`, `masquerade-02.png`, `masquerade-03.png` |
-| Horror | A Mother's Despair | `public/artwork/horror/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, `a-mothers-despair-03.png` |
-| Concept Art | It's Time to Go | `public/artwork/concept-art/` | `its-time-to-go-01.png`, `its-time-to-go-02.png`, `its-time-to-go-03.png` |
-| Concept Art | Vigil | `public/artwork/concept-art/` | `vigil-01.png`, `vigil-02.png`, `vigil-03.png` |
-| Concept Art | Not Yet | `public/artwork/concept-art/` | `not-yet-01.png`, `not-yet-02.png`, `not-yet-03.png` |
-| Concept Art | Unbound | `public/artwork/concept-art/` | `unbound-01.png`, `unbound-02.png`, `unbound-03.png` |
-| Environment Design | The Way I've Grown | `public/artwork/environment-design/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, `the-way-ive-grown-03.png` |
-| Environment Design | Na Casa de Titia (At Auntie's House) | `public/artwork/environment-design/` | `na-casa-de-titia-01.png`, `na-casa-de-titia-02.png`, `na-casa-de-titia-03.png` |
-| Environment Design | Depois da Chuva (After the Rain) | `public/artwork/environment-design/` | `depois-da-chuva-01.png`, `depois-da-chuva-02.png`, `depois-da-chuva-03.png` |
+| Horror | The Watchers | `public/artwork/horror/the-watchers/` | `the-watchers-01.png`, `the-watchers-02.png`, etc. |
+| Horror | Masquerade | `public/artwork/horror/masquerade/` | `masquerade-01.png`, `masquerade-02.png`, etc. |
+| Horror | A Mother's Despair | `public/artwork/horror/a-mothers-despair/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, etc. |
+| Concept Art | It's Time to Go | `public/artwork/concept-art/its-time-to-go/` | `its-time-to-go-01.png`, `its-time-to-go-02.png`, etc. |
+| Concept Art | Vigil | `public/artwork/concept-art/vigil/` | `vigil-01.png`, `vigil-02.png`, etc. |
+| Concept Art | Not Yet | `public/artwork/concept-art/not-yet/` | `not-yet-01.png`, `not-yet-02.png`, etc. |
+| Concept Art | Unbound | `public/artwork/concept-art/unbound/` | `unbound-01.png`, `unbound-02.png`, etc. |
+| Environment Design | The Way I've Grown | `public/artwork/environment-design/the-way-ive-grown/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, etc. |
+| Environment Design | Na Casa de Titia (At Auntie's House) | `public/artwork/environment-design/na-casa-de-titia/` | `na-casa-de-titia-01.png`, `na-casa-de-titia-02.png`, etc. |
+| Environment Design | Depois da Chuva (After the Rain) | `public/artwork/environment-design/depois-da-chuva/` | `depois-da-chuva-01.png`, `depois-da-chuva-02.png`, etc. |
 
 Recommended ratio for the current project images:
 
@@ -111,25 +119,20 @@ The site uses `object-fit: cover`, so images may crop differently on desktop and
 ## How To Add Images To A Project
 
 1. Export each artwork image as `.png`.
-2. Create three files for the project using the exact filenames in the table.
-3. Put the files in the correct category folder.
+2. Put the files inside that project's folder.
+3. Use filenames that sort in the order you want them displayed.
 4. Refresh the site preview.
 
 Example for `The Watchers`:
 
 ```text
-public/artwork/horror/the-watchers-01.png
-public/artwork/horror/the-watchers-02.png
-public/artwork/horror/the-watchers-03.png
+public/artwork/horror/the-watchers/the-watchers-01.png
+public/artwork/horror/the-watchers/the-watchers-02.png
+public/artwork/horror/the-watchers/the-watchers-03.png
+public/artwork/horror/the-watchers/the-watchers-04.png
 ```
 
-The first image appears as:
-
-- the project hero
-- the Work page project panel
-- one slide in the homepage carousel
-
-All three images appear in the project page's `Final Work` section and in the homepage carousel.
+If a project only has two final images, add only two PNG files. If it has twelve, add twelve. The website will match the folder contents.
 
 ## Missing Image Placeholders
 
@@ -139,7 +142,7 @@ If an image is missing, the site displays a dark placeholder with:
 - recommended aspect ratio
 - suggested media type
 
-To fix a placeholder, add the exact file shown in the placeholder to the correct folder.
+To fix a placeholder, add one or more `.png` files to that project's folder.
 
 GitHub Pages is case-sensitive, so this matters:
 
@@ -169,7 +172,7 @@ To change the first hero image, replace:
 public/artwork/home/home-hero.png
 ```
 
-To change the project slides, replace the three PNGs for each project in the category folders.
+To change the project slides, add, remove, or reorder PNG files inside the project folders.
 
 ## Change A Project Category
 
@@ -193,8 +196,8 @@ The Work page groups projects automatically by this value.
 
 1. Add a new object to the `projects` array in `data/site.ts`.
 2. Choose one of the three category values.
-3. Create three PNG paths with the `projectImages()` helper.
-4. Use image `01` as the hero.
+3. Create a new project folder under the matching category folder.
+4. Use the `projectImages()` helper with that folder path.
 5. Add the project slug to `selectedSlugs` if it should appear on the homepage.
 6. Add the project URL to `public/sitemap.xml`.
 
@@ -202,7 +205,7 @@ Pattern:
 
 ```ts
 const newProjectImages = projectImages(
-  'horror',
+  'horror/new-project-slug',
   'new-project-slug',
   'horror final image',
 );
@@ -211,9 +214,8 @@ const newProjectImages = projectImages(
 Then add files:
 
 ```text
-public/artwork/horror/new-project-slug-01.png
-public/artwork/horror/new-project-slug-02.png
-public/artwork/horror/new-project-slug-03.png
+public/artwork/horror/new-project-slug/new-project-slug-01.png
+public/artwork/horror/new-project-slug/new-project-slug-02.png
 ```
 
 ## Remove Or Reorder Projects
@@ -270,7 +272,7 @@ The CV page shows a placeholder label until that file exists.
 
 - Run `npm run dev` and open `http://localhost:3000`.
 - Make sure each image is `.png`.
-- Make sure the filename exactly matches `data/site.ts`.
-- Make sure the file is in the correct category folder.
+- Make sure the image is inside the correct project folder.
+- Use `01`, `02`, `03`, etc. in filenames if you want precise display order.
 - Run `npm run build` before deploying.
 - If GitHub Pages shows the README instead of the site, confirm Pages is set to `GitHub Actions`.
