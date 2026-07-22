@@ -64,3 +64,19 @@ The CV page download link will point to that file automatically.
 ## Deployment notes for GitHub Pages
 
 The project uses `output: 'export'`, unoptimized images, and trailing slashes in `next.config.mjs`, making it compatible with static hosting on GitHub Pages.
+
+This repository includes `.github/workflows/deploy-pages.yml`, which builds the Next.js app and deploys the generated `out/` folder to GitHub Pages.
+
+In GitHub, open:
+
+```text
+Settings -> Pages -> Build and deployment -> Source
+```
+
+Set the source to:
+
+```text
+GitHub Actions
+```
+
+Then push to `main`. If Pages is set to "Deploy from a branch" instead, GitHub may serve this `README.md` rather than the portfolio site.
