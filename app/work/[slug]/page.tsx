@@ -92,8 +92,16 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </section>
 
       <nav className="mx-auto mt-20 grid max-w-7xl gap-5 border-t border-line pt-8 text-xs uppercase tracking-[.18em] text-amber sm:grid-cols-2">
-        <Link href={`/work/${previous.slug}`}>Previous: {previous.title}</Link>
-        <Link href={`/work/${next.slug}`} className="sm:text-right">
+        <Link
+          href={`/work/${previous.slug}`}
+          className="transition-colors duration-300 ease-out hover:text-bone"
+        >
+          Previous: {previous.title}
+        </Link>
+        <Link
+          href={`/work/${next.slug}`}
+          className="transition-colors duration-300 ease-out hover:text-bone sm:text-right"
+        >
           Next: {next.title}
         </Link>
       </nav>

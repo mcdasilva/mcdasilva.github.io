@@ -74,7 +74,7 @@ export default function Home() {
             </p>
             <Link
               href="/work"
-              className="mt-8 inline-block text-xs uppercase tracking-[.18em] text-amber"
+              className="mt-8 inline-block text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:text-bone"
             >
               View Work
             </Link>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="mb-12 flex items-end justify-between gap-6">
           <h2 className="font-serif text-5xl">Selected Work</h2>
           <Link
-            className="text-xs uppercase tracking-[.18em] text-amber"
+            className="text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:text-bone"
             href="/work"
           >
             All Projects
