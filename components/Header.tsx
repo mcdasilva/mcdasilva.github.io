@@ -16,10 +16,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-line bg-ink/80 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 text-xs tracking-[.18em]">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 text-xs uppercase tracking-[.18em]">
         <Link
           href="/"
-          className="max-w-[68vw] text-[11px] leading-tight tracking-[.08em] text-bone sm:max-w-none sm:text-xs sm:tracking-[.14em]"
+          className="max-w-[68vw] text-[10px] leading-tight text-bone sm:max-w-none sm:text-xs"
         >
           Matheus Coutinho da Silva
         </Link>

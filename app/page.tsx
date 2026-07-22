@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import Artwork from '@/components/Artwork';
+import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
 import ProjectPanel from '@/components/ProjectPanel';
 import { contact, intro, projects, selectedSlugs } from '@/data/site';
 
@@ -7,24 +9,38 @@ export default function Home() {
   const selected = selectedSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter(Boolean);
+  const heroPath = '/artwork/home/home-hero.png';
+  const heroExists = fs.existsSync(
+    path.join(process.cwd(), 'public', heroPath.replace(/^\/+/, '')),
+  );
 
   return (
     <>
       <section className="relative isolate min-h-[92vh] overflow-hidden px-5 pt-24">
-        <Artwork
-          priority
-          showCaption={false}
-          sizes="100vw"
-          art={{
-            src: '/artwork/home/home-hero.png',
-            alt: 'home-hero.png',
-            ratio: '16:9',
-            type: 'full-screen cinematic artwork',
-          }}
-          className="absolute inset-0 -z-20 h-full w-full border-0"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/20" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-ink via-ink/65 to-transparent" />
+        {heroExists ? (
+          <Image
+            src={heroPath}
+            alt="home-hero.png"
+            fill
+            priority
+            sizes="100vw"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 -z-20 flex items-center justify-center bg-coal p-6 text-center">
+            <div>
+              <p className="font-serif text-2xl text-bone">home-hero.png</p>
+              <p className="mt-3 text-xs uppercase tracking-[.18em] text-amber">
+                Recommended 16:9
+              </p>
+              <p className="mt-2 text-sm text-muted">
+                Suggested media type: full-screen cinematic artwork
+              </p>
+            </div>
+          </div>
+        )}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/75 via-ink/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-ink/65 via-transparent to-transparent" />
         <div className="mx-auto flex min-h-[calc(92vh-6rem)] max-w-7xl items-end pb-20 pt-24 md:pb-28">
           <div className="max-w-2xl">
             <h1 className="font-serif text-5xl leading-none sm:text-6xl md:text-8xl">
