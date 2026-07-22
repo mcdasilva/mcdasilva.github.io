@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Artwork from './Artwork';
-import ToolLogos from './ToolLogos';
 import type { Project } from '@/data/site';
 
 export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
@@ -11,6 +10,7 @@ export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
     >
       <Artwork
         art={p.hero}
+        tools={p.tools}
         className={i % 3 === 0 ? 'md:aspect-[4/5]' : 'md:aspect-[5/4]'}
       />
       <div className="mt-3 flex gap-4">
@@ -21,7 +21,6 @@ export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
           <h3 className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
             {p.title}
           </h3>
-          <ToolLogos tools={p.tools} className="mt-3" />
         </div>
       </div>
       <p className="mt-2 max-w-sm text-sm text-muted">{p.summary}</p>

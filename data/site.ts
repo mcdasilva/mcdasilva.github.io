@@ -128,7 +128,7 @@ export const toolLogos: Record<ToolKey, ToolLogo> = {
   blender: {
     id: 'blender',
     name: 'Blender',
-    logo: '/logos/blender/logo.svg',
+    logo: '/logos/blender/logo.png',
     fallback: 'B',
   },
 };

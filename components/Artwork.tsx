@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
-import type { Artwork as ArtworkItem } from '@/data/site';
+import ToolLogos from './ToolLogos';
+import type { Artwork as ArtworkItem, ToolKey } from '@/data/site';
 
 type ArtworkProps = {
   art: ArtworkItem;
@@ -9,6 +10,7 @@ type ArtworkProps = {
   priority?: boolean;
   showCaption?: boolean;
   sizes?: string;
+  tools?: ToolKey[];
 };
 
 const aspectClass = (ratio: string) => {
@@ -27,6 +29,7 @@ export default function Artwork({
   priority = false,
   showCaption = false,
   sizes = '(max-width: 768px) 100vw, 50vw',
+  tools = [],
 }: ArtworkProps) {
   const exists = fs.existsSync(publicPath(art.src));
   const isVideo = art.src.endsWith('.mp4');
@@ -76,6 +79,13 @@ export default function Artwork({
         <figcaption className="absolute bottom-0 left-0 bg-ink/75 px-3 py-2 text-xs text-muted">
           {art.caption}
         </figcaption>
+      )}
+      {exists && tools.length > 0 && (
+        <ToolLogos
+          tools={tools}
+          className="absolute bottom-0 left-0 bg-ink/80 px-3 py-2"
+          iconClassName="h-7 w-7 border-0 bg-transparent"
+        />
       )}
     </figure>
   );

@@ -6,12 +6,17 @@ import { toolLogos, type ToolKey } from '@/data/site';
 type ToolLogosProps = {
   tools: ToolKey[];
   className?: string;
+  iconClassName?: string;
 };
 
 const publicPath = (src: string) =>
   path.join(process.cwd(), 'public', src.replace(/^\/+/, ''));
 
-export default function ToolLogos({ tools, className = '' }: ToolLogosProps) {
+export default function ToolLogos({
+  tools,
+  className = '',
+  iconClassName = '',
+}: ToolLogosProps) {
   const resolvedTools = tools.map((tool) => toolLogos[tool]).filter(Boolean);
 
   if (resolvedTools.length === 0) return null;
@@ -30,7 +35,7 @@ export default function ToolLogos({ tools, className = '' }: ToolLogosProps) {
           <span
             key={tool.id}
             title={tool.name}
-            className="inline-flex h-8 w-8 items-center justify-center border border-line bg-coal/70 text-[10px] font-semibold uppercase tracking-[.12em] text-bone"
+            className={`inline-flex h-8 w-8 items-center justify-center border border-line bg-coal/70 text-[10px] font-semibold uppercase tracking-[.12em] text-bone ${iconClassName}`}
           >
             {exists ? (
               <Image src={tool.logo} alt={tool.name} width={20} height={20} />

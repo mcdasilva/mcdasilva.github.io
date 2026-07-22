@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Artwork from '@/components/Artwork';
-import ToolLogos from '@/components/ToolLogos';
 import { getProject, getProjects } from '@/data/site';
 
 export function generateStaticParams() {
@@ -56,13 +55,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dd>{project.dimensions}</dd>
             </div>
           </dl>
-          <ToolLogos tools={project.tools} className="mt-8" />
           <p className="mt-8 leading-relaxed text-bone">
             {project.description}
           </p>
         </div>
         <Artwork
           art={project.hero}
+          tools={project.tools}
           priority
           sizes="(max-width: 768px) 100vw, 65vw"
           className="min-h-[45vh]"
@@ -73,7 +72,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <h2 className="font-serif text-4xl">Final Work</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {project.gallery.map((item) => (
-            <Artwork key={item.src} art={item} />
+            <Artwork key={item.src} art={item} tools={project.tools} />
           ))}
         </div>
       </section>
@@ -92,13 +91,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <nav className="mx-auto mt-20 grid max-w-7xl gap-5 border-t border-line pt-8 text-xs uppercase tracking-[.18em] text-amber sm:grid-cols-2">
         <Link
           href={`/work/${previous.slug}`}
-          className="transition-colors duration-300 ease-out hover:text-bone"
+          className="inline-flex w-fit justify-self-start transition-colors duration-300 ease-out hover:text-bone"
         >
           Previous: {previous.title}
         </Link>
         <Link
           href={`/work/${next.slug}`}
-          className="transition-colors duration-300 ease-out hover:text-bone sm:text-right"
+          className="inline-flex w-fit justify-self-start transition-colors duration-300 ease-out hover:text-bone sm:justify-self-end sm:text-right"
         >
           Next: {next.title}
         </Link>

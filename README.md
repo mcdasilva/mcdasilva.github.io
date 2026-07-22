@@ -138,7 +138,7 @@ If a project only has two final images, add only two PNG files. If it has twelve
 
 ## Tool And Logo Folders
 
-Project pages and Work panels can show small tool logos instead of a separate text-only Software field.
+Project pages and Work panels can show small tool logos as lower-left artwork overlays instead of a separate text-only Software field.
 
 Logos live in:
 
@@ -149,7 +149,7 @@ public/logos/
 The current Blender logo path is:
 
 ```text
-public/logos/blender/logo.svg
+public/logos/blender/logo.png
 ```
 
 The project record controls which logos appear:
@@ -167,7 +167,7 @@ tools: [],
 To add another tool later:
 
 1. Create a folder such as `public/logos/photoshop/`.
-2. Add `logo.svg` or another small image asset.
+2. Add `logo.png` or another small image asset.
 3. Add the tool to `ToolKey` and `toolLogos` in `data/site.ts`.
 4. Add the tool id to the project record's `tools` array.
 
