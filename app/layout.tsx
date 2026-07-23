@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import PageShell from '@/components/PageShell';
+import SiteFooter from '@/components/SiteFooter';
 
 const serif = Cormorant_Garamond({
   subsets: ['latin'],
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
       'Artist + Creative Technologist portfolio for MFA Visualization applications.',
     type: 'website',
     url: 'https://mcdasilva.github.io',
-    images: ['/artwork/home/home-hero.jpg'],
+    images: ['/artwork/horror/the-watchers/the-watchers-01.png'],
   },
 };
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="grain font-sans">
         <Header />
         <PageShell>{children}</PageShell>
+        <SiteFooter />
       </body>
     </html>
   );

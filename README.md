@@ -1,82 +1,312 @@
 # Matheus Coutinho da Silva Portfolio
 
-A dark, cinematic, editorial portfolio built for an MFA Visualization application with Next.js, TypeScript, Tailwind CSS, and Framer Motion. The site is static-export ready for GitHub Pages or Vercel and uses no database or CMS.
+A dark, cinematic, editorial portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. The site uses static project data only. There is no database or CMS.
 
-## Run locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build the static site:
+Preview locally:
+
+```text
+http://localhost:3000
+```
+
+## Build
 
 ```bash
 npm run build
 ```
 
-The static export is written to `out/` by Next.js.
+The static export is generated in:
 
-## Add artwork
+```text
+out/
+```
 
-Place final artwork and process assets in the labeled folders under `public/artwork/`:
+## Deploy To GitHub Pages
 
-- `public/artwork/home/`
-- `public/artwork/landscapes/`
-- `public/artwork/not-yet/`
-- `public/artwork/digital-atelier/`
-- `public/artwork/watchers/`
-- `public/artwork/mothers-despair/`
-- `public/artwork/designed-space/`
-- `public/artwork/material-studies/`
-- `public/artwork/process/`
-- `public/artwork/portrait/`
+GitHub Pages deployment is handled by:
 
-Use the filenames already referenced in `data/site.ts`, such as `home-hero.jpg`, `landscapes-hero.jpg`, `the-way-ive-grown-final-01.jpg`, `not-yet-video.mp4`, and `portrait.jpg`. If a file is missing, the website displays a dark labeled placeholder with the filename, recommended aspect ratio, and suggested image type.
+```text
+.github/workflows/deploy-pages.yml
+```
 
-## Replace project text
+In GitHub, set:
 
-All project copy, metadata, image paths, contact details, and selected homepage projects live in `data/site.ts`. Edit that file to update titles, years, mediums, software, dimensions, descriptions, process text, reflections, credits, or artwork paths.
+```text
+Settings -> Pages -> Build and deployment -> Source -> GitHub Actions
+```
 
-## Add projects
+Then push to `main`. The workflow builds the static site and deploys the generated `out/` folder.
 
-1. Add a new object to the `projects` array in `data/site.ts`.
-2. Include a unique `slug`, metadata, `hero`, `gallery`, and `process` assets.
-3. Add the slug to `selectedSlugs` if the project should appear on the homepage.
-4. Add matching artwork files to the appropriate `public/artwork/` folder.
+## Main Editing File
 
-Project pages are generated automatically at `/work/[slug]/`.
+All editable project records are stored in:
 
-## Update contact information
+```text
+data/site.ts
+```
 
-Edit the `contact` object in `data/site.ts`. The homepage footer, About page, and CV page use this shared contact data.
+Edit this file to change:
 
-## Add the CV PDF
+- project category
+- project title
+- date
+- medium
+- tool logos
+- dimensions or duration
+- short description
+- image filenames
+- credits
+- collaborators
+- homepage selected projects
+- contact information
+- About page introduction
 
-Place the file at:
+## Artwork Categories
+
+Projects are currently divided into three categories:
+
+1. Horror
+2. Concept Art
+3. Environment Design
+
+The category folders are:
+
+```text
+public/artwork/horror/
+public/artwork/concept-art/
+public/artwork/environment-design/
+```
+
+Each project has its own folder inside one of those category folders. Add as many `.png` images as the project needs. The site automatically reads every `.png` file in that folder, sorted by filename.
+
+The first sorted image is used as:
+
+- the project hero
+- the Work page project panel
+- one slide in the homepage carousel
+
+Every `.png` in the folder appears in the project page's `Final Work` section. If a project folder has no PNGs yet, the site shows one dark placeholder for that project instead of several fake missing image slots.
+
+Filenames are not displayed on real artwork. They are only used internally for sorting and accessibility.
+
+## Project Image Table
+
+| Category | Project | Project folder | Suggested PNG naming |
+|---|---|---|---|
+| Horror | The Watchers | `public/artwork/horror/the-watchers/` | `the-watchers-01.png`, `the-watchers-02.png`, etc. |
+| Horror | Masquerade | `public/artwork/horror/masquerade/` | `masquerade-01.png`, `masquerade-02.png`, etc. |
+| Horror | A Mother's Despair | `public/artwork/horror/a-mothers-despair/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, etc. |
+| Concept Art | It's Time to Go | `public/artwork/concept-art/its-time-to-go/` | `its-time-to-go-01.png`, `its-time-to-go-02.png`, etc. |
+| Concept Art | Vigil | `public/artwork/concept-art/vigil/` | `vigil-01.png`, `vigil-02.png`, etc. |
+| Concept Art | Not Yet | `public/artwork/concept-art/not-yet/` | `not-yet-01.png`, `not-yet-02.png`, etc. |
+| Concept Art | Unbound | `public/artwork/concept-art/unbound/` | `unbound-01.png`, `unbound-02.png`, etc. |
+| Environment Design | The Way I've Grown | `public/artwork/environment-design/the-way-ive-grown/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, etc. |
+| Environment Design | Na Casa de Titia (At Auntie's House) | `public/artwork/environment-design/na-casa-de-titia/` | `na-casa-de-titia-01.png`, `na-casa-de-titia-02.png`, etc. |
+| Environment Design | Depois da Chuva (After the Rain) | `public/artwork/environment-design/depois-da-chuva/` | `depois-da-chuva-01.png`, `depois-da-chuva-02.png`, etc. |
+
+Recommended ratio for the current project images:
+
+```text
+16:9
+```
+
+The site uses `object-fit: cover`, so images may crop differently on desktop and mobile.
+
+## How To Add Images To A Project
+
+1. Export each artwork image as `.png`.
+2. Put the files inside that project's folder.
+3. Use filenames that sort in the order you want them displayed.
+4. Refresh the site preview.
+
+Example for `The Watchers`:
+
+```text
+public/artwork/horror/the-watchers/the-watchers-01.png
+public/artwork/horror/the-watchers/the-watchers-02.png
+public/artwork/horror/the-watchers/the-watchers-03.png
+public/artwork/horror/the-watchers/the-watchers-04.png
+```
+
+If a project only has two final images, add only two PNG files. If it has twelve, add twelve. The website will match the folder contents.
+
+## Tool And Logo Folders
+
+Project pages and Work panels can show small tool logos as lower-left artwork overlays instead of a separate text-only Software field.
+
+Logos live in:
+
+```text
+public/logos/
+```
+
+The current Blender logo path is:
+
+```text
+public/logos/blender/logo.png
+```
+
+The project record controls which logos appear:
+
+```ts
+tools: ['blender'],
+```
+
+For traditional work or projects where no software logo should appear, use:
+
+```ts
+tools: [],
+```
+
+To add another tool later:
+
+1. Create a folder such as `public/logos/photoshop/`.
+2. Add `logo.png` or another small image asset.
+3. Add the tool to `ToolKey` and `toolLogos` in `data/site.ts`.
+4. Add the tool id to the project record's `tools` array.
+
+## Missing Image Placeholders
+
+If an image is missing, the site displays a dark placeholder with:
+
+- missing filename
+- recommended aspect ratio
+- suggested media type
+
+To fix a placeholder, add one or more `.png` files to that project's folder.
+
+GitHub Pages is case-sensitive, so this matters:
+
+```text
+the-watchers-01.png
+```
+
+is not the same as:
+
+```text
+The-Watchers-01.png
+```
+
+## Homepage Hero Carousel
+
+The homepage hero carousel rotates through real project PNGs from the project folders. There is no separate homepage hero image, so artwork will not be duplicated from a `home` folder.
+
+To change the homepage carousel, add, remove, or reorder PNG files inside the project folders. Empty project placeholders are skipped by the carousel.
+
+## Change A Project Category
+
+Open `data/site.ts` and edit the `category` field:
+
+```ts
+category: 'Horror',
+```
+
+Allowed values:
+
+```ts
+'Horror'
+'Concept Art'
+'Environment Design'
+```
+
+The Work page groups projects automatically by this value.
+
+## Add A New Project
+
+1. Add a new object to the `projectRecords` array in `data/site.ts`.
+2. Choose one of the three category values.
+3. Create a new project folder under the matching category folder.
+4. Set `artworkFolder` to that folder path.
+5. Add the project URL to `public/sitemap.xml`.
+
+Pattern:
+
+```ts
+{
+  slug: 'new-project-slug',
+  title: 'New Project',
+  category: 'Horror',
+  year: '2026',
+  medium: 'Digital image sequence',
+  tools: ['blender'],
+  dimensions: 'Variable image series',
+  summary: 'Short panel description.',
+  description: 'Short project-page description.',
+  artworkFolder: 'horror/new-project-slug',
+  fallbackBasename: 'new-project-slug',
+  artworkType: 'horror final image',
+  credits: 'All work by Matheus Coutinho da Silva.',
+  collaborators: 'No additional collaborators listed.',
+}
+```
+
+Then add files:
+
+```text
+public/artwork/horror/new-project-slug/new-project-slug-01.png
+public/artwork/horror/new-project-slug/new-project-slug-02.png
+```
+
+## Remove Or Reorder Projects
+
+To remove a project:
+
+1. Remove its object from `projectRecords`.
+2. Remove its URL from `public/sitemap.xml`.
+
+To reorder projects, reorder the objects in the `projectRecords` array. Previous/next navigation follows this order.
+
+## Update About
+
+The About introduction is:
+
+```text
+data/site.ts -> aboutIntro
+```
+
+The About page layout is:
+
+```text
+app/about/page.tsx
+```
+
+The portrait image path is:
+
+```text
+public/artwork/portrait/portrait.png
+```
+
+## Update Contact Information
+
+Edit:
+
+```text
+data/site.ts -> contact
+```
+
+The homepage footer and About page use this shared contact data. Instagram and other social handles are not displayed by default.
+
+## Replace The CV PDF
+
+Add the PDF here:
 
 ```text
 public/Matheus-Coutinho-da-Silva-CV.pdf
 ```
 
-The CV page download link will point to that file automatically.
+The About page CV section shows a download link only when that file exists.
 
-## Deployment notes for GitHub Pages
+## Troubleshooting
 
-The project uses `output: 'export'`, unoptimized images, and trailing slashes in `next.config.mjs`, making it compatible with static hosting on GitHub Pages.
-
-This repository includes `.github/workflows/deploy-pages.yml`, which builds the Next.js app and deploys the generated `out/` folder to GitHub Pages.
-
-In GitHub, open:
-
-```text
-Settings -> Pages -> Build and deployment -> Source
-```
-
-Set the source to:
-
-```text
-GitHub Actions
-```
-
-Then push to `main`. If Pages is set to "Deploy from a branch" instead, GitHub may serve this `README.md` rather than the portfolio site.
+- Run `npm run dev` and open `http://localhost:3000`.
+- Make sure each image is `.png`.
+- Make sure the image is inside the correct project folder.
+- Use `01`, `02`, `03`, etc. in filenames if you want precise display order.
+- Run `npm run build` before deploying.
+- If GitHub Pages shows the README instead of the site, confirm Pages is set to `GitHub Actions`.
