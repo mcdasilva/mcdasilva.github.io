@@ -223,8 +223,7 @@ The Work page groups projects automatically by this value.
 2. Choose one of the three category values.
 3. Create a new project folder under the matching category folder.
 4. Set `artworkFolder` to that folder path.
-5. Add the project slug to `selectedSlugs` if it should appear on the homepage.
-6. Add the project URL to `public/sitemap.xml`.
+5. Add the project URL to `public/sitemap.xml`.
 
 Pattern:
 
@@ -259,8 +258,7 @@ public/artwork/horror/new-project-slug/new-project-slug-02.png
 To remove a project:
 
 1. Remove its object from `projectRecords`.
-2. Remove its slug from `selectedSlugs`.
-3. Remove its URL from `public/sitemap.xml`.
+2. Remove its URL from `public/sitemap.xml`.
 
 To reorder projects, reorder the objects in the `projectRecords` array. Previous/next navigation follows this order.
 
@@ -292,7 +290,7 @@ Edit:
 data/site.ts -> contact
 ```
 
-The homepage footer, About page, and CV page use this shared contact data. Instagram and other social handles are not displayed by default.
+The homepage footer and About page use this shared contact data. Instagram and other social handles are not displayed by default.
 
 ## Replace The CV PDF
 
@@ -302,7 +300,7 @@ Add the PDF here:
 public/Matheus-Coutinho-da-Silva-CV.pdf
 ```
 
-The CV page shows a placeholder label until that file exists.
+The About page CV section shows a download link only when that file exists.
 
 ## Troubleshooting
 

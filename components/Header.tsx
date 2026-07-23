@@ -7,7 +7,6 @@ import { useState } from 'react';
 const nav = [
   ['/work', 'Work'],
   ['/about', 'About'],
-  ['/cv', 'CV'],
 ];
 
 export default function Header() {

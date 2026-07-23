@@ -2,7 +2,17 @@ import Link from 'next/link';
 import Artwork from './Artwork';
 import type { Project } from '@/data/site';
 
-export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
+type ProjectPanelProps = {
+  p: Project;
+  i: number;
+  showTools?: boolean;
+};
+
+export default function ProjectPanel({
+  p,
+  i,
+  showTools = false,
+}: ProjectPanelProps) {
   return (
     <Link
       href={`/work/${p.slug}`}
@@ -10,7 +20,7 @@ export default function ProjectPanel({ p, i }: { p: Project; i: number }) {
     >
       <Artwork
         art={p.hero}
-        tools={p.tools}
+        tools={showTools ? p.tools : undefined}
         className={i % 3 === 0 ? 'md:aspect-[4/5]' : 'md:aspect-[5/4]'}
       />
       <div className="mt-3 flex gap-4">

@@ -54,7 +54,12 @@ export default function Work() {
                 </div>
                 <div className="grid gap-10 sm:grid-cols-2">
                   {categoryProjects.map((project, index) => (
-                    <ProjectPanel key={project.slug} p={project} i={index} />
+                    <ProjectPanel
+                      key={project.slug}
+                      p={project}
+                      i={index}
+                      showTools
+                    />
                   ))}
                 </div>
               </section>

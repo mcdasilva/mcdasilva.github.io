@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import HeroCarousel, { type HeroSlide } from '@/components/HeroCarousel';
-import ProjectPanel from '@/components/ProjectPanel';
-import { contact, getProjects, intro, selectedSlugs } from '@/data/site';
+import Artwork from '@/components/Artwork';
+import { contact, getProjects, intro, type Project } from '@/data/site';
 
 const uniqueSlides = (slides: HeroSlide[]) => {
   const seen = new Set<string>();
@@ -13,11 +13,53 @@ const uniqueSlides = (slides: HeroSlide[]) => {
   });
 };
 
+function FeaturedWorkLink({
+  project,
+  index,
+  className,
+  artClassName,
+  sizes,
+}: {
+  project: Project;
+  index: number;
+  className?: string;
+  artClassName?: string;
+  sizes: string;
+}) {
+  return (
+    <Link
+      href={`/work/${project.slug}`}
+      className={`group block transition-colors duration-300 ease-out ${className || ''}`}
+    >
+      <Artwork
+        art={project.hero}
+        tools={project.tools}
+        className={artClassName}
+        sizes={sizes}
+      />
+      <div className="mt-3 flex gap-4">
+        <span className="text-xs text-amber">
+          {String(index).padStart(2, '0')}
+        </span>
+        <div>
+          <h3 className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
+            {project.title}
+          </h3>
+        </div>
+      </div>
+      <p className="mt-2 max-w-md text-sm text-muted">{project.summary}</p>
+    </Link>
+  );
+}
+
 export default function Home() {
   const projects = getProjects();
-  const selected = selectedSlugs
-    .map((slug) => projects.find((project) => project.slug === slug))
-    .filter(Boolean);
+  const depoisDaChuva = projects.find(
+    (project) => project.slug === 'depois-da-chuva',
+  );
+  const mothersDespair = projects.find(
+    (project) => project.slug === 'a-mothers-despair',
+  );
   const gallerySlides = projects.flatMap((project) => {
     const projectSlides: HeroSlide[] = [];
 
@@ -64,7 +106,9 @@ export default function Home() {
         <div className="mx-auto flex min-h-[calc(92vh-6rem)] max-w-7xl items-end pb-20 pt-24 md:pb-28">
           <div className="max-w-2xl">
             <h1 className="font-serif text-5xl leading-none sm:text-6xl md:text-8xl">
-              Matheus Coutinho da Silva
+              <span className="block">Matheus</span>
+              <span className="block">Coutinho</span>
+              <span className="block whitespace-nowrap">da Silva</span>
             </h1>
             <p className="mt-5 text-sm uppercase tracking-[.18em] text-amber">
               Artist + Creative Technologist
@@ -83,21 +127,46 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-28">
-        <div className="mb-12 flex items-end justify-between gap-6">
-          <h2 className="font-serif text-5xl">Selected Work</h2>
+        <div className="grid gap-12 lg:grid-cols-[1.25fr_.75fr] lg:items-end">
+          <div>
+            <p className="text-xs uppercase tracking-[.2em] text-amber">
+              Explore the Work
+            </p>
+            <h2 className="mt-4 font-serif text-5xl">A Focused Glimpse</h2>
+            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
+              The portfolio moves between atmospheric environment design,
+              psychological horror, and emotionally charged digital images.
+            </p>
+          </div>
           <Link
-            className="text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:text-bone"
+            className="inline-flex w-fit items-center border border-amber px-5 py-4 text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:border-bone hover:text-bone lg:justify-self-end"
             href="/work"
           >
-            All Projects
+            View All Projects{' '}
+            <span aria-hidden="true" className="ml-2">
+              &rarr;
+            </span>
           </Link>
         </div>
-        <div className="grid gap-10 md:grid-cols-3">
-          {selected.slice(0, 6).map((project, index) =>
-            project ? (
-              <ProjectPanel key={project.slug} p={project} i={index} />
-            ) : null,
-          )}
+        <div className="mx-auto mt-12 max-w-6xl">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:items-start">
+            {depoisDaChuva && (
+              <FeaturedWorkLink
+                project={depoisDaChuva}
+                index={1}
+                className="min-w-0"
+                sizes="(max-width: 1024px) 100vw, 56vw"
+              />
+            )}
+            {mothersDespair && (
+              <FeaturedWorkLink
+                project={mothersDespair}
+                index={2}
+                className="min-w-0"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            )}
+          </div>
         </div>
       </section>
 

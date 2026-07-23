@@ -29,6 +29,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <article id={`${project.slug}-top`} className="px-5 py-32">
+      <Link
+        href={`/work/${previous.slug}`}
+        aria-label={`Previous project: ${previous.title}`}
+        title={`Previous: ${previous.title}`}
+        className="fixed left-2 top-1/2 z-40 hidden -translate-y-1/2 px-2 py-4 text-5xl leading-none text-muted transition-colors duration-300 ease-out hover:text-amber md:flex"
+      >
+        &#8249;
+      </Link>
+      <Link
+        href={`/work/${next.slug}`}
+        aria-label={`Next project: ${next.title}`}
+        title={`Next: ${next.title}`}
+        className="fixed right-2 top-1/2 z-40 hidden -translate-y-1/2 px-2 py-4 text-5xl leading-none text-muted transition-colors duration-300 ease-out hover:text-amber md:flex"
+      >
+        &#8250;
+      </Link>
       <section className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.8fr_1.6fr]">
         <div>
           <p className="text-xs uppercase tracking-[.2em] text-amber">
@@ -55,13 +71,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dd>{project.dimensions}</dd>
             </div>
           </dl>
-          <p className="mt-8 leading-relaxed text-bone">
-            {project.description}
+          <p 
+            className="mt-8 leading-relaxed text-bone" dangerouslySetInnerHTML={{ __html: project.description }}>
           </p>
         </div>
         <Artwork
           art={project.hero}
-          tools={project.tools}
           priority
           sizes="(max-width: 768px) 100vw, 65vw"
           className="min-h-[45vh]"
@@ -72,7 +87,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <h2 className="font-serif text-4xl">Final Work</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {project.gallery.map((item) => (
-            <Artwork key={item.src} art={item} tools={project.tools} />
+            <Artwork key={item.src} art={item} />
           ))}
         </div>
       </section>
@@ -80,7 +95,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <section className="mx-auto mt-24 grid max-w-7xl gap-12 border-t border-line pt-16 md:grid-cols-2">
         <div>
           <h2 className="font-serif text-4xl">Credits</h2>
-          <p className="mt-5 text-muted">{project.credits}</p>
+          <p className="mt-5 text-muted" style={{ whiteSpace: 'pre-wrap' }}>{project.credits}</p>
         </div>
         <div>
           <h2 className="font-serif text-4xl">Collaborators</h2>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import PageShell from '@/components/PageShell';
+import SiteFooter from '@/components/SiteFooter';
 
 const serif = Cormorant_Garamond({
   subsets: ['latin'],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="grain font-sans">
         <Header />
         <PageShell>{children}</PageShell>
+        <SiteFooter />
       </body>
     </html>
   );

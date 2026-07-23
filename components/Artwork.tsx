@@ -83,7 +83,7 @@ export default function Artwork({
       {exists && tools.length > 0 && (
         <ToolLogos
           tools={tools}
-          className="absolute bottom-4 left-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+          className="absolute bottom-0.5 left-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
           iconClassName="h-14 w-14"
           imageSize={48}
         />
