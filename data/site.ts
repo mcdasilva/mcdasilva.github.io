@@ -139,10 +139,10 @@ export const contact = {
 };
 
 export const intro =
-  'I create digital environments and objects that translate memory, emotion, and place into spatial experiences.';
+  'I work across traditional and digital media, combining art and technology to create environments that translate feelings into experiences.';
 
 export const aboutIntro =
-  'Matheus Coutinho da Silva is a Brazilian artist and creative technologist whose work combines art and technology. His practice explores memory, place, migration, domestic space, and emotional atmosphere.';
+  'Matheus Coutinho da Silva is a Brazilian artist and creative technologist working across traditional and digital media. With a background in computer science, his practice brings together 3D visualization, programming, drawing, and painting. His interdisciplinary approach grew from an interest in using both artistic and computational tools as forms of creative expression.';
 
 const projectRecords: ProjectRecord[] = [
   {

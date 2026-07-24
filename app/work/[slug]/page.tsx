@@ -28,7 +28,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const next = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <article id={`${project.slug}-top`} className="px-5 py-32">
+    <article id={`${project.slug}-top`} className="overflow-x-hidden px-5 py-32">
       <Link
         href={`/work/${previous.slug}`}
         aria-label={`Previous project: ${previous.title}`}
@@ -46,7 +46,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         &#8250;
       </Link>
       <section className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.8fr_1.6fr]">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[.2em] text-amber">
             {project.year}
           </p>
@@ -78,8 +78,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <Artwork
           art={project.hero}
           priority
-          sizes="(max-width: 768px) 100vw, 65vw"
-          className="min-h-[45vh]"
+          sizes="(max-width: 768px) calc(100vw - 2.5rem), 65vw"
+          className="w-full max-w-full md:min-h-[45vh]"
         />
       </section>
 

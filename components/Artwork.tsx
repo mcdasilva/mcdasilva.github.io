@@ -39,7 +39,7 @@ export default function Artwork({
 
   return (
     <figure
-      className={`relative overflow-hidden border border-line bg-coal ${aspectClass(
+      className={`relative w-full min-w-0 max-w-full overflow-hidden border border-line bg-coal ${aspectClass(
         art.ratio,
       )} ${className}`}
     >
@@ -49,7 +49,7 @@ export default function Artwork({
           alt={art.alt}
           fill
           sizes={sizes}
-          className="object-cover"
+          className="h-full w-full object-cover"
           style={mediaStyle}
           priority={priority}
         />
