@@ -9,11 +9,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  overflow-x: hidden;
 }
 
 body {
   background: #0e0e0e;
   color: #ede8e0;
+  overflow-x: hidden;
 }
 
 ::selection {

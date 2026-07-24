@@ -16,6 +16,10 @@ export type HeroSlide = {
 };
 
 const slideDuration = 4800;
+const fadeTransition = {
+  opacity: { duration: 1.8, ease: [0.45, 0, 0.2, 1] },
+  scale: { duration: 4.8, ease: [0.22, 1, 0.36, 1] },
+};
 
 export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
   const [index, setIndex] = useState(0);
@@ -32,18 +36,28 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
     return () => window.clearInterval(timer);
   }, [reduceMotion, slides.length]);
 
+  useEffect(() => {
+    if (slides.length < 2) return;
+
+    const nextSlide = slides[(index + 1) % slides.length];
+    if (!nextSlide?.exists || nextSlide.src.endsWith('.mp4')) return;
+
+    const image = new window.Image();
+    image.src = nextSlide.src;
+  }, [index, slides]);
+
   if (!active) return null;
 
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden bg-coal">
-      <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence initial={false}>
         <motion.div
           key={active.src}
           className="absolute inset-0"
-          initial={reduceMotion ? false : { opacity: 0, scale: 1.035 }}
+          initial={reduceMotion ? false : { opacity: 0, scale: 1.025 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={reduceMotion ? undefined : { opacity: 0, scale: 1.015 }}
-          transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+          transition={fadeTransition}
         >
           {active.exists ? (
             <Image
@@ -52,7 +66,7 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
               fill
               priority={index === 0}
               sizes="100vw"
-              className="object-cover"
+              className="h-full w-full object-cover"
               style={
                 active.position ? { objectPosition: active.position } : undefined
               }
