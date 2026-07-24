@@ -193,6 +193,7 @@ const projectRecords: ProjectRecord[] = [
             'Concept, composition, modeling, custom fog material, sculpting, shading, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
             'Third-party assets:\n'+
             '       Porcelain texture: “Porcelain Cracks” by Jonathan Ramos, sourced through BlenderKit\n' +
+            '       Pedestal model: sourced through BlenderKit\n' +
             '       Pedestal material: “Worn Matte Concrete Ground Texture” by Poliigon',
     collaborators: 'No additional collaborators listed.',
   },
