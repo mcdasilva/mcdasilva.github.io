@@ -154,7 +154,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'Figural observers emerging from darkness, attention, and unease.',
+      'Figural observers reflect xenophobic scrutiny and the discomfort of being watched and judged.',
     description:
       'The Watchers grew from my experience with xenophobia and the persistent \
       feeling of being watched as an outsider. Drawing from psychological horror, \
@@ -179,7 +179,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A staged horror sequence about concealment, performance, and the instability of identity.',
+      'Masquerade talks about concealment, performance, and the instability of identity.',
     description:
       'Masquerade explores the distance between appearance and identity.\
        Emerging from darkness, its figures remain obscured by shadow, blur, \
@@ -204,7 +204,7 @@ const projectRecords: ProjectRecord[] = [
     medium: 'Blender',
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
-    summary: 'A study of grief, exhaustion, and inherited emotion.',
+    summary: 'A mother’s grief swells moments before her scream.',
     description:
       'Built around the moment when horror overwhelms language, \
       this piece explores the instant when grief becomes too immense to contain. \
@@ -228,7 +228,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A cinematic departure scene centered on urgency, threshold, and emotional release.',
+      'An empty chair holds loneliness, belonging, memory, and quiet acceptance.',
     description:
       "This piece explores the intersection between loneliness and peace. \
       The empty chair symbolizes both absence and belonging, \
@@ -256,7 +256,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A watchful scene built around waiting, silence, and restrained tension.',
+      'Candles holding fading memories, honoring loss and what still remains.',
     description:
       'Vigil explores remembrance as something quiet, fragile, and ongoing. \
       Candles emerge from the darkness like memories: some are distant and fading, \
@@ -282,7 +282,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A meditation on anticipation and the distance between pressure and release.',
+      'Anxiety grows as imagined danger becomes stronger than the threat itself.',
     description:
       'This piece explores anxiety through a balloon and needle caught in a cycle of near-collision. \
       The impact never comes, yet the balloon recoils as if danger were inevitable. \
@@ -307,7 +307,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A release from constraint shown through motion, material rupture, and atmosphere.',
+      'Freedom is possible, but doubt makes us hesitate to leave.',
     description:
       'This piece explores the bittersweet moment when freedom becomes possible, \
       yet doubt makes us hesitate. The lock is already open and the chains are \
@@ -332,7 +332,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A remembered backyard reconstructed as a quiet meditation on growth.',
+      'Leaving Brazil revealed how ordinary childhood moments shaped my sense of belonging.',
     description:
       'You don’t realize you’re making memories while you’re living them. \
       Growing up in Brazil, these were ordinary afternoons: laundry drying outside, \
@@ -361,7 +361,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A domestic environment shaped by hospitality, memory, and the quiet intimacy of family space.',
+      'Memories of home hold warmth, welcome, and long afternoons.',
     description:
       "<em>Na Casa de Titia</em> reflects the warmth of Brazilian domestic life through \
       memories of coffee, lace, gardens, and conversations in the afternoon. \
@@ -391,7 +391,7 @@ const projectRecords: ProjectRecord[] = [
     tools: ['blender'],
     dimensions: '1920 × 1080 px',
     summary:
-      'A post-rain environment focused on wet surfaces, softened sound, and charged quiet.',
+      'After the storm, everything pauses before everyday life begins again.',
     description:
       '<em>Depois da Chuva</em> captures a moment I remember vividly from Brazil: \
       the strange stillness after a rainstorm, when wet concrete reflects the returning light, \
