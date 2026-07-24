@@ -164,7 +164,7 @@ const projectRecords: ProjectRecord[] = [
     fallbackBasename: 'the-watchers',
     artworkType: 'horror sculpture final image',
     credits:
-            'Concept, composition, wall and eye-socket modeling/sculpting, custom fog material, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
+            'Concept, composition, wall and eye socket modeling/sculpting, custom fog material, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
             'Third-party assets:\n'+
             '       Eye models: Tiny Eye add-on by Tiny Nocky\n' +
             '       Wall material: “Rotten Human Skin” by Dennis Hafemann, sourced through BlenderKit',

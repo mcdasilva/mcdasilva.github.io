@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     template: '%s - Matheus Coutinho da Silva',
   },
   description:
-    'Dark cinematic MFA visualization portfolio of digital environments, sculpture, creative coding, and material studies.',
+    'Matheus Coutinho da Silva Visualization Portfolio - Explore work across 3D design and traditional media.',
   openGraph: {
-    title: 'Matheus Coutinho da Silva Portfolio',
+    title: 'Matheus Coutinho da Silva - Artist + Creative Technologist',
     description:
-      'Artist + Creative Technologist portfolio for MFA Visualization applications.',
+      'Matheus Coutinho da Silva Visualization Portfolio - Explore work across 3D design and traditional media.',
     type: 'website',
     url: 'https://mcdasilva.github.io',
     images: ['/artwork/horror/the-watchers/the-watchers-01.png'],
