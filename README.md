@@ -1,66 +1,15 @@
 # Matheus Coutinho da Silva Portfolio
 
-A dark, cinematic, editorial portfolio built for an MFA Visualization application with Next.js, TypeScript, Tailwind CSS, and Framer Motion. The site is static-export ready for GitHub Pages or Vercel and uses no database or CMS.
+Some experiences resist language. We know what they feel like, yet the moment we try to explain them, words get lost in translation: the strange feeling of returning somewhere that no longer exists the way we remember it, or the nostalgia of remembering a childhood afternoon are some examples. This portfolio is my attempt to give those experiences a physical form, building spaces where they can be felt instead of explained. 
 
-## Run locally
+To do that, my art was driven by a simple belief: individual elements become meaningful only when they work together, allowing the whole to communicate something greater than the sum of its parts. For instance, a chair or a clothesline are not remarkable on their own. Yet, when placed in the right relationship with one another, they can carry the weight of places we've left or people we've lost. Throughout my pieces, the objects are intentionally ordinary. Their purpose is never to attract attention individually, but to support the overall atmosphere.
 
-```bash
-npm install
-npm run dev
-```
+A great part of this portfolio was inspired by my experience growing up in Brazil. The landscapes, domestic rituals, and financial limitations shaped the way I understand beauty, hardship, and belonging. They appear throughout my work not as literal reconstructions of memories, but as environments that remain emotionally faithful to them. Memory simplifies, exaggerates, and forgets; this portfolio embraces that process.
 
-Build the static site:
+The presented artworks never began with an image. They began with a feeling that refused to leave me. From there, I gradually constructed an environment around that emotion, constantly adjusting the space until it communicated what words could not. For my digital work, I used the 3D software Blender, while for my traditional work I used soft pastels, charcoal, oil, and acrylic paints. 
 
-```bash
-npm run build
-```
+One characteristic deliberately shared across this collection is visual hierarchy. I never want everything to reveal itself at once. I believe reflection requires attention, and attention requires time; I want to reward that time. I intentionally hide details so that the longer someone spends with a piece, the more they notice. I also leave enough room for viewers to build their own emotional interpretation of the work. Every spectator brings different perspectives, and those also become part of the experience.
 
-The static export is written to `out/` by Next.js.
+My visual language was informed by filmmakers such as Jordan Peele and Ari Aster, and films like Pan’s Labyrinth and Silent Hill, which taught me how places and ordinary details can carry emotion and psychological tension. I was also inspired by the contemporary 3D artists Gabriel Massan and Pedro Conti, whose work draws from Brazilian and diasporic experiences while reimagining them through their own artistic perspectives.
 
-## Add artwork
-
-Place final artwork and process assets in the labeled folders under `public/artwork/`:
-
-- `public/artwork/home/`
-- `public/artwork/landscapes/`
-- `public/artwork/not-yet/`
-- `public/artwork/digital-atelier/`
-- `public/artwork/watchers/`
-- `public/artwork/mothers-despair/`
-- `public/artwork/designed-space/`
-- `public/artwork/material-studies/`
-- `public/artwork/process/`
-- `public/artwork/portrait/`
-
-Use the filenames already referenced in `data/site.ts`, such as `home-hero.jpg`, `landscapes-hero.jpg`, `the-way-ive-grown-final-01.jpg`, `not-yet-video.mp4`, and `portrait.jpg`. If a file is missing, the website displays a dark labeled placeholder with the filename, recommended aspect ratio, and suggested image type.
-
-## Replace project text
-
-All project copy, metadata, image paths, contact details, and selected homepage projects live in `data/site.ts`. Edit that file to update titles, years, mediums, software, dimensions, descriptions, process text, reflections, credits, or artwork paths.
-
-## Add projects
-
-1. Add a new object to the `projects` array in `data/site.ts`.
-2. Include a unique `slug`, metadata, `hero`, `gallery`, and `process` assets.
-3. Add the slug to `selectedSlugs` if the project should appear on the homepage.
-4. Add matching artwork files to the appropriate `public/artwork/` folder.
-
-Project pages are generated automatically at `/work/[slug]/`.
-
-## Update contact information
-
-Edit the `contact` object in `data/site.ts`. The homepage footer, About page, and CV page use this shared contact data.
-
-## Add the CV PDF
-
-Place the file at:
-
-```text
-public/Matheus-Coutinho-da-Silva-CV.pdf
-```
-
-The CV page download link will point to that file automatically.
-
-## Deployment notes for GitHub Pages
-
-The project uses `output: 'export'`, unoptimized images, and trailing slashes in `next.config.mjs`, making it compatible with static hosting on GitHub Pages.
+Ultimately, I hope this portfolio is experienced the same way it was created: not as a compilation of individual images, but as a series of emotional spaces. If viewers leave remembering how these environments made them feel rather than the individual objects they contained, then the work has done exactly what I hoped it would do.
