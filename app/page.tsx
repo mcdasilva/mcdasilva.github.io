@@ -147,10 +147,10 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[.2em] text-amber">
               Explore the Work
             </p>
-            <h2 className="mt-4 font-serif text-5xl">A Focused Glimpse</h2>
+            <h2 className="mt-4 font-serif text-5xl">A Glimpse</h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              The portfolio moves between atmospheric environment design,
-              psychological horror, and emotionally charged digital images.
+              The portfolio moves between environment design,
+              psychological horror, and emotionally charged images.
             </p>
           </div>
           <Link
