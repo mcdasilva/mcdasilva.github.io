@@ -6,6 +6,8 @@ export type Artwork = {
   alt: string;
   ratio: string;
   type: string;
+  width?: number;
+  height?: number;
   caption?: string;
   poster?: string;
   placeholder?: boolean;
@@ -56,6 +58,75 @@ const art = (
 const publicArtworkPath = (folder: string) =>
   path.join(process.cwd(), 'public', 'artwork', folder);
 
+const pngDimensions = (filePath: string) => {
+  const signature = '89504e470d0a1a0a';
+
+  try {
+    const buffer = fs.readFileSync(filePath);
+
+    if (
+      buffer.length < 24 ||
+      buffer.subarray(0, 8).toString('hex') !== signature
+    ) {
+      return undefined;
+    }
+
+    return {
+      width: buffer.readUInt32BE(16),
+      height: buffer.readUInt32BE(20),
+    };
+  } catch {
+    return undefined;
+  }
+};
+
+const jpegDimensions = (filePath: string) => {
+  try {
+    const buffer = fs.readFileSync(filePath);
+
+    if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) {
+      return undefined;
+    }
+
+    let offset = 2;
+
+    while (offset < buffer.length) {
+      while (buffer[offset] === 0xff) offset += 1;
+
+      const marker = buffer[offset];
+      offset += 1;
+
+      if (marker === 0xd9 || marker === 0xda) break;
+      if (offset + 2 > buffer.length) break;
+
+      const length = buffer.readUInt16BE(offset);
+
+      if (length < 2 || offset + length > buffer.length) break;
+
+      if (
+        (marker >= 0xc0 && marker <= 0xc3) ||
+        (marker >= 0xc5 && marker <= 0xc7) ||
+        (marker >= 0xc9 && marker <= 0xcb) ||
+        (marker >= 0xcd && marker <= 0xcf)
+      ) {
+        return {
+          height: buffer.readUInt16BE(offset + 3),
+          width: buffer.readUInt16BE(offset + 5),
+        };
+      }
+
+      offset += length;
+    }
+
+    return undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+const imageDimensions = (filePath: string) =>
+  pngDimensions(filePath) || jpegDimensions(filePath);
+
 const sortedPngFiles = (folder: string) => {
   const directory = publicArtworkPath(folder);
 
@@ -92,9 +163,17 @@ const projectImages = (
     ];
   }
 
-  return files.map((file) =>
-    art(`/artwork/${folder}/${file}`, file, '16:9', type, { position }),
-  );
+  return files.map((file) => {
+    const dimensions = imageDimensions(path.join(publicArtworkPath(folder), file));
+    const ratio = dimensions
+      ? `${dimensions.width}:${dimensions.height}`
+      : '16:9';
+
+    return {
+      ...art(`/artwork/${folder}/${file}`, file, ratio, type, { position }),
+      ...dimensions,
+    };
+  });
 };
 
 const resolveProject = ({
@@ -156,7 +235,7 @@ const projectRecords: ProjectRecord[] = [
     summary:
       'Figural observers reflect xenophobic scrutiny and the discomfort of being watched and judged.',
     description:
-      'The Watchers grew from my experience with xenophobia and the persistent \
+      '<em>The Watchers</em> grew from my experience with xenophobia and the persistent \
       feeling of being watched as an outsider. Drawing from psychological horror, \
       I transformed that unease into a wall of concealed eyes: an ambiguous presence \
       where observation becomes judgment, and simply being seen begins to feel threatening.',
@@ -181,7 +260,7 @@ const projectRecords: ProjectRecord[] = [
     summary:
       'Masquerade talks about concealment, performance, and the instability of identity.',
     description:
-      'Masquerade explores the distance between appearance and identity.\
+      '<em>Masquerade</em> explores the distance between appearance and identity.\
        Emerging from darkness, its figures remain obscured by shadow, blur, \
        and distance, reflecting how we know others only through fragments. \
        The work considers the masks we wear and asks how much of anyone, \
@@ -218,6 +297,94 @@ const projectRecords: ProjectRecord[] = [
             'Concept, composition, modeling, sculpting, shading, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
             'Third-party assets:\n'+
             '       Skin texture: sourced from 3D Scan Store’s Free 3D Head Model.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'quiet',
+    title: 'Quiet!',
+    category: 'Horror',
+    year: 'February 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils)',
+    tools: [],
+    dimensions: '18" x 24"',
+    summary:
+      'The loudest screams are the ones no one lets escape.',
+    description:
+      `Sometimes the hardest part of suffering isn't the pain itself, \
+      but being made to carry it in silence. <em>Quiet!</em> explores what happens \
+      when difficult conversations are treated as forbidden, leaving \
+      hopelessness, loneliness, and anger with nowhere to go except inward.`,
+    artworkFolder: 'horror/quiet',
+    fallbackBasename: 'quiet',
+    artworkType: 'horror final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'the-end-of-the-world',
+    title: 'The End of The World',
+    category: 'Horror',
+    year: 'April 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils)',
+    tools: [],
+    dimensions: '5.5" x 8.5"',
+    summary:
+      'When the future becomes panic before reality ever arrives.',
+    description:
+      `During one of the most uncertain periods of my life, I found myself \
+      imagining every possible future except a hopeful one. This drawing \
+      captures the moment when my fear stopped being rational and became \
+      all-consuming, convincing me that everything I've worked for was \
+      slipping beyond my reach.`,
+    artworkFolder: 'horror/the-end-of-the-world',
+    fallbackBasename: 'the-end-of-the-world',
+    artworkType: 'horror final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'do-not-trust',
+    title: 'Do Not Trust',
+    category: 'Horror',
+    year: 'December 2025',
+    medium: 'Oil paint',
+    tools: [],
+    dimensions: '38" x 38"',
+    summary:
+      'Not every threat is real, but every scar remembers one.',
+    description:
+      '<em>Do Not Trust</em> explores what repeated betrayal can leave behind. \
+      After being hurt often enough, self-protection becomes instinct, and \
+      every stranger begins to look like a threat. The crouched posture reflects \
+      a mind that no longer knows how to rest because trust has become something earned instead of expected.',
+    artworkFolder: 'horror/do-not-trust',
+    fallbackBasename: 'do-not-trust',
+    artworkType: 'oil painting final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'restless',
+    title: 'Restless',
+    category: 'Horror',
+    year: 'March 2026',
+    medium: 'Oil paint',
+    tools: [],
+    dimensions: '30" x 30"',
+    summary:
+      'An exhausted body cannot rest while the mind refuses to stop.',
+    description:
+      '<em>Restless</em> is about the quiet battle between an exhausted body and an overactive mind. \
+      The figure searches for comfort but finds none, trapped in the endless cycle of anxious \
+      thoughts that turns rest into something to chase rather than something to receive.',
+    artworkFolder: 'horror/restless',
+    fallbackBasename: 'restless',
+    artworkType: 'oil painting final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
   {
@@ -259,7 +426,7 @@ const projectRecords: ProjectRecord[] = [
     summary:
       'Candles holding fading memories, honoring loss and what still remains.',
     description:
-      'Vigil explores remembrance as something quiet, fragile, and ongoing. \
+      '<em>Vigil</em> explores remembrance as something quiet, fragile, and ongoing. \
       Candles emerge from the darkness like memories: some are distant and fading, \
       while others still burn brightly. The work reflects on grief not only as \
       mourning what is gone, but as honoring what remains and keeping a light \
@@ -322,6 +489,51 @@ const projectRecords: ProjectRecord[] = [
             'Concept, composition, modeling, custom fog material, shading, lighting, rendering by Matheus Coutinho da Silva.\n\n' +
             'Third-party assets:\n'+
             '       Additional materials: sourced through BlenderKit.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'within',
+    title: 'Within',
+    category: 'Concept Art',
+    year: 'January 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils) and colored soft pastels',
+    tools: [],
+    dimensions: '18" x 24"',
+    summary:
+      'Daydreams are places where forgotten possibilities continue to exist.',
+    description:
+      'Daydreams are places we visit without ever moving. While our eyes remain fixed on the present, \
+      our mind wanders through imagined lives where opportunities still exist and everything happens \
+      differently. This drawing reflects the quiet comfort of escaping into possibilities that reality \
+      no longer offers.',
+    artworkFolder: 'concept-art/within',
+    fallbackBasename: 'within',
+    artworkType: 'concept art final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'i-saw-your-first',
+    title: 'I Saw Your First',
+    category: 'Concept Art',
+    year: 'July 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils), black and white soft pastels, and acrylic paint.',
+    tools: [],
+    dimensions: `8' x 4.5'`,
+    summary:
+      'The cruelest part of love is witnessing pain you cannot ease.',
+    description:
+      '<em>I Saw You First</em> explores the helplessness of witnessing someone you love \
+      suffer while knowing you cannot carry that pain for them. The eyes act as \
+      silent witnesses, while the burning forms represent emotional battles fought \
+      in isolation. Looking closely, the eyes reveal figures curled into themselves, \
+      reminding us that some suffering remains hidden, even when it is seen.',
+    artworkFolder: 'concept-art/i-saw-your-first',
+    fallbackBasename: 'i-saw-your-first',
+    artworkType: 'concept art final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
   {

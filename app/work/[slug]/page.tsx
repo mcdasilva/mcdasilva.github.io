@@ -77,9 +77,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
         <Artwork
           art={project.hero}
+          fit="contain"
           priority
           sizes="(max-width: 768px) calc(100vw - 2.5rem), 65vw"
-          className="w-full max-w-full md:min-h-[45vh]"
+          className="md:justify-self-center"
+          maxDisplayHeight={760}
         />
       </section>
 
@@ -87,7 +89,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <h2 className="font-serif text-4xl">Final Work</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {project.gallery.map((item) => (
-            <Artwork key={item.src} art={item} />
+            <Artwork
+              key={item.src}
+              art={item}
+              fit="contain"
+              sizes="(max-width: 768px) calc(100vw - 2.5rem), 45vw"
+              maxDisplayHeight={520}
+              align="start"
+            />
           ))}
         </div>
       </section>

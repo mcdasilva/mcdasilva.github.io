@@ -102,21 +102,27 @@ Filenames are not displayed on real artwork. They are only used internally for s
 | Horror | The Watchers | `public/artwork/horror/the-watchers/` | `the-watchers-01.png`, `the-watchers-02.png`, etc. |
 | Horror | Masquerade | `public/artwork/horror/masquerade/` | `masquerade-01.png`, `masquerade-02.png`, etc. |
 | Horror | A Mother's Despair | `public/artwork/horror/a-mothers-despair/` | `a-mothers-despair-01.png`, `a-mothers-despair-02.png`, etc. |
+| Horror | Quiet! | `public/artwork/horror/quiet/` | `quiet-01.png`, `quiet-02.png`, etc. |
+| Horror | The End of The World | `public/artwork/horror/the-end-of-the-world/` | `the-end-of-the-world-01.png`, `the-end-of-the-world-02.png`, etc. |
+| Horror | Do Not Trust | `public/artwork/horror/do-not-trust/` | `do-not-trust-01.png`, `do-not-trust-02.png`, etc. |
+| Horror | Restless | `public/artwork/horror/restless/` | `restless-01.png`, `restless-02.png`, etc. |
 | Concept Art | It's Time to Go | `public/artwork/concept-art/its-time-to-go/` | `its-time-to-go-01.png`, `its-time-to-go-02.png`, etc. |
 | Concept Art | Vigil | `public/artwork/concept-art/vigil/` | `vigil-01.png`, `vigil-02.png`, etc. |
 | Concept Art | Not Yet | `public/artwork/concept-art/not-yet/` | `not-yet-01.png`, `not-yet-02.png`, etc. |
 | Concept Art | Unbound | `public/artwork/concept-art/unbound/` | `unbound-01.png`, `unbound-02.png`, etc. |
+| Concept Art | Within | `public/artwork/concept-art/within/` | `within-01.png`, `within-02.png`, etc. |
+| Concept Art | I Saw Your First | `public/artwork/concept-art/i-saw-your-first/` | `i-saw-your-first-01.png`, `i-saw-your-first-02.png`, etc. |
 | Environment Design | The Way I've Grown | `public/artwork/environment-design/the-way-ive-grown/` | `the-way-ive-grown-01.png`, `the-way-ive-grown-02.png`, etc. |
 | Environment Design | Na Casa de Titia (At Auntie's House) | `public/artwork/environment-design/na-casa-de-titia/` | `na-casa-de-titia-01.png`, `na-casa-de-titia-02.png`, etc. |
 | Environment Design | Depois da Chuva (After the Rain) | `public/artwork/environment-design/depois-da-chuva/` | `depois-da-chuva-01.png`, `depois-da-chuva-02.png`, etc. |
 
-Recommended ratio for the current project images:
+Recommended ratio for digital landscape renders:
 
 ```text
 16:9
 ```
 
-The site uses `object-fit: cover`, so images may crop differently on desktop and mobile.
+The Work page uses editorial cropping so the grid stays visually consistent. Individual project pages preserve each real PNG's orientation and use contained images, so portrait drawings and paintings are not cropped.
 
 ## How To Add Images To A Project
 

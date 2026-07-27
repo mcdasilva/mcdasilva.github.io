@@ -21,6 +21,7 @@ export default function ProjectPanel({
       <Artwork
         art={p.hero}
         tools={showTools ? p.tools : undefined}
+        respectRatio={false}
         className={i % 3 === 0 ? 'md:aspect-[4/5]' : 'md:aspect-[5/4]'}
       />
       <div className="mt-3 flex gap-4">

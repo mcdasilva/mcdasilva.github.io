@@ -49,6 +49,7 @@ function FeaturedWorkLink({
         art={project.hero}
         tools={project.tools}
         className={artClassName}
+        respectRatio={false}
         sizes={sizes}
       />
       <div className="mt-3 flex gap-4">
