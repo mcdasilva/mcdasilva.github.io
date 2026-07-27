@@ -1,1 +1,0 @@
-import {projects} from '@/data/site';export default function sitemap(){const base='https://mcdasilva.github.io';return ['','/work','/process','/about','/cv',...projects.map(p=>`/work/${p.slug}`)].map(url=>({url:base+url,lastModified:new Date()}))}
