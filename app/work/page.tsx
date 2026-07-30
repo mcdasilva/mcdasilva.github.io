@@ -17,7 +17,7 @@ export default function Work() {
         <div className="md:sticky md:top-28 md:self-start">
           <h1 className="font-serif text-6xl">Work</h1>
           <p className="mt-6 text-muted">
-            Artwork organized into Horror, Concept Art, and Environment Design.
+            Artwork organized into Horror, Symbolic Art, and Environment Design.
           </p>
           <nav
             aria-label="Work categories"

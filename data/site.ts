@@ -14,7 +14,7 @@ export type Artwork = {
   position?: string;
 };
 
-export type ProjectCategory = 'Horror' | 'Concept Art' | 'Environment Design';
+export type ProjectCategory = 'Horror' | 'Symbolic Art' | 'Environment Design';
 export type ToolKey = 'blender';
 
 export type ToolLogo = {
@@ -199,7 +199,7 @@ const resolveProject = ({
 
 export const projectCategories: ProjectCategory[] = [
   'Horror',
-  'Concept Art',
+  'Symbolic Art',
   'Environment Design',
 ];
 
@@ -322,23 +322,21 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'the-end-of-the-world',
-    title: 'The End of The World',
+    slug: 'oh-my-dear',
+    title: 'Oh, My Dear',
     category: 'Horror',
-    year: 'April 2026',
-    medium: 'Charcoal (vine, willow, compressed, and pencils)',
+    year: 'August 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils) and black and white soft pastels.',
     tools: [],
-    dimensions: '5.5" x 8.5"',
+    dimensions: '18" x 24"',
     summary:
-      'When the future becomes panic before reality ever arrives.',
+      `Knowing what's coming doesn't mean you can stop it; love doesn't always come with the power to protect.`,
     description:
-      `During one of the most uncertain periods of my life, I found myself \
-      imagining every possible future except a hopeful one. This drawing \
-      captures the moment when my fear stopped being rational and became \
-      all-consuming, convincing me that everything I've worked for was \
-      slipping beyond my reach.`,
-    artworkFolder: 'horror/the-end-of-the-world',
-    fallbackBasename: 'the-end-of-the-world',
+      `A lone sheep stands beneath the only light while something waits just beyond it. \
+      <em>Oh, My Dear</em> came from the feeling of seeing danger before someone you love does, knowing \
+      what's coming, yet having no way to protect them.`,
+    artworkFolder: 'horror/oh-my-dear',
+    fallbackBasename: 'oh-my-dear',
     artworkType: 'horror final image',
     credits:
             'All work done by Matheus Coutinho da Silva.',
@@ -367,22 +365,24 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'restless',
-    title: 'Restless',
+    slug: 'the-end-of-the-world',
+    title: 'The End of The World',
     category: 'Horror',
-    year: 'March 2026',
-    medium: 'Oil paint',
+    year: 'April 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils)',
     tools: [],
-    dimensions: '30" x 30"',
+    dimensions: '5.5" x 8.5"',
     summary:
-      'An exhausted body cannot rest while the mind refuses to stop.',
+      'When the future becomes panic before reality ever arrives.',
     description:
-      '<em>Restless</em> is about the quiet battle between an exhausted body and an overactive mind. \
-      The figure searches for comfort but finds none, trapped in the endless cycle of anxious \
-      thoughts that turns rest into something to chase rather than something to receive.',
-    artworkFolder: 'horror/restless',
-    fallbackBasename: 'restless',
-    artworkType: 'oil painting final image',
+      `During one of the most uncertain periods of my life, I found myself \
+      imagining every possible future except a hopeful one. This drawing \
+      captures the moment when my fear stopped being rational and became \
+      all-consuming, convincing me that everything I've worked for was \
+      slipping beyond my reach.`,
+    artworkFolder: 'horror/the-end-of-the-world',
+    fallbackBasename: 'the-end-of-the-world',
+    artworkType: 'horror final image',
     credits:
             'All work done by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
@@ -390,7 +390,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'its-time-to-go',
     title: "It's Time to Go",
-    category: 'Concept Art',
+    category: 'Symbolic Art',
     year: 'June 2026',
     medium: 'Blender',
     tools: ['blender'],
@@ -403,7 +403,7 @@ const projectRecords: ProjectRecord[] = [
       surrounded by a landscape that feels like a fading memory of family, love, and home. \
       It reflects the quiet acceptance that some chapters must end, and the peace \
       of carrying what we leave behind with us.",
-    artworkFolder: 'concept-art/its-time-to-go',
+    artworkFolder: 'symbolic-art/its-time-to-go',
     fallbackBasename: 'its-time-to-go',
     artworkType: 'concept art final image',
     credits:
@@ -416,35 +416,53 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'vigil',
-    title: 'Vigil',
-    category: 'Concept Art',
-    year: 'June 2026',
-    medium: 'Blender',
-    tools: ['blender'],
-    dimensions: '1920 × 1080 px',
+    slug: 'restless',
+    title: 'Restless',
+    category: 'Symbolic Art',
+    year: 'March 2026',
+    medium: 'Oil paint',
+    tools: [],
+    dimensions: '30" x 30"',
     summary:
-      'Candles holding fading memories, honoring loss and what still remains.',
+      'An exhausted body cannot rest while the mind refuses to stop.',
     description:
-      '<em>Vigil</em> explores remembrance as something quiet, fragile, and ongoing. \
-      Candles emerge from the darkness like memories: some are distant and fading, \
-      while others still burn brightly. The work reflects on grief not only as \
-      mourning what is gone, but as honoring what remains and keeping a light \
-      alive for what continues to live within us.',
-    artworkFolder: 'concept-art/vigil',
-    fallbackBasename: 'vigil',
+      '<em>Restless</em> is about the quiet battle between an exhausted body and an overactive mind. \
+      The figure searches for comfort but finds none, trapped in the endless cycle of anxious \
+      thoughts that turns rest into something to chase rather than something to receive.',
+    artworkFolder: 'symbolic-art/restless',
+    fallbackBasename: 'restless',
+    artworkType: 'oil painting final image',
+    credits:
+            'All work done by Matheus Coutinho da Silva.',
+    collaborators: 'No additional collaborators listed.',
+  },
+  {
+    slug: 'i-saw-your-first',
+    title: 'I Saw Your First',
+    category: 'Symbolic Art',
+    year: 'July 2026',
+    medium: 'Charcoal (vine, willow, compressed, and pencils), black and white soft pastels, and acrylic paint.',
+    tools: [],
+    dimensions: `8' x 4.5'`,
+    summary:
+      'The cruelest part of love is witnessing pain you cannot ease.',
+    description:
+      '<em>I Saw You First</em> explores the helplessness of witnessing someone you love \
+      suffer while knowing you cannot carry that pain for them. The eyes act as \
+      silent witnesses, while the burning forms represent emotional battles fought \
+      in isolation. Seen from above, the eyes become figures curled into themselves, \
+      reminding us that some suffering remains hidden, even when it is seen.',
+    artworkFolder: 'symbolic-art/i-saw-your-first',
+    fallbackBasename: 'i-saw-your-first',
     artworkType: 'concept art final image',
     credits:
-            'Concept, composition, modeling, custom fog material, sculpting, shading, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
-            'Third-party assets:\n'+
-            '       Materials: sourced through BlenderKit.\n' +
-            '       Flame image: sourced from FreeIconsPNG.',
+            'All work done by Matheus Coutinho da Silva.',
     collaborators: 'No additional collaborators listed.',
   },
   {
     slug: 'not-yet',
     title: 'Not Yet',
-    category: 'Concept Art',
+    category: 'Symbolic Art',
     year: 'May 2026',
     medium: 'Blender',
     tools: ['blender'],
@@ -456,7 +474,7 @@ const projectRecords: ProjectRecord[] = [
       The impact never comes, yet the balloon recoils as if danger were inevitable. \
       Its fear becomes more powerful than the threat itself, reflecting the exhausting \
       uncertainty of anticipating something that may never happen.',
-    artworkFolder: 'concept-art/not-yet',
+    artworkFolder: 'symbolic-art/not-yet',
     fallbackBasename: 'not-yet',
     artworkType: 'concept art final image',
     credits:
@@ -469,7 +487,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'unbound',
     title: 'Unbound',
-    category: 'Concept Art',
+    category: 'Symbolic Art',
     year: 'May 2026',
     medium: 'Blender',
     tools: ['blender'],
@@ -481,7 +499,7 @@ const projectRecords: ProjectRecord[] = [
       yet doubt makes us hesitate. The lock is already open and the chains are \
       not attached, suggesting that some barriers hold us even after they lose \
       their power. <em>Unbound</em> shows that sometimes the hardest part of breaking free is realizing we already can.',
-    artworkFolder: 'concept-art/unbound',
+    artworkFolder: 'symbolic-art/unbound',
     fallbackBasename: 'unbound',
     artworkType: 'concept art final image',
     artworkPosition: '85% 50%',
@@ -494,7 +512,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'within',
     title: 'Within',
-    category: 'Concept Art',
+    category: 'Symbolic Art',
     year: 'January 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils) and colored soft pastels',
     tools: [],
@@ -506,7 +524,7 @@ const projectRecords: ProjectRecord[] = [
       our mind wanders through imagined lives where opportunities still exist and everything happens \
       differently. This drawing reflects the quiet comfort of escaping into possibilities that reality \
       no longer offers.',
-    artworkFolder: 'concept-art/within',
+    artworkFolder: 'symbolic-art/within',
     fallbackBasename: 'within',
     artworkType: 'concept art final image',
     credits:
@@ -514,26 +532,29 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'i-saw-your-first',
-    title: 'I Saw Your First',
-    category: 'Concept Art',
-    year: 'July 2026',
-    medium: 'Charcoal (vine, willow, compressed, and pencils), black and white soft pastels, and acrylic paint.',
-    tools: [],
-    dimensions: `8' x 4.5'`,
+    slug: 'vigil',
+    title: 'Vigil',
+    category: 'Symbolic Art',
+    year: 'June 2026',
+    medium: 'Blender',
+    tools: ['blender'],
+    dimensions: '1920 × 1080 px',
     summary:
-      'The cruelest part of love is witnessing pain you cannot ease.',
+      'Candles holding fading memories, honoring loss and what still remains.',
     description:
-      '<em>I Saw You First</em> explores the helplessness of witnessing someone you love \
-      suffer while knowing you cannot carry that pain for them. The eyes act as \
-      silent witnesses, while the burning forms represent emotional battles fought \
-      in isolation. Looking closely, the eyes reveal figures curled into themselves, \
-      reminding us that some suffering remains hidden, even when it is seen.',
-    artworkFolder: 'concept-art/i-saw-your-first',
-    fallbackBasename: 'i-saw-your-first',
+      '<em>Vigil</em> explores remembrance as something quiet, fragile, and ongoing. \
+      Candles emerge from the darkness like memories: some are distant and fading, \
+      while others still burn brightly. The work reflects on grief not only as \
+      mourning what is gone, but as honoring what remains and keeping a light \
+      alive for what continues to live within us.',
+    artworkFolder: 'symbolic-art/vigil',
+    fallbackBasename: 'vigil',
     artworkType: 'concept art final image',
     credits:
-            'All work done by Matheus Coutinho da Silva.',
+            'Concept, composition, modeling, custom fog material, sculpting, shading, lighting, and rendering by Matheus Coutinho da Silva.\n\n' +
+            'Third-party assets:\n'+
+            '       Materials: sourced through BlenderKit.\n' +
+            '       Flame image: sourced from FreeIconsPNG.',
     collaborators: 'No additional collaborators listed.',
   },
   {
