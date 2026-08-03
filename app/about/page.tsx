@@ -230,7 +230,7 @@ export default function About() {
                   <dt className="text-sm uppercase tracking-[.18em] text-amber">
                     Traditional Art
                   </dt>
-                  <dd>Drawing, painting.</dd>
+                  <dd>Charcoal, soft pastels, oil paint, acrylic paint</dd>
                 </div>
               </dl>
             </section>
