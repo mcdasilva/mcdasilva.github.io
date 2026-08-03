@@ -437,8 +437,8 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
   {
-    slug: 'i-saw-your-first',
-    title: 'I Saw Your First',
+    slug: 'i-saw-you-first',
+    title: 'I Saw You First',
     category: 'Symbolic Art',
     year: 'July 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils), black and white soft pastels, and acrylic paint.',
@@ -452,8 +452,8 @@ const projectRecords: ProjectRecord[] = [
       silent witnesses, while the burning forms represent emotional battles fought \
       in isolation. Seen from above, the eyes become figures curled into themselves, \
       reminding us that some suffering remains hidden, even when it is seen.',
-    artworkFolder: 'symbolic-art/i-saw-your-first',
-    fallbackBasename: 'i-saw-your-first',
+    artworkFolder: 'symbolic-art/i-saw-you-first',
+    fallbackBasename: 'i-saw-you-first',
     artworkType: 'concept art final image',
     credits:
             'All work done by Matheus Coutinho da Silva.',
