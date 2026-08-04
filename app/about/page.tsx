@@ -260,17 +260,13 @@ export default function About() {
               Curriculum Vitae
             </h2>
           </div>
-          {cvExists ? (
+          {cvExists && (
             <a
               href={cvPath}
               className="text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:text-bone"
             >
               Download PDF <span aria-hidden="true">&#8599;</span>
             </a>
-          ) : (
-            <p className="text-xs uppercase tracking-[.18em] text-muted">
-              CV PDF Placeholder
-            </p>
           )}
         </div>
 
