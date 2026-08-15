@@ -100,7 +100,7 @@ const experience: ExperienceItem[] = [
     organization: 'iD Tech Camps - Southern New Hampshire University',
     location: 'Manchester, NH, USA',
     role:
-      'On-Campus Instructor: Machine Learning & Roblox Development / Territory Manager',
+      'On-Campus Instructor: Machine Learning & Roblox Development',
     date: 'June-August 2025',
     details: [
       <>Instructed 12 students across two tracks: 5 students (ages 7–9) in <em>Roblox</em> game development, and 7 students (ages 13–17) in Python programming, AI fundamentals, and machine learning.</>,
