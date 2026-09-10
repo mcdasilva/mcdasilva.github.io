@@ -53,7 +53,7 @@ export default function EntangledExperience() {
           <h2 id="experience-title" className="mt-2 font-serif text-4xl md:text-5xl">Enter the field</h2>
         </div>
         <p id="experience-pointer-help" className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-          Press and drag with your mouse to form an entanglement.
+          Press and drag on the canvas to form an entanglement.
           Release it to let it drift and disappear. Sound begins with your first gesture.
         </p>
       </div>
