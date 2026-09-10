@@ -88,7 +88,8 @@ export default function EntangledExperience() {
         </div>
       </div>
       <p id="experience-keyboard-help" className="mt-4 text-sm leading-relaxed text-muted">
-        Keyboard: P selects points, S selects scribbles,
+        The canvas is organized around nine fixed root points. Where you begin your gesture determines 
+        which root the points or scribbles grow from. P selects points, S selects scribbles,
         B selects both, R clears, and Q or Escape toggles sound.
       </p>
       <p role="status" className="mt-2 text-sm text-muted">
