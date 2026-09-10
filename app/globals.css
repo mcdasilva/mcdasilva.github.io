@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: dark;
+  --font-cormorant: "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-inter: Inter, "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -56,5 +58,11 @@ button:focus-visible {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[.66rem] uppercase tracking-[.2em] text-amber;
   }
 }

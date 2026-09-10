@@ -3,7 +3,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "next dev --hostname 127.0.0.1"
   },
   "dependencies": {
     "framer-motion": "^11.3.0",

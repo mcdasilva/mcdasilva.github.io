@@ -6,13 +6,17 @@ type ProjectPanelProps = {
   p: Project;
   i: number;
   showTools?: boolean;
+  headingLevel?: 3 | 4;
 };
 
 export default function ProjectPanel({
   p,
   i,
   showTools = false,
+  headingLevel = 3,
 }: ProjectPanelProps) {
+  const Heading = headingLevel === 4 ? 'h4' : 'h3';
+
   return (
     <Link
       href={`/work/${p.slug}`}
@@ -29,9 +33,9 @@ export default function ProjectPanel({
           {String(i + 1).padStart(2, '0')}
         </span>
         <div>
-          <h3 className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
+          <Heading className="font-serif text-2xl transition-colors duration-300 ease-out group-hover:text-amber">
             {p.title}
-          </h3>
+          </Heading>
         </div>
       </div>
       <p className="mt-2 max-w-sm text-sm text-muted">{p.summary}</p>

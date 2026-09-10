@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Artwork from '@/components/Artwork';
+import EntangledExperience from '@/components/EntangledExperience';
+import ProjectMedia from '@/components/ProjectMedia';
 import { getProject, getProjects } from '@/data/site';
 
 export function generateStaticParams() {
@@ -63,6 +65,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dd>{project.category}</dd>
             </div>
             <div>
+              <dt className="text-amber">Subcategory</dt>
+              <dd>{project.subcategory}</dd>
+            </div>
+            <div>
               <dt className="text-amber">Medium</dt>
               <dd>{project.medium}</dd>
             </div>
@@ -74,16 +80,26 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <p 
             className="mt-8 leading-relaxed text-bone" dangerouslySetInnerHTML={{ __html: project.description }}>
           </p>
+          {project.interactive && (
+            <a
+              href="#interactive-experience"
+              className="mt-6 inline-block border-b border-amber pb-1 text-xs uppercase tracking-[.18em] text-amber hover:text-bone"
+            >
+              Try the interactive artwork
+            </a>
+          )}
         </div>
-        <Artwork
+        {project.video ? <ProjectMedia project={project} /> : <Artwork
           art={project.hero}
           fit="contain"
           priority
           sizes="(max-width: 768px) calc(100vw - 2.5rem), 65vw"
           className="md:justify-self-center"
           maxDisplayHeight={760}
-        />
+        />}
       </section>
+
+      {project.interactive && <EntangledExperience />}
 
       <section className="mx-auto mt-20 max-w-7xl">
         <h2 className="font-serif text-4xl">Final Work</h2>
