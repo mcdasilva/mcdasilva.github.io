@@ -75,7 +75,7 @@
     if (ready && dragging) window.mouseReleased();
   });
 
-  window.disposeEntangled = () => {
+  window.disposeSketch = () => {
     if (!ready) return;
     closeSounds();
     noLoop();
@@ -83,6 +83,6 @@
     if (context.state !== 'closed') void context.close().catch(() => {});
     ready = false;
   };
-  window.addEventListener('pagehide', window.disposeEntangled);
+  window.addEventListener('pagehide', window.disposeSketch);
   window.addEventListener('error', fail);
 })();

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import type { ExperienceConfig } from '@/components/InteractiveExperience';
 
 export type Artwork = {
   src: string;
@@ -45,7 +46,7 @@ export type Project = {
   credits: string;
   collaborators: string;
   video?: { src: string; poster: string; label: string };
-  interactive?: boolean;
+  interactive?: ExperienceConfig;
 };
 
 type ProjectRecord = Omit<Project, 'hero' | 'gallery'> & {
@@ -695,7 +696,7 @@ const projectRecords: ProjectRecord[] = [
     summary:
       'At the root of every choice, a new life.',
     description:
-      'Entangled traces how a single decision can split into many possible lives. \
+      '<em>Entangled</em> traces how a single decision can split into many possible lives. \
       Each chain begins at a root, a choice, and grows into drifting points and restless \
       marks. As you move through the piece, new paths appear while older ones slowly fade. \
       The sound is inspired by experiments where vibration moves grains of salt or sand \
@@ -710,12 +711,56 @@ const projectRecords: ProjectRecord[] = [
       poster: '/artwork/creative-coding/interactive-art/entangled/entangled-01.png',
       label: 'Entangled documentation video',
     },
-    interactive: true,
+    interactive: {
+      title: 'Enter the field',
+      instructions: 'Press and drag on the canvas to form an entanglement. Release it to let it drift and disappear. Sound begins with your first gesture.',
+      keyboardHelp: 'The canvas is organized around nine fixed root points. Where you begin your gesture determines which root the points or scribbles grow from. P selects points, S selects scribbles, B selects both, R clears, and Q or Escape toggles sound.',
+      drawingModes: true,
+    },
     credits:
       'Concept, visuals, and programming by Matheus Coutinho da Silva. \n\n' +
       'Sound design developed with AI-assisted audio generation (ChatGPT, by OpenAI).',
     collaborators: 'No additional collaborators listed.',
   },
+  {
+    slug: 'mayra',
+    title: 'Mayra',
+    category: 'Creative Coding',
+    subcategory: 'Interactive Art',
+    year: 'September 2026',
+    medium: 'Processing 3.5.4',
+    tools: ['processing3'],
+    dimensions: 'Responsive browser experience',
+    summary: 'A birthday becomes a pattern, carrying the repetition and care of something made by hand.',
+    description:
+      '<em>Mayra</em> begins with a birthday. The viewer chooses a month and day, and those numbers \
+      become the rules for a fractal pattern that slowly draws itself across the screen. \
+      Each date produces a different structure. The work is named after my godmother, Mayra, \
+      who has marked many of my birthdays with things she crocheted by hand, from scarves and purses. \
+      The repeating branches are inspired by the logic of crochet, where simple gestures build on one \
+      another until they become something intricate and personal. This piece is my attempt to show \
+      some of the love I have received from my godmother over the years. This one is for you, Dinda.',
+    artworkFolder: 'creative-coding/interactive-art/mayra',
+    fallbackBasename: 'mayra',
+    artworkType: 'interactive artwork documentation',
+    video: {
+      src: '/artwork/creative-coding/interactive-art/mayra/mayra-vid-01.mp4',
+      poster: '/artwork/creative-coding/interactive-art/mayra/mayra-01.png',
+      label: 'Mayra documentation video',
+    },
+    interactive: {
+      title: 'Make your pattern',
+      instructions: 'Choose your birth month, then your birth day. Watch the pattern unfold and fade.',
+      keyboardHelp: 'R returns to the month selection. Q or Escape toggles sound.',
+      clearLabel: 'Restart / R',
+    },
+    credits:
+      'Concept, visuals, and programming by Matheus Coutinho da Silva. \n\n' +
+      'Third-party assets:\n'+
+            '       Sound: <em>Harp and Pad Fm Complicated Loop</em> by f-r-a-g-i-l-e, via Freesound. CC0.',
+    collaborators: 'No additional collaborators listed.',
+  },
+
 ];
 
 export const getProjects = () => projectRecords.map(resolveProject);

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Artwork from '@/components/Artwork';
-import EntangledExperience from '@/components/EntangledExperience';
+import InteractiveExperience from '@/components/InteractiveExperience';
 import ProjectMedia from '@/components/ProjectMedia';
 import { getProject, getProjects } from '@/data/site';
 
@@ -99,7 +99,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         />}
       </section>
 
-      {project.interactive && <EntangledExperience />}
+      {project.interactive && <InteractiveExperience key={project.slug} slug={project.slug} title={project.title} config={project.interactive} />}
 
       <section className="mx-auto mt-20 max-w-7xl">
         <h2 className="font-serif text-4xl">Final Work</h2>
@@ -120,11 +120,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <section className="mx-auto mt-24 grid max-w-7xl gap-12 border-t border-line pt-16 md:grid-cols-2">
         <div>
           <h2 className="font-serif text-4xl">Credits</h2>
-          <p className="mt-5 text-muted" style={{ whiteSpace: 'pre-wrap' }}>{project.credits}</p>
+          <p className="mt-5 whitespace-pre-wrap text-muted" dangerouslySetInnerHTML={{ __html: project.credits }} />
         </div>
         <div>
           <h2 className="font-serif text-4xl">Collaborators</h2>
-          <p className="mt-5 text-muted">{project.collaborators}</p>
+          <p className="mt-5 whitespace-pre-wrap text-muted" dangerouslySetInnerHTML={{ __html: project.collaborators }} />
         </div>
       </section>
 
