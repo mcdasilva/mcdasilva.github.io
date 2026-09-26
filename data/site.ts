@@ -761,6 +761,49 @@ const projectRecords: ProjectRecord[] = [
     collaborators: 'No additional collaborators listed.',
   },
 
+  {
+    slug: 'interference',
+    title: 'Interference',
+    category: 'Creative Coding',
+    subcategory: 'Interactive Art',
+    year: 'September 2026',
+    medium: 'Processing 3.5.4',
+    tools: ['processing3'],
+    dimensions: 'Responsive browser experience',
+    summary: 'We leave traces wherever we go, changing people and places in ways that continue after we leave.',
+    description:
+      '<em>Interference</em> begins with a field of moving waves. \
+      As the viewer interacts with it, the lines distort and color \
+      remains behind, altering the composition even after the cursor moves away. \
+      The piece reflects on the traces we leave in people and places. \
+      Our presence can shift how others think, see, or act, often in \
+      ways we never witness ourselves. Those effects can linger long \
+      after we are gone, becoming part of something larger than us. \
+      It can also be read politically, as a reflection on how ideas spread, \
+      accumulate, and continue shaping a collective space over time.',
+    artworkFolder: 'creative-coding/interactive-art/interference',
+    fallbackBasename: 'interference',
+    artworkType: 'interactive artwork documentation',
+    video: {
+      src: '/artwork/creative-coding/interactive-art/interference/interference-vid-01.mp4',
+      poster: '/artwork/creative-coding/interactive-art/interference/interference-01.png',
+      label: 'Interference documentation video',
+    },
+    interactive: {
+      title: 'Interfere',
+      instructions: 'Move your pointer across the canvas to disturb the waves. \
+      Click or tap to leave color.',
+      keyboardHelp: 'R clears the color. Q or Escape toggles sound.',
+      clearLabel: 'Clear / R',
+    },
+    credits:
+        'Concept, visuals, and programming by Matheus Coutinho da Silva. \n\n' +
+        'Third-party assets:\n' +
+        '       Sound: <em>WaterDropletInCave2</em> by Akkaittou, via Freesound. CC BY 4.0.\n' +
+        '       Sound: <em>Angels Calling</em> by OmarBelattar, via Freesound. CC BY 4.0.',
+    collaborators: 'No additional collaborators listed.',
+  },
+
 ];
 
 export const getProjects = () => projectRecords.map(resolveProject);

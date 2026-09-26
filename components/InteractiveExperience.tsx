@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 type Mode = 'both' | 'points' | 'scribbles';
-type SketchWindow = Window & { disposeSketch?: () => void };
+type SketchWindow = Window & {
+  disposeSketch?: () => void;
+  controlSketch?: (action: 'mode' | 'clear' | 'sound', value?: Mode) => void;
+};
 
 export type ExperienceConfig = {
   title: string;
@@ -47,7 +50,13 @@ export default function InteractiveExperience({ slug, title, config }: { slug: s
 
   const control = (action: 'mode' | 'clear' | 'sound', value?: Mode) => {
     setError('');
-    frameRef.current?.contentWindow?.postMessage(
+    const sketchWindow = frameRef.current?.contentWindow as SketchWindow | null;
+    // A direct same-origin call preserves the button's audio activation gesture.
+    if (sketchWindow?.controlSketch) {
+      sketchWindow.controlSketch(action, value);
+      return;
+    }
+    sketchWindow?.postMessage(
       { type: `${slug}-control`, action, value },
       window.location.origin,
     );
