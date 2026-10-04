@@ -16,4 +16,4 @@ sketch actions.
 
 `index.html` loads the same local p5.js and p5.sound libraries as the other works.
 Metadata, media paths, and instructions live in the project record in `data/site.ts`.
-Media belongs in `public/artwork/creative-coding/interactive-art/interference/`.
+Media belongs in `public/artwork/digital-art/creative-coding/interactive-art/interference/`.

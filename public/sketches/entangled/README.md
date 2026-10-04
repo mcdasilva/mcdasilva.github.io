@@ -10,7 +10,7 @@ The supplied p5.js translation is kept in three files:
 
 `index.html` runs the sketch in its own frame so the original global p5.js code cannot interfere with the rest of the portfolio. p5.js 1.11.11 and its bundled p5.sound addon are served locally from `public/vendor/p5/`.
 
-The two original audio loops are loaded from `public/artwork/creative-coding/interactive-art/entangled/`:
+The two original audio loops are loaded from `public/artwork/digital-art/creative-coding/interactive-art/entangled/`:
 
 - `entangled_points_sound.wav`
 - `entangled_scribbles_sound.wav`

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       'Matheus Coutinho da Silva Visualization Portfolio - Explore work across 3D design and traditional media.',
     type: 'website',
     url: 'https://mcdasilva.github.io',
-    images: ['/artwork/3d-design/horror/the-watchers/the-watchers-01.png'],
+    images: ['/artwork/digital-art/3d-design/horror/the-watchers/the-watchers-01.png'],
   },
 };
 

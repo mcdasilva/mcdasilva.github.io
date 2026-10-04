@@ -15,12 +15,14 @@ export type Artwork = {
   position?: string;
 };
 
-export type ProjectCategory = '3D Design' | 'Creative Coding';
+export type ProjectCategory = 'Traditional Art' | 'Digital Art';
+export type ProjectDiscipline = '3D Design' | 'Creative Coding';
 export type ProjectSubcategory =
   | 'Horror'
   | 'Symbolic Art'
   | 'Environment Design'
-  | 'Interactive Art';
+  | 'Interactive Art'
+  | 'Animation';
 export type ToolKey = 'blender' | 'processing3';
 
 export type ToolLogo = {
@@ -34,6 +36,7 @@ export type Project = {
   slug: string;
   title: string;
   category: ProjectCategory;
+  discipline?: ProjectDiscipline;
   subcategory: ProjectSubcategory;
   year: string;
   medium: string;
@@ -208,15 +211,27 @@ const resolveProject = ({
 
 export const projectCategoryGroups: {
   category: ProjectCategory;
-  subcategories: ProjectSubcategory[];
+  disciplines: {
+    discipline?: ProjectDiscipline;
+    subcategories: ProjectSubcategory[];
+  }[];
 }[] = [
   {
-    category: '3D Design',
-    subcategories: ['Horror', 'Symbolic Art', 'Environment Design'],
+    category: 'Traditional Art',
+    disciplines: [{ subcategories: ['Horror', 'Symbolic Art'] }],
   },
   {
-    category: 'Creative Coding',
-    subcategories: ['Interactive Art'],
+    category: 'Digital Art',
+    disciplines: [
+      {
+        discipline: '3D Design',
+        subcategories: ['Horror', 'Symbolic Art', 'Environment Design'],
+      },
+      {
+        discipline: 'Creative Coding',
+        subcategories: ['Interactive Art', 'Animation'],
+      },
+    ],
   },
 ];
 
@@ -250,7 +265,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'the-watchers',
     title: 'The Watchers',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Horror',
     year: 'June 2026',
     medium: 'Blender',
@@ -263,7 +279,7 @@ const projectRecords: ProjectRecord[] = [
       feeling of being watched as an outsider. Drawing from psychological horror, \
       I transformed that unease into a wall of concealed eyes: an ambiguous presence \
       where observation becomes judgment, and simply being seen begins to feel threatening.',
-    artworkFolder: '3d-design/horror/the-watchers',
+    artworkFolder: 'digital-art/3d-design/horror/the-watchers',
     fallbackBasename: 'the-watchers',
     artworkType: 'horror sculpture final image',
     credits:
@@ -276,7 +292,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'masquerade',
     title: 'Masquerade',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Horror',
     year: 'June 2026',
     medium: 'Blender',
@@ -290,7 +307,7 @@ const projectRecords: ProjectRecord[] = [
        and distance, reflecting how we know others only through fragments. \
        The work considers the masks we wear and asks how much of anyone, \
        including ourselves, we can ever truly know.',
-    artworkFolder: '3d-design/horror/masquerade',
+    artworkFolder: 'digital-art/3d-design/horror/masquerade',
     fallbackBasename: 'masquerade',
     artworkType: 'horror final image',
     credits:
@@ -304,7 +321,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'a-mothers-despair',
     title: "A Mother's Despair",
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Horror',
     year: 'June 2026',
     medium: 'Blender',
@@ -316,7 +334,7 @@ const projectRecords: ProjectRecord[] = [
       this piece explores the instant when grief becomes too immense to contain. \
       Inspired by the emotional intensity of <em>Hereditary</em> (2018), I used expression, lighting, \
       and motion to capture not the scream itself, but the moment just before it fully forms.',
-    artworkFolder: '3d-design/horror/a-mothers-despair',
+    artworkFolder: 'digital-art/3d-design/horror/a-mothers-despair',
     fallbackBasename: 'a-mothers-despair',
     artworkType: 'horror sculpture final image',
     credits:
@@ -328,7 +346,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'quiet',
     title: 'Quiet!',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Horror',
     year: 'February 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils)',
@@ -341,7 +359,7 @@ const projectRecords: ProjectRecord[] = [
       but being made to carry it in silence. <em>Quiet!</em> explores what happens \
       when difficult conversations are treated as forbidden, leaving \
       hopelessness, loneliness, and anger with nowhere to go except inward.`,
-    artworkFolder: '3d-design/horror/quiet',
+    artworkFolder: 'traditional-art/horror/quiet',
     fallbackBasename: 'quiet',
     artworkType: 'horror final image',
     credits:
@@ -351,7 +369,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'oh-my-dear',
     title: 'Oh, My Dear',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Horror',
     year: 'August 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils) and black and white soft pastels.',
@@ -363,7 +381,7 @@ const projectRecords: ProjectRecord[] = [
       `A lone sheep stands beneath the only light while something waits just beyond it. \
       <em>Oh, My Dear</em> came from the feeling of seeing danger before someone you love does, knowing \
       what's coming, yet having no way to protect them.`,
-    artworkFolder: '3d-design/horror/oh-my-dear',
+    artworkFolder: 'traditional-art/horror/oh-my-dear',
     fallbackBasename: 'oh-my-dear',
     artworkType: 'horror final image',
     credits:
@@ -373,7 +391,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'do-not-trust',
     title: 'Do Not Trust',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Horror',
     year: 'December 2025',
     medium: 'Oil paint',
@@ -386,7 +404,7 @@ const projectRecords: ProjectRecord[] = [
       After being hurt often enough, self-protection becomes instinct, and \
       every stranger begins to look like a threat. The crouched posture reflects \
       a mind that no longer knows how to rest because trust has become something earned instead of expected.',
-    artworkFolder: '3d-design/horror/do-not-trust',
+    artworkFolder: 'traditional-art/horror/do-not-trust',
     fallbackBasename: 'do-not-trust',
     artworkType: 'oil painting final image',
     credits:
@@ -396,7 +414,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'the-end-of-the-world',
     title: 'The End of The World',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Horror',
     year: 'April 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils)',
@@ -410,7 +428,7 @@ const projectRecords: ProjectRecord[] = [
       captures the moment when my fear stopped being rational and became \
       all-consuming, convincing me that everything I've worked for was \
       slipping beyond my reach.`,
-    artworkFolder: '3d-design/horror/the-end-of-the-world',
+    artworkFolder: 'traditional-art/horror/the-end-of-the-world',
     fallbackBasename: 'the-end-of-the-world',
     artworkType: 'horror final image',
     credits:
@@ -420,7 +438,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'its-time-to-go',
     title: "It's Time to Go",
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Symbolic Art',
     year: 'June 2026',
     medium: 'Blender',
@@ -434,7 +453,7 @@ const projectRecords: ProjectRecord[] = [
       surrounded by a landscape that feels like a fading memory of family, love, and home. \
       It reflects the quiet acceptance that some chapters must end, and the peace \
       of carrying what we leave behind with us.",
-    artworkFolder: '3d-design/symbolic-art/its-time-to-go',
+    artworkFolder: 'digital-art/3d-design/symbolic-art/its-time-to-go',
     fallbackBasename: 'its-time-to-go',
     artworkType: 'concept art final image',
     credits:
@@ -449,7 +468,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'restless',
     title: 'Restless',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Symbolic Art',
     year: 'March 2026',
     medium: 'Oil paint',
@@ -461,7 +480,7 @@ const projectRecords: ProjectRecord[] = [
       '<em>Restless</em> is about the quiet battle between an exhausted body and an overactive mind. \
       The figure searches for comfort but finds none, trapped in the endless cycle of anxious \
       thoughts that turns rest into something to chase rather than something to receive.',
-    artworkFolder: '3d-design/symbolic-art/restless',
+    artworkFolder: 'traditional-art/symbolic-art/restless',
     fallbackBasename: 'restless',
     artworkType: 'oil painting final image',
     credits:
@@ -471,7 +490,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'i-saw-you-first',
     title: 'I Saw You First',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Symbolic Art',
     year: 'July 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils), black and white soft pastels, and acrylic paint.',
@@ -485,7 +504,7 @@ const projectRecords: ProjectRecord[] = [
       silent witnesses, while the burning forms represent emotional battles fought \
       in isolation. Seen from above, the eyes become figures curled into themselves, \
       reminding us that some suffering remains hidden, even when it is seen.',
-    artworkFolder: '3d-design/symbolic-art/i-saw-you-first',
+    artworkFolder: 'traditional-art/symbolic-art/i-saw-you-first',
     fallbackBasename: 'i-saw-you-first',
     artworkType: 'concept art final image',
     credits:
@@ -495,7 +514,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'not-yet',
     title: 'Not Yet',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Symbolic Art',
     year: 'May 2026',
     medium: 'Blender',
@@ -508,7 +528,7 @@ const projectRecords: ProjectRecord[] = [
       The impact never comes, yet the balloon recoils as if danger were inevitable. \
       Its fear becomes more powerful than the threat itself, reflecting the exhausting \
       uncertainty of anticipating something that may never happen.',
-    artworkFolder: '3d-design/symbolic-art/not-yet',
+    artworkFolder: 'digital-art/3d-design/symbolic-art/not-yet',
     fallbackBasename: 'not-yet',
     artworkType: 'concept art final image',
     credits:
@@ -521,7 +541,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'unbound',
     title: 'Unbound',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Symbolic Art',
     year: 'May 2026',
     medium: 'Blender',
@@ -534,7 +555,7 @@ const projectRecords: ProjectRecord[] = [
       yet doubt makes us hesitate. The lock is already open and the chains are \
       not attached, suggesting that some barriers hold us even after they lose \
       their power. <em>Unbound</em> shows that sometimes the hardest part of breaking free is realizing we already can.',
-    artworkFolder: '3d-design/symbolic-art/unbound',
+    artworkFolder: 'digital-art/3d-design/symbolic-art/unbound',
     fallbackBasename: 'unbound',
     artworkType: 'concept art final image',
     artworkPosition: '85% 50%',
@@ -547,7 +568,7 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'within',
     title: 'Within',
-    category: '3D Design',
+    category: 'Traditional Art',
     subcategory: 'Symbolic Art',
     year: 'January 2026',
     medium: 'Charcoal (vine, willow, compressed, and pencils) and colored soft pastels',
@@ -560,7 +581,7 @@ const projectRecords: ProjectRecord[] = [
       our mind wanders through imagined lives where opportunities still exist and everything happens \
       differently. This drawing reflects the quiet comfort of escaping into possibilities that reality \
       no longer offers.',
-    artworkFolder: '3d-design/symbolic-art/within',
+    artworkFolder: 'traditional-art/symbolic-art/within',
     fallbackBasename: 'within',
     artworkType: 'concept art final image',
     credits:
@@ -570,7 +591,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'vigil',
     title: 'Vigil',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Symbolic Art',
     year: 'June 2026',
     medium: 'Blender',
@@ -584,7 +606,7 @@ const projectRecords: ProjectRecord[] = [
       while others still burn brightly. The work reflects on grief not only as \
       mourning what is gone, but as honoring what remains and keeping a light \
       alive for what continues to live within us.',
-    artworkFolder: '3d-design/symbolic-art/vigil',
+    artworkFolder: 'digital-art/3d-design/symbolic-art/vigil',
     fallbackBasename: 'vigil',
     artworkType: 'concept art final image',
     credits:
@@ -597,7 +619,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'the-way-ive-grown',
     title: "The Way I've Grown",
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Environment Design',
     year: 'July 2026',
     medium: 'Blender',
@@ -610,7 +633,7 @@ const projectRecords: ProjectRecord[] = [
       Growing up in Brazil, these were ordinary afternoons: laundry drying outside, \
       a bicycle in the yard, worn paths through the grass. Only after leaving home did \
       I understand how these small, everyday things shaped my sense of comfort, family, and belonging.',
-    artworkFolder: '3d-design/environment-design/the-way-ive-grown',
+    artworkFolder: 'digital-art/3d-design/environment-design/the-way-ive-grown',
     fallbackBasename: 'the-way-ive-grown',
     artworkType: 'environment design final image',
     credits:
@@ -627,7 +650,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'na-casa-de-titia',
     title: "Na Casa de Titia (At Auntie's House)",
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Environment Design',
     year: 'June 2026',
     medium: 'Blender',
@@ -641,7 +665,7 @@ const projectRecords: ProjectRecord[] = [
       Rather than reconstructing one especific place, I assembled fragments of many. \
       The scene explores how memory idealizes home, preserving not spaces \
       exactly as they were, but how they felt.",
-    artworkFolder: '3d-design/environment-design/na-casa-de-titia',
+    artworkFolder: 'digital-art/3d-design/environment-design/na-casa-de-titia',
     fallbackBasename: 'na-casa-de-titia',
     artworkType: 'environment design final image',
     credits:
@@ -658,7 +682,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'depois-da-chuva',
     title: 'Depois da Chuva (After the Rain)',
-    category: '3D Design',
+    category: 'Digital Art',
+    discipline: '3D Design',
     subcategory: 'Environment Design',
     year: 'July 2026',
     medium: 'Blender',
@@ -671,7 +696,7 @@ const projectRecords: ProjectRecord[] = [
       the strange stillness after a rainstorm, when wet concrete reflects the returning light, \
       mangoes lie scattered across the ground, and the smell of damp earth fills the air. \
       The scene recreates that brief pause before everyday life resumes.',
-    artworkFolder: '3d-design/environment-design/depois-da-chuva',
+    artworkFolder: 'digital-art/3d-design/environment-design/depois-da-chuva',
     fallbackBasename: 'depois-da-chuva',
     artworkType: 'environment design final image',
     credits:
@@ -687,7 +712,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'entangled',
     title: 'Entangled',
-    category: 'Creative Coding',
+    category: 'Digital Art',
+    discipline: 'Creative Coding',
     subcategory: 'Interactive Art',
     year: 'September 2026',
     medium: 'Processing 3.5.4',
@@ -703,12 +729,12 @@ const projectRecords: ProjectRecord[] = [
       into patterns, making something invisible suddenly take form. The work reflects \
       on those strange moments of déjà vu, when another possible life feels close \
       enough to brush against our own.',
-    artworkFolder: 'creative-coding/interactive-art/entangled',
+    artworkFolder: 'digital-art/creative-coding/interactive-art/entangled',
     fallbackBasename: 'entangled',
     artworkType: 'interactive artwork documentation',
     video: {
-      src: '/artwork/creative-coding/interactive-art/entangled/entangled-vid-01.mp4',
-      poster: '/artwork/creative-coding/interactive-art/entangled/entangled-01.png',
+      src: '/artwork/digital-art/creative-coding/interactive-art/entangled/entangled-vid-01.mp4',
+      poster: '/artwork/digital-art/creative-coding/interactive-art/entangled/entangled-01.png',
       label: 'Entangled documentation video',
     },
     interactive: {
@@ -725,7 +751,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'mayra',
     title: 'Mayra',
-    category: 'Creative Coding',
+    category: 'Digital Art',
+    discipline: 'Creative Coding',
     subcategory: 'Interactive Art',
     year: 'September 2026',
     medium: 'Processing 3.5.4',
@@ -740,17 +767,17 @@ const projectRecords: ProjectRecord[] = [
       The repeating branches are inspired by the logic of crochet, where simple gestures build on one \
       another until they become something intricate and personal. This piece is my attempt to show \
       some of the love I have received from my godmother over the years. This one is for you, Dinda.',
-    artworkFolder: 'creative-coding/interactive-art/mayra',
+    artworkFolder: 'digital-art/creative-coding/interactive-art/mayra',
     fallbackBasename: 'mayra',
     artworkType: 'interactive artwork documentation',
     video: {
-      src: '/artwork/creative-coding/interactive-art/mayra/mayra-vid-01.mp4',
-      poster: '/artwork/creative-coding/interactive-art/mayra/mayra-01.png',
+      src: '/artwork/digital-art/creative-coding/interactive-art/mayra/mayra-vid-01.mp4',
+      poster: '/artwork/digital-art/creative-coding/interactive-art/mayra/mayra-01.png',
       label: 'Mayra documentation video',
     },
     interactive: {
       title: 'Make your pattern',
-      instructions: 'Choose your birth month, then your birth day. Watch the pattern unfold and fade.',
+      instructions: 'Choose your birth month, then your birth day. Watch the pattern unfold and fade. Sound begins with your first click or tap on the artwork.',
       keyboardHelp: 'R returns to the month selection. Q or Escape toggles sound.',
       clearLabel: 'Restart / R',
     },
@@ -764,7 +791,8 @@ const projectRecords: ProjectRecord[] = [
   {
     slug: 'interference',
     title: 'Interference',
-    category: 'Creative Coding',
+    category: 'Digital Art',
+    discipline: 'Creative Coding',
     subcategory: 'Interactive Art',
     year: 'September 2026',
     medium: 'Processing 3.5.4',
@@ -781,12 +809,12 @@ const projectRecords: ProjectRecord[] = [
       after we are gone, becoming part of something larger than us. \
       It can also be read politically, as a reflection on how ideas spread, \
       accumulate, and continue shaping a collective space over time.',
-    artworkFolder: 'creative-coding/interactive-art/interference',
+    artworkFolder: 'digital-art/creative-coding/interactive-art/interference',
     fallbackBasename: 'interference',
     artworkType: 'interactive artwork documentation',
     video: {
-      src: '/artwork/creative-coding/interactive-art/interference/interference-vid-01.mp4',
-      poster: '/artwork/creative-coding/interactive-art/interference/interference-01.png',
+      src: '/artwork/digital-art/creative-coding/interactive-art/interference/interference-vid-01.mp4',
+      poster: '/artwork/digital-art/creative-coding/interactive-art/interference/interference-01.png',
       label: 'Interference documentation video',
     },
     interactive: {
@@ -801,6 +829,49 @@ const projectRecords: ProjectRecord[] = [
         'Third-party assets:\n' +
         '       Sound: <em>WaterDropletInCave2</em> by Akkaittou, via Freesound. CC BY 4.0.\n' +
         '       Sound: <em>Angels Calling</em> by OmarBelattar, via Freesound. CC BY 4.0.',
+    collaborators: 'No additional collaborators listed.',
+  },
+
+  {
+    slug: 'the-day-i-was-born',
+    title: 'The Day I Was Born',
+    category: 'Digital Art',
+    discipline: 'Creative Coding',
+    subcategory: 'Animation',
+    year: 'October 2026',
+    medium: 'Processing 3.5.4',
+    tools: ['processing3'],
+    dimensions: 'Responsive browser animation',
+    summary: 'I existed in love before I even existed in the world.',
+    description:
+      '<em>The Day I Was Born</em> tells the story of my birth before I \
+      had a physical body. Two spores move through a field of other lives, \
+      growing networks that reach outward and eventually toward one another. \
+      They represent my parents, and the connections between them represent a \
+      love that existed before I did. As the two spores come together, their \
+      particles merge into something new: me. The final burst marks the moment \
+      that I cross into the physical world, i.e. the day I was actually born.  ',
+    artworkFolder: 'digital-art/creative-coding/animation/the-day-i-was-born',
+    fallbackBasename: 'the-day-i-was-born',
+    artworkType: 'animation documentation',
+    video: {
+      src: '/artwork/digital-art/creative-coding/animation/the-day-i-was-born/the-day-i-was-born-vid-01.mp4',
+      poster: '/artwork/digital-art/creative-coding/animation/the-day-i-was-born/the-day-i-was-born-01.png',
+      label: 'The Day I Was Born documentation video',
+    },
+    interactive: {
+      label: 'Animation',
+      ctaLabel: 'Watch the animation',
+      title: 'Be born',
+      instructions: 'Press START ANIMATION to begin. The animation returns to the start screen when it finishes.',
+      keyboardHelp: 'R returns to the start screen. Q or Escape toggles sound.',
+      clearLabel: 'Restart / R',
+    },
+    credits:
+        'Concept, visuals, and programming by Matheus Coutinho da Silva. \n\n' +
+        'Third-party assets:\n' +
+        '       Sound: <em>intro 0Q19m3</em> by Setuniman, via Freesound. CC BY-NC 4.0.\n' +
+        '       Sound: <em>SynthTechnoSteroids-4</em> by gmortizwavs, via Freesound. CC0.',
     collaborators: 'No additional collaborators listed.',
   },
 

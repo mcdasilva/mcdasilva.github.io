@@ -12,6 +12,8 @@ export type ExperienceConfig = {
   title: string;
   instructions: string;
   keyboardHelp: string;
+  label?: string;
+  ctaLabel?: string;
   drawingModes?: boolean;
   clearLabel?: string;
 };
@@ -66,7 +68,7 @@ export default function InteractiveExperience({ slug, title, config }: { slug: s
     <section id="interactive-experience" aria-labelledby="experience-title" className="mx-auto mt-24 max-w-7xl scroll-mt-28">
       <div className="mb-6">
         <div>
-          <p className="eyebrow">Interactive experience</p>
+          <p className="eyebrow">{config.label || 'Interactive experience'}</p>
           <h2 id="experience-title" className="mt-2 font-serif text-4xl md:text-5xl">{config.title}</h2>
         </div>
         <p id="experience-pointer-help" className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">

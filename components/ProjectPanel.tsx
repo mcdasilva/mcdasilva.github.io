@@ -6,7 +6,7 @@ type ProjectPanelProps = {
   p: Project;
   i: number;
   showTools?: boolean;
-  headingLevel?: 3 | 4;
+  headingLevel?: 3 | 4 | 5;
 };
 
 export default function ProjectPanel({
@@ -15,7 +15,7 @@ export default function ProjectPanel({
   showTools = false,
   headingLevel = 3,
 }: ProjectPanelProps) {
-  const Heading = headingLevel === 4 ? 'h4' : 'h3';
+  const Heading = headingLevel === 5 ? 'h5' : headingLevel === 4 ? 'h4' : 'h3';
 
   return (
     <Link

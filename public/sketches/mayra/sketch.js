@@ -24,7 +24,7 @@ function preload() {
 
     soundFormats("wav");
 
-    music = loadSound("/artwork/creative-coding/interactive-art/mayra/mayra_harp.wav", undefined, () => { music = null; });
+    music = loadSound("/artwork/digital-art/creative-coding/interactive-art/mayra/mayra_harp.wav", undefined, () => { music = null; });
 }
 
 
@@ -37,14 +37,7 @@ function setup() {
     frameRate(60);
 
 
-    // Try autoplay.
-    // Some browsers will block this until user interaction.
-    if (getAudioContext().state === "running") {
-
-        music.loop();
-
-        audioStarted = true;
-    }
+    // Music begins with the first gesture on the artwork, not on load.
 }
 
 

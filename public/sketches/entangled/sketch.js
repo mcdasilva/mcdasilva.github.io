@@ -19,8 +19,8 @@ let soundRequest = 0;
 
 function preload() {
 
-    pointsSound = loadSound("/artwork/creative-coding/interactive-art/entangled/entangled_points_sound.wav");
-    scribblesSound = loadSound("/artwork/creative-coding/interactive-art/entangled/entangled_scribbles_sound.wav");
+    pointsSound = loadSound("/artwork/digital-art/creative-coding/interactive-art/entangled/entangled_points_sound.wav");
+    scribblesSound = loadSound("/artwork/digital-art/creative-coding/interactive-art/entangled/entangled_scribbles_sound.wav");
 }
 
 

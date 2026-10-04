@@ -2,6 +2,7 @@
 (() => {
   let ready = false;
   let soundEnabled = true;
+  let hasCanvasGesture = false;
   let soundRequest = 0;
   const report = () => window.parent.postMessage({
     type: 'mayra-state', ready,
@@ -13,7 +14,7 @@
 
   // Await browser audio permission and keep mute persistent across selections.
   window.start_audio = async () => {
-    if (!soundEnabled || audioStarted) return;
+    if (!ready || !hasCanvasGesture || !soundEnabled || audioStarted) return;
     if (!music?.isLoaded()) {
       fail('The music is unavailable. You can still interact with the artwork.');
       return;
@@ -30,14 +31,14 @@
     report();
   };
   const toggleSound = async () => {
-    if (soundEnabled && (audioStarted || music?.isPlaying())) {
+    if (soundEnabled) {
       soundEnabled = false;
       soundRequest++;
-      music.pause();
+      if (music?.isPlaying()) music.pause();
       audioStarted = false;
     } else {
       soundEnabled = true;
-      await window.start_audio();
+      if (hasCanvasGesture) await window.start_audio();
     }
     report();
   };
@@ -52,6 +53,11 @@
     ready = true;
     getAudioContext().addEventListener('statechange', report);
     report();
+  };
+  const originalMousePressed = window.mousePressed;
+  window.mousePressed = (...args) => {
+    hasCanvasGesture = true;
+    return originalMousePressed(...args);
   };
   // Q/Escape control sound without stopping the drawing loop.
   window.keyPressed = (event) => {

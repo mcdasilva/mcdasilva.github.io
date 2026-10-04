@@ -64,6 +64,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <dt className="text-amber">Category</dt>
               <dd>{project.category}</dd>
             </div>
+            {project.discipline && (
+              <div>
+                <dt className="text-amber">Discipline</dt>
+                <dd>{project.discipline}</dd>
+              </div>
+            )}
             <div>
               <dt className="text-amber">Subcategory</dt>
               <dd>{project.subcategory}</dd>
@@ -85,7 +91,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               href="#interactive-experience"
               className="mt-6 inline-block border-b border-amber pb-1 text-xs uppercase tracking-[.18em] text-amber hover:text-bone"
             >
-              Try the interactive artwork
+              {project.interactive.ctaLabel || 'Try the interactive artwork'}
             </a>
           )}
         </div>

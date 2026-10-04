@@ -8,9 +8,9 @@ let color_spots = [];
 
 function preload() {
 
-    music = loadSound("/artwork/creative-coding/interactive-art/interference/background_music.wav", undefined, () => {});
+    music = loadSound("/artwork/digital-art/creative-coding/interactive-art/interference/background_music.wav", undefined, () => {});
 
-    click_sound = loadSound("/artwork/creative-coding/interactive-art/interference/click_sound.wav", undefined, () => {});
+    click_sound = loadSound("/artwork/digital-art/creative-coding/interactive-art/interference/click_sound.wav", undefined, () => {});
 }
 
 
