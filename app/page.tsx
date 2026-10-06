@@ -149,7 +149,7 @@ export default function Home() {
             </p>
             <h2 className="mt-4 font-serif text-5xl">A Glimpse</h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              The portfolio moves between environment design, interactive art,
+              The portfolio moves between environment design, interactive art, animation,
               psychological horror, and emotionally charged images.
             </p>
           </div>
