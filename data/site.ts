@@ -727,7 +727,7 @@ const projectRecords: ProjectRecord[] = [
       marks. As you move through the piece, new paths appear while older ones slowly fade. \
       The sound is inspired by experiments where vibration moves grains of salt or sand \
       into patterns, making something invisible suddenly take form. The work reflects \
-      on those strange moments of déjà vu, when another possible life feels close \
+      on those strange moments of <em>déjà vu</em>, when another possible life feels close \
       enough to brush against our own.',
     artworkFolder: 'digital-art/creative-coding/interactive-art/entangled',
     fallbackBasename: 'entangled',
