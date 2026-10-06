@@ -763,7 +763,7 @@ const projectRecords: ProjectRecord[] = [
       '<em>Mayra</em> begins with a birthday. The viewer chooses a month and day, and those numbers \
       become the rules for a fractal pattern that slowly draws itself across the screen. \
       Each date produces a different structure. The work is named after my godmother, Mayra, \
-      who has marked many of my birthdays with things she crocheted by hand, from scarves and purses. \
+      who has marked many of my birthdays with things she crocheted by hand, from scarves to purses. \
       The repeating branches are inspired by the logic of crochet, where simple gestures build on one \
       another until they become something intricate and personal. This piece is my attempt to show \
       some of the love I have received from my godmother over the years. This one is for you, Dinda.',
