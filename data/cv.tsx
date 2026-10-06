@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
 const collegeVenue = 'Fayerweather Hall, Amherst College, Amherst, MA, USA';
-const onlineVenue = 'Online exhibition, BRASA (Brazilian Student Association), Brazil';
+// const onlineVenue = 'Online exhibition, BRASA (Brazilian Student Association), Brazil';
+const onlineVenue = 'Online exhibition, BRASA, Brazil';
 
 // export const exhibitions = [
 //   { kind: 'Solo', title: 'Interactive Art', description: 'Selected creative coding works, curated by BRASA', venue: onlineVenue, date: 'September 2026' },
@@ -18,17 +19,17 @@ const onlineVenue = 'Online exhibition, BRASA (Brazilian Student Association), B
 // ];
 
 export const exhibitions = [
-  { kind: 'Solo', title: 'Interactive Art', description: 'Selected creative coding works, curated by BRASA', venue: onlineVenue, date: 'September 2026' },
-  { kind: 'Solo', title: 'Environment Design', description: 'Selected 3D works, curated by BRASA', venue: onlineVenue, date: 'August 2026' },
-  { kind: 'Group', title: 'Oh, My Dear', description: 'Curated by BRASA', venue: onlineVenue, date: 'August 2026' },
-  { kind: 'Solo', title: 'Symbolic Art', description: 'Selected 3D works, curated by BRASA', venue: onlineVenue, date: 'July 2026' },
-  { kind: 'Group', title: 'I Saw You First', description: 'Curated by BRASA', venue: onlineVenue, date: 'July 2026' },
-  { kind: 'Solo', title: 'Horror', description: 'Selected 3D works, curated by BRASA', venue: onlineVenue, date: 'June 2026' },
-  { kind: 'Group', title: 'The End of The World', description: 'Curated by BRASA', venue: onlineVenue, date: 'April 2026' },
-  { kind: 'Group', title: 'Restless', description: 'Curated by BRASA', venue: onlineVenue, date: 'March 2026' },
-  { kind: 'Group', title: 'Quiet!', description: 'Curated by BRASA', venue: onlineVenue, date: 'February 2026' },
-  { kind: 'Group', title: 'Within', description: 'Curated by BRASA', venue: onlineVenue, date: 'January 2026' },
-  { kind: 'Group', title: 'Do Not Trust', description: 'Curated by BRASA', venue: onlineVenue, date: 'December 2025' },
+  { kind: 'Solo', title: 'Interactive Art', description: 'Selected creative coding works, curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'September 2026' },
+  { kind: 'Solo', title: 'Environment Design', description: 'Selected 3D works, curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'August 2026' },
+  { kind: 'Group', title: 'Oh, My Dear', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'August 2026' },
+  { kind: 'Solo', title: 'Symbolic Art', description: 'Selected 3D works, curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'July 2026' },
+  { kind: 'Group', title: 'I Saw You First', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'July 2026' },
+  { kind: 'Solo', title: 'Horror', description: 'Selected 3D works, curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'June 2026' },
+  { kind: 'Group', title: 'The End of The World', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'April 2026' },
+  { kind: 'Group', title: 'Restless', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'March 2026' },
+  { kind: 'Group', title: 'Quiet!', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'February 2026' },
+  { kind: 'Group', title: 'Within', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'January 2026' },
+  { kind: 'Group', title: 'Do Not Trust', description: 'Curated by BRASA (Brazilian Student Association)', venue: onlineVenue, date: 'December 2025' },
 ];
 
 export const awards: [ReactNode, string][] = [
