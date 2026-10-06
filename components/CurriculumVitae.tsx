@@ -50,7 +50,7 @@ export default function CurriculumVitae({ standalone = false }: { standalone?: b
         </div>
 
         <div className="mt-16 grid gap-x-14 gap-y-16 lg:grid-cols-2">
-          {/* <div className="lg:col-span-2">
+          <div className="lg:col-span-2">
             <CVSection title="Curated Exhibitions">
               <div className="space-y-6">
                 {exhibitions.map((item) => (
@@ -65,7 +65,7 @@ export default function CurriculumVitae({ standalone = false }: { standalone?: b
                 ))}
               </div>
             </CVSection>
-          </div> */}
+          </div>
           <CVSection title="Professional & Creative Experience">
             <div className="space-y-8">
               {experience.map((item) => (
