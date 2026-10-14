@@ -833,6 +833,49 @@ const projectRecords: ProjectRecord[] = [
   },
 
   {
+    slug: 'fireflies',
+    title: 'Fireflies',
+    category: 'Digital Art',
+    discipline: 'Creative Coding',
+    subcategory: 'Animation',
+    year: 'October 2026',
+    medium: 'Processing 3.5.4',
+    tools: ['processing3'],
+    dimensions: 'Responsive browser animation',
+    summary: "One thought becomes another, until there's no room left for anything else.",
+    description:
+      '<em>Fireflies</em> begins with a single heartbeat. Each pulse gives rise to another \
+      flickering light, resembling a firefly wandering through space. \
+      But instead of illuminating its surroundings, each one leaves a \
+      dark trail behind. As they multiply, their paths slowly consume the \
+      white canvas. What begins as something small and almost beautiful \
+      becomes impossible to control. The piece explores how anxiety can \
+      grow from one thought into countless others, until even the smallest \
+      thoughts become overwhelming.',
+    artworkFolder: 'digital-art/creative-coding/animation/fireflies',
+    fallbackBasename: 'fireflies',
+    artworkType: 'animation documentation',
+    video: {
+      src: '/artwork/digital-art/creative-coding/animation/fireflies/fireflies-vid-01.mp4',
+      poster: '/artwork/digital-art/creative-coding/animation/fireflies/fireflies-01.png',
+      label: 'Fireflies documentation video',
+    },
+    interactive: {
+      label: 'Animation',
+      ctaLabel: 'Watch the animation',
+      title: 'Listen',
+      instructions: 'Press LISTEN to start the heartbeat and animation. The artwork returns to its start screen when it finishes.',
+      keyboardHelp: 'R returns to the start screen. Q or Escape toggles sound.',
+      clearLabel: 'Restart / R',
+    },
+    credits:
+        'Concept, visuals, and programming by Matheus Coutinho da Silva. \n\n' +
+        'Third-party assets:\n' +
+        '       Sound: <em>Heart beat.Valve move and muscle work.Sound design_EM.wav</em> by newlocknew, via Freesound. CC BY-NC 4.0.',
+    collaborators: 'No additional collaborators listed.',
+  },
+
+  {
     slug: 'the-day-i-was-born',
     title: 'The Day I Was Born',
     category: 'Digital Art',
