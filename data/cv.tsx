@@ -41,19 +41,19 @@ export const features = {
   ],
 };
 export const awards: [ReactNode, string][] = [
-  [<>B.A. awarded <em>cum laude</em>. Amherst College.</>, '2025'],
-  ['Associate Member Nominee. Sigma Xi – The Scientific Research Honor Society.', '2025'],
-  ['1st Place (Individual). Quora Question Pairs Task, Deep Learning Systems Final Competition (Georg-August-Universität Göttingen).', '2024'],
-  ['1st Place (Team). Overall Team, Deep Learning Systems Final Competition (Georg-August-Universität Göttingen).', '2024'],
-  ['Scholarship Recipient. Brazilian Student Association (BRASA): 12 recipients out of 287 applicants.', '2021'],
-  ['Fellow. Prep Estudar Fora. Selective Fundação Estudar program preparing Brazilian students for admission to universities abroad: 46 admitted out of 7,561 applicants.', '2020'],
-  ['Finalist. EF Challenge 2020. International public speaking competition focused on global issues: 8 finalists selected out of 1,150 participants.', '2020'],
-  ['Youth Ambassador. Youth Ambassadors Program, USA. U.S. Department of State exchange program focused on leadership, civic engagement, and cross-cultural exchange: 50 admitted out of 7,000+ applicants.', '2020'],
-  ['Silver medal. Brazilian Biology Olympiad (OBB): only silver medalist from Rio de Janeiro; 47 silver medals out of 125,000 contestants.', '2019'],
-  ['Fellow. Clubes de Ciência Brasil (Science Clubs Brazil). Science immersion and mentorship program in which students develop research projects with university researchers: 100 admitted out of 500 applicants.', '2019'],
-  ['Golden Feather Student. Awarded to the valedictorian of Colégio Pedro II: 1 out of 255 students.', '2019'],
-  ['Fellow. Latin American Leadership Academy, Ecuador: 26 admitted out of 700 applicants.', '2019'],
-  ['Finalist. Prêmio Prudential Espírito Comunitário. Brazilian youth volunteerism award recognizing community service initiatives with social impact: 10 finalists out of 1,500+ applicants.', '2019'],
+  [<><strong>B.A. awarded <em>cum laude</em>.</strong> Amherst College.</>, '2025'],
+  [<><strong>Associate Member Nominee.</strong> Sigma Xi - The Scientific Research Honor Society.</>, '2025'],
+  [<><strong>1st Place (Individual).</strong> Quora Question Pairs Task, Deep Learning Systems Final Competition (Georg-August-Universität Göttingen).</>, '2024'],
+  [<><strong>1st Place (Team).</strong> Overall Team, Deep Learning Systems Final Competition (Georg-August-Universität Göttingen).</>, '2024'],
+  [<><strong>Scholarship Recipient.</strong> Brazilian Student Association (BRASA) [12 recipients out of 287 applicants].</>, '2021'],
+  [<><strong>Fellow.</strong> Prep Estudar Fora. Selective Fundação Estudar program that prepares Brazilian students for admission to universities abroad [46 admitted out of 7561 applicants].</>, '2020'],
+  [<><strong>Finalist.</strong> EF Challenge 2020. International public speaking competition focused on global issues [8 finalists selected out of 1,150 participants].</>, '2020'],
+  [<><strong>Youth Ambassador.</strong> Youth Ambassadors Program, USA. U.S. Department of State exchange program focused on leadership, civic engagement, and cross-cultural exchange [50 admitted out of 7,000+ applicants].</>, '2020'],
+  [<><strong>Silver medal.</strong> Brazilian Biology Olympiad (OBB) [only silver medalist from Rio de Janeiro; 47 silver medals out of 125,000 contestants].</>, '2019'],
+  [<><strong>Fellow.</strong> Clubes de Ciência Brasil (Science Clubs Brazil). Science immersion and mentorship program in which students develop research projects with university researchers [100 admitted out of 500 applicants].</>, '2019'],
+  [<><strong>Golden Feather Student.</strong> Awarded to the valedictorian of Colégio Pedro II [1 out of 255 students].</>, '2019'],
+  [<><strong>Fellow.</strong> Latin American Leadership Academy, Ecuador [26 admitted out of 700 applicants].</>, '2019'],
+  [<><strong>Finalist.</strong> Prêmio Prudential Espírito Comunitário. Brazilian youth volunteerism award recognizing community service initiatives with social impact [10 finalists out of 1,500+ applicants].</>, '2019'],
 ];
 
 export const selectedSkills = [
