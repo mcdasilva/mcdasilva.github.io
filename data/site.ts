@@ -663,7 +663,7 @@ const projectRecords: ProjectRecord[] = [
     description:
       "<em>Na Casa de Titia</em> reflects the warmth of Brazilian domestic life through \
       memories of coffee, lace, gardens, and conversations in the afternoon. \
-      Rather than reconstructing one especific place, I assembled fragments of many. \
+      Rather than reconstructing one specific place, I assembled fragments of many. \
       The scene explores how memory idealizes home, preserving not spaces \
       exactly as they were, but how they felt.",
     artworkFolder: 'digital-art/3d-design/environment-design/na-casa-de-titia',
