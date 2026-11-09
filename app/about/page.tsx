@@ -51,8 +51,8 @@ export default function About() {
                     Digital Art
                   </dt>
                   <dd>
-                    AutoCAD, Revit, SketchUp, Blender, Roblox Studio, Adobe Acrobat, Processing
-                    Java, JavaScript, PHP, Python.
+                    AutoCAD, Revit, SketchUp, Blender, Roblox Studio, Adobe Acrobat,
+                    Processing, Java, JavaScript, PHP, Python.
                   </dd>
                 </div>
                 <div>
@@ -73,6 +73,8 @@ export default function About() {
                   {contact.email}
                 </a>{' '}
                 - {contact.location}
+                <br />
+                <a className="text-amber hover:text-bone" href="tel:+14134724213">{contact.phone}</a>
               </p>
             </section>
           </div>

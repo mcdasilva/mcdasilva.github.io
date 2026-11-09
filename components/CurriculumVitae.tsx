@@ -1,13 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import type { ReactNode } from 'react';
-import { experience, researchExperience, awards, exhibitions, selectedSkills, mentoring } from '@/data/cv';
+import { experience, researchExperience, awards, exhibitions, defaultExhibitionCurator, features, selectedSkills, mentoring } from '@/data/cv';
 
-const cvPath = '/Matheus-Coutinho-da-Silva-CV.pdf';
-
-const cvExists = fs.existsSync(
-  path.join(process.cwd(), 'public', cvPath.replace(/^\/+/, '')),
-);
+const cvPath = '/CV/Matheus-Coutinho-da-Silva-CV.pdf';
 
 function CVSection({
   title,
@@ -27,6 +23,7 @@ function CVSection({
 }
 
 export default function CurriculumVitae({ standalone = false }: { standalone?: boolean }) {
+  const cvExists = fs.existsSync(path.join(process.cwd(), 'public', cvPath.slice(1)));
   const Heading = standalone ? 'h1' : 'h2';
   return (
       <section id="cv" className={standalone ? '' : 'mt-28 border-t border-line pt-20'}>
@@ -39,29 +36,53 @@ export default function CurriculumVitae({ standalone = false }: { standalone?: b
               Curriculum Vitae
             </Heading>
           </div>
-          {cvExists && (
+          {cvExists ? (
             <a
               href={cvPath}
+              download
               className="text-xs uppercase tracking-[.18em] text-amber transition-colors duration-300 ease-out hover:text-bone"
             >
-              Download PDF <span aria-hidden="true">&#8599;</span>
+              Download CV <span aria-hidden="true">&#8599;</span>
             </a>
+          ) : (
+            <button type="button" disabled title="The CV PDF will be available after it is uploaded." className="text-xs uppercase tracking-[.18em] text-muted disabled:opacity-60">
+              Download CV — PDF coming soon
+            </button>
           )}
         </div>
 
         <div className="mt-16 grid gap-x-14 gap-y-16 lg:grid-cols-2">
           <div className="lg:col-span-2">
-            <CVSection title="Curated Exhibitions">
+            <CVSection title="Selected Exhibitions">
               <div className="space-y-6">
                 {exhibitions.map((item) => (
                   <article key={item.title} className="grid gap-2 sm:grid-cols-[1fr_auto] sm:gap-8">
                     <div>
                       <h4 className="text-bone">{item.kind} Exhibition, <em>{item.title}</em></h4>
-                      <p>{item.description}</p>
+                      <p>Curated by {item.curator || defaultExhibitionCurator}</p>
                       <p>{item.venue}</p>
                     </div>
                     <p className="text-sm text-amber">{item.date}</p>
                   </article>
+                ))}
+              </div>
+            </CVSection>
+          </div>
+          <div className="lg:col-span-2">
+            <CVSection title="Selected Features">
+              <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+                <div>
+                  <h4 className="text-bone">{features.role}, {features.organization}</h4>
+                  <p>{features.location}</p>
+                </div>
+                <p className="text-sm text-amber">{features.date}</p>
+              </div>
+              <div className="mt-5 space-y-4">
+                {features.selections.map((item) => (
+                  <div key={item.title} className="grid gap-1 sm:grid-cols-[1fr_auto] sm:gap-6">
+                    <p><em>{item.title}</em>, {item.description.toLowerCase()}</p>
+                    <p className="text-sm text-amber">{item.date}</p>
+                  </div>
                 ))}
               </div>
             </CVSection>

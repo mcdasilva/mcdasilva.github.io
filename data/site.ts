@@ -252,14 +252,15 @@ export const toolLogos: Record<ToolKey, ToolLogo> = {
 
 export const contact = {
   email: 'mcdasilva2025@gmail.com',
-  location: 'United States / Brazil',
+  location: 'Holyoke, Massachusetts, USA',
+  phone: '(413) 472-4213',
 };
 
 export const intro =
   'I work across traditional and digital media, combining art and technology to create materials that translate feelings into experiences.';
 
 export const aboutIntro =
-  'Matheus Coutinho da Silva is a Brazilian artist and creative technologist working across traditional and digital media. With a background in computer science, his practice brings together 3D visualization, programming, drawing, and painting. His interdisciplinary approach grew from an interest in using both artistic and computational tools as forms of creative expression.';
+  'Matheus Coutinho da Silva is a Brazilian artist and creative technologist based in Holyoke, Massachusetts. He graduated from Amherst College with a B.A. in Computer Science, cum laude, in 2025. His practice brings together drawing, painting, 3D design, interactive art, and animation. As an Architectural & 3D Designer at Torus Knot 3D Designs, he works across architectural visualization, custom objects, and fabrication. His background also includes research in conversational AI and natural language processing, alongside teaching and mentoring in programming, AI, and creative technology.';
 
 const projectRecords: ProjectRecord[] = [
   {
@@ -920,7 +921,16 @@ const projectRecords: ProjectRecord[] = [
 
 ];
 
-export const getProjects = () => projectRecords.map(resolveProject);
+// Match the category, discipline, and subcategory traversal on the Work page.
+// Preserve the manually chosen record order within each subcategory.
+export const getProjects = () => projectCategoryGroups.flatMap(({ category, disciplines }) =>
+  disciplines.flatMap(({ discipline, subcategories }) =>
+    subcategories.flatMap((subcategory) => projectRecords.filter((project) =>
+      project.category === category && project.discipline === discipline &&
+      project.subcategory === subcategory,
+    )),
+  ),
+).map(resolveProject);
 
 export const getProject = (slug: string) =>
   getProjects().find((project) => project.slug === slug);
